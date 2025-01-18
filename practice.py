@@ -16,6 +16,10 @@ class VirusMapSimulator:
         self.canvas = tkintermapview.TkinterMapView(root, width=self.width, height=self.height)
         self.canvas.pack()
 
+        #create an overlay canvas for drawing the grid
+        self.overlay_canvas = tk.Canvas(root, width=self.width, height=self.height, bd=0, highlightthickness=0)
+        self.overlay_canvas.pack()
+
         # Set an initial location and zoom level for the map
         self.canvas.set_position(0, 0)  # Center on (0, 0) - you can adjust this as needed
         self.canvas.set_zoom(2)  # Set zoom level
@@ -37,11 +41,12 @@ class VirusMapSimulator:
 
     def draw_grid(self):
         """Draw the grid on top of the map."""
+        self.overlay_canvas.delete("all")
         for row in range(self.rows):
             for col in range(self.cols):
                 color = "green" if self.grid[row][col] == 0 else "red"  # Green for healthy, red for infected
                 # Draw a rectangle on the map based on grid size
-                self.canvas.create_rectangle(
+                self.overlay_canvas.create_rectangle(
                     col * self.grid_size, row * self.grid_size,
                     (col + 1) * self.grid_size, (row + 1) * self.grid_size,
                     fill=color, outline="black"
