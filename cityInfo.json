@@ -1,0 +1,84 @@
+{
+    "cities": [
+        {
+            "name": "CityA",
+            "population": 500000,
+            "neighbors": {
+                "CityB": 10,
+                "CityC": 20
+            }
+        },
+        {
+            "name": "CityB",
+            "population": 300000,
+            "neighbors": {
+                "CityA": 10,
+                "CityD": 15
+            }
+        },
+        {
+            "name": "CityC",
+            "population": 200000,
+            "neighbors": {
+                "CityA": 20,
+                "CityE": 25
+            }
+        },
+        {
+            "name": "CityD",
+            "population": 400000,
+            "neighbors": {
+                "CityB": 15,
+                "CityF": 30
+            }
+        },
+        {
+            "name": "CityE",
+            "population": 250000,
+            "neighbors": {
+                "CityC": 25,
+                "CityG": 35
+            }
+        },
+        {
+            "name": "CityF",
+            "population": 350000,
+            "neighbors": {
+                "CityD": 30,
+                "CityH": 40
+            }
+        },
+        {
+            "name": "CityG",
+            "population": 150000,
+            "neighbors": {
+                "CityE": 35,
+                "CityI": 45
+            }
+        },
+        {
+            "name": "CityH",
+            "population": 450000,
+            "neighbors": {
+                "CityF": 40,
+                "CityJ": 50
+            }
+        },
+        {
+            "name": "CityI",
+            "population": 100000,
+            "neighbors": {
+                "CityG": 45,
+                "CityJ": 55
+            }
+        },
+        {
+            "name": "CityJ",
+            "population": 600000,
+            "neighbors": {
+                "CityH": 50,
+                "CityI": 55
+            }
+        }
+    ]
+}
