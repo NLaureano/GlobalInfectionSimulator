@@ -62,7 +62,7 @@ class InfectionSimulator:
         for country in self.countryData:
             res[country['name']] = self.infectionVector[self.countryIndex[country['name']]]
         return res
-    n
+    
     def reset(self, neighborPriority=0.1):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
