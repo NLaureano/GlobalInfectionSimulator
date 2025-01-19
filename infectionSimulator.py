@@ -85,7 +85,7 @@ class InfectionSimulator:
             # Populate population, HDI, and travel score vectors
             for country in self.countryData:
                 self.populationVector[self.countryIndex[country['name']]] = country['population']
-                self.countryHDI[self.countryIndex[country['name']]] = country['HDI']
+                self.countryHDI[self.countryIndex[country['name']]] = country['hdi']
                 self.countryTravelScore[self.countryIndex[country['name']]] = country['annual_passenger_traffic'] / sumTravelScore
             
             print("Population Vector:", self.populationVector)
