@@ -1,0 +1,210 @@
+import tkinter as tk
+from tkinter import messagebox
+from PIL import Image, ImageTk
+from borders import country_borders
+
+class InfectionSimulator:
+    def __init__(self):
+        # Create the main window
+        self.root = tk.Tk()
+        self.root.title("Infection Simulator")
+        
+        # Simulation state
+        self.simulation_state = {
+            "virulence": 50,
+            "starting_country": None,
+            "starting_infected": 0,
+            "map": "default"
+        }
+        self.infected_count = 0
+        self.infected_grids = set()
+        
+        # Create frames
+        self.left_frame = tk.Frame(self.root)
+        self.left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        self.right_frame = tk.Frame(self.root)
+        self.right_frame.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # Initialize map
+        self.setup_map()
+        
+        # Initialize menu
+        self.setup_menu()
+        
+        # Initialize labels
+        self.setup_labels()
+    
+    def setup_map(self):
+        # Load and display the world map
+        self.image = Image.open("world.png")
+        self.photo = ImageTk.PhotoImage(self.image)
+        
+        # Create canvas for the map
+        self.canvas = tk.Canvas(self.left_frame, width=self.image.width, height=self.image.height)
+        self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
+        self.canvas.pack()
+        
+        # Grid settings
+        self.grid_rows = 100
+        self.grid_columns = 200
+        
+        # Draw grid
+        self.draw_grid()
+        
+        # Bind mouse movement
+        self.canvas.bind('<Motion>', self.track_grid_cursor)
+        self.canvas.bind('<Button-1>', self.handle_click)
+    
+    def setup_menu(self):
+        # Create menu buttons
+        buttons = [
+            ("Virulence", self.virulence_option),
+            ("Starting Country", self.starting_country_option),
+            ("Starting Infected", self.starting_infected_option),
+            ("Start/Step", self.start_step_option),
+            ("Reset", self.reset_option),
+            ("Total Infected", self.total_infected_option)
+        ]
+        
+        for text, command in buttons:
+            btn = tk.Button(self.right_frame, text=text, font=("Arial", 12), 
+                          width=20, command=command)
+            btn.pack(pady=5)
+    
+    def setup_labels(self):
+        # Coordinates label
+        self.coords_label = tk.Label(self.root, text="Lat: 0.00, Lon: 0.00", 
+                                   font=("Arial", 12), bg="white")
+        self.coords_label.pack(pady=10)
+        
+        # Total infected label
+        self.total_infected_label = tk.Label(self.root, text="Total Infected: 0", 
+                                           font=("Arial", 12))
+        self.total_infected_label.pack(pady=10)
+    
+    def draw_grid(self):
+        grid_width = self.image.width // self.grid_columns
+        grid_height = self.image.height // self.grid_rows
+        
+        # Draw horizontal lines
+        for i in range(1, self.grid_rows):
+            y = i * grid_height
+            self.canvas.create_line(0, y, self.image.width, y, fill="black")
+        
+        # Draw vertical lines
+        for j in range(1, self.grid_columns):
+            x = j * grid_width
+            self.canvas.create_line(x, 0, x, self.image.height, fill="black")
+    
+    def track_grid_cursor(self, event):
+        grid_x = event.x // (self.image.width // self.grid_columns)
+        grid_y = event.y // (self.image.height // self.grid_rows)
+        
+        # Convert grid coordinates to lat/lon
+        lat, lon = self.grid_to_latlon(grid_x, grid_y)
+        self.coords_label.config(text=f"Lat: {lat:.2f}, Lon: {lon:.2f}")
+    
+    def handle_click(self, event):
+        grid_x = event.x // (self.image.width // self.grid_columns)
+        grid_y = event.y // (self.image.height // self.grid_rows)
+        
+        # Add to infected grids if in simulation mode
+        if self.simulation_state["starting_country"] is None:
+            self.infected_grids.add((grid_x, grid_y))
+            self.update_infected_count()
+            self.highlight_cell(grid_x, grid_y)
+    
+    def highlight_cell(self, grid_x, grid_y):
+        cell_width = self.image.width // self.grid_columns
+        cell_height = self.image.height // self.grid_rows
+        x1, y1 = grid_x * cell_width, grid_y * cell_height
+        x2, y2 = x1 + cell_width, y1 + cell_height
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
+    
+    def grid_to_latlon(self, grid_x, grid_y):
+        lat = 90 - (grid_y * 180 / self.grid_rows)
+        lon = -180 + (grid_x * 360 / self.grid_columns)
+        return lat, lon
+    
+    def update_infected_count(self):
+        self.infected_count = len(self.infected_grids)
+        self.total_infected_label.config(text=f"Total Infected: {self.infected_count}")
+    
+    # Menu option functions
+    def virulence_option(self):
+        window = tk.Toplevel(self.root)
+        window.title("Adjust Virulence")
+        window.geometry("300x200")
+        
+        label = tk.Label(window, text="Adjust the virulence:", font=("Arial", 12))
+        label.pack(pady=10)
+        
+        def update_virulence(value):
+            virulence_label.config(text=f"Virulence: {value}%")
+            self.simulation_state["virulence"] = int(value)
+        
+        slider = tk.Scale(window, from_=0, to=100, orient="horizontal", 
+                         font=("Arial", 12), command=update_virulence)
+        slider.set(self.simulation_state["virulence"])
+        slider.pack(pady=10)
+        
+        virulence_label = tk.Label(window, text=f"Virulence: {self.simulation_state['virulence']}%", 
+                                  font=("Arial", 12))
+        virulence_label.pack(pady=10)
+    
+    def starting_country_option(self):
+        messagebox.showinfo("Starting Country", 
+                          "Click on the map to select a starting country")
+        self.simulation_state["starting_country"] = "pending"
+    
+    def starting_infected_option(self):
+        window = tk.Toplevel(self.root)
+        window.title("Set Starting Infected")
+        window.geometry("300x200")
+        
+        label = tk.Label(window, text="Enter number of initially infected:", 
+                        font=("Arial", 12))
+        label.pack(pady=10)
+        
+        entry = tk.Entry(window, font=("Arial", 12))
+        entry.insert(0, str(self.simulation_state["starting_infected"]))
+        entry.pack(pady=10)
+        
+        def update_infected():
+            try:
+                value = int(entry.get())
+                if value >= 0:
+                    self.simulation_state["starting_infected"] = value
+                    window.destroy()
+                else:
+                    messagebox.showerror("Error", "Please enter a positive number")
+            except ValueError:
+                messagebox.showerror("Error", "Please enter a valid number")
+        
+        button = tk.Button(window, text="Set", command=update_infected, 
+                          font=("Arial", 12))
+        button.pack(pady=10)
+    
+    def start_step_option(self):
+        # Add simulation step logic here
+        pass
+    
+    def reset_option(self):
+        self.infected_grids.clear()
+        self.update_infected_count()
+        self.simulation_state["starting_country"] = None
+        self.simulation_state["starting_infected"] = 0
+        # Clear highlighted cells
+        self.setup_map()
+    
+    def total_infected_option(self):
+        messagebox.showinfo("Total Infected", 
+                          f"Current total infected: {self.infected_count}")
+    
+    def run(self):
+        self.root.mainloop()
+
+if __name__ == "__main__":
+    simulator = InfectionSimulator()
+    simulator.run()
