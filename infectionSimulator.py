@@ -32,31 +32,37 @@ class InfectionSimulator:
         self.infectionVector[0] = 1
 
         # Record infection history
-        infectionHistory = np.zeros((timeSteps, self.cityCount))
+        infectionHistory = np.zeros((timeSteps, self.countryCount))
         infectionHistory[0] = self.infectionVector
 
         #For each timestep
         for t in range(1, timeSteps):
-            resultingVector = np.zeros(self.cityCount)
-
-            for i in range(self.cityCount):
-                for j in range(self.cityCount):
-                    if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
-                        # Determine actual new infections probabilistically
-                        actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * spreadProb)
-                        resultingVector[j] += actual_transmissions
-
-            # Update the infection vector
-            self.infectionVector += resultingVector
-            infectionHistory[t] = self.infectionVector
+            infectionHistory[t] = self.step(spreadProb)
 
             print(f"Time Step {t}: {self.infectionVector}")
 
         return infectionHistory
     
-    def step(self):
-        pass
+    def step(self, spreadProb=0.5):
+        resultingVector = np.zeros(self.countryCount)
+        for i in range(self.countryCount):
+            for j in range(self.countryCount):
+                if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
+                    # Determine actual new infections probabilistically
+                    actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * spreadProb)
+                    resultingVector[j] += actual_transmissions
 
+        # Update the infection vector
+        self.infectionVector += resultingVector
+        self.infectionVector = np.minimum(self.infectionVector, self.populationVector)  # Cap infections at population size
+        return self.infectionVector
+
+    def returnInfections(self):
+        res = {}
+        for country in self.countryData:
+            res[country['name']] = self.infectionVector[self.countryIndex[country['name']]]
+        return res
+    n
     def reset(self, neighborPriority=0.1):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
@@ -74,23 +80,24 @@ class InfectionSimulator:
             # Create a dictionary to map city names to indices
             for i, country in enumerate(self.countryData):
                 self.countryIndex[country['name']] = i
-                print(f"Country {country['name']} has index {i}")
+                #print(f"Country {country['name']} has index {i}")
 
             sumTravelScore = 0
             for country in self.countryData:
-                print("Country PASSANGER:", country['name'])
+                #print("Country PASSANGER:", country['name'])
                 sumTravelScore += country['annual_passenger_traffic']
-            print("Sum of travel scores:", sumTravelScore)
+            #print("Sum of travel scores:", sumTravelScore)
 
             # Populate population, HDI, and travel score vectors
             for country in self.countryData:
+                #print("Country updating:", country['name'])
                 self.populationVector[self.countryIndex[country['name']]] = country['population']
                 self.countryHDI[self.countryIndex[country['name']]] = country['hdi']
                 self.countryTravelScore[self.countryIndex[country['name']]] = country['annual_passenger_traffic'] / sumTravelScore
             
-            print("Population Vector:", self.populationVector)
-            print("HDI Vector:", self.countryHDI)
-            print("Travel Score Vector:", self.countryTravelScore)
+            # print("Population Vector:", self.populationVector)
+            # print("HDI Vector:", self.countryHDI)
+            # print("Travel Score Vector:", self.countryTravelScore)
 
             # Populate adjacency matrix
             for country in self.countryData:
@@ -98,6 +105,8 @@ class InfectionSimulator:
                 for i in range(self.countryCount):
                     self.adjacenyMatrix[rowOfCountry][i] = self.countryTravelScore[i]
                 for neighbor in country['neighbors']:
+                    if neighbor not in self.countryIndex:
+                        continue
                     colOfCountry = self.countryIndex[neighbor]
                     self.adjacenyMatrix[rowOfCountry][colOfCountry] += neighborPriority
                 self.adjacenyMatrix[rowOfCountry] = self.softmax(self.adjacenyMatrix[rowOfCountry])
@@ -130,4 +139,5 @@ class InfectionSimulator:
 # Instantiate and use the simulator
 simulator = InfectionSimulator()
 simulator.reset()
+simulator.simulateInfection(0.5, 100)
 #simulator.simulateInfection()

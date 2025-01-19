@@ -11,7 +11,6 @@
             "India",
             "Nepal",
             "Bhutan",
-            "Myanmar",
             "Laos",
             "Vietnam",
             "North Korea"
@@ -108,7 +107,6 @@
         "name": "Bangladesh",
         "neighbors": [
             "India",
-            "Myanmar",
             "Bhutan"
         ],
         "hdi": 0.67,
@@ -260,7 +258,6 @@
     {
         "name": "Thailand",
         "neighbors": [
-            "Myanmar",
             "Laos",
             "Cambodia",
             "Malaysia"
@@ -1298,8 +1295,7 @@
             "Thailand",
             "Vietnam",
             "Cambodia",
-            "China",
-            "Myanmar"
+            "China"
         ],
         "hdi": 0.62,
         "alternate_name": "laos",
@@ -1825,6 +1821,7 @@
             "Israel",
             "Egypt"
         ],
+        "hdi": 0.708,
         "alternate_name": "gaza-strip",
         "population": 2141643,
         "annual_passenger_traffic": 0
@@ -2005,8 +2002,7 @@
         "neighbors": [
             "India",
             "China",
-            "Bangladesh",
-            "Myanmar"
+            "Bangladesh"
         ],
         "hdi": 0.681,
         "alternate_name": "bhutan",
