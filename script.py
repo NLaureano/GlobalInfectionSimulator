@@ -1,134 +1,90 @@
-# So i grab the 10k cities, and then pull information
-# population, 
-# urbanization of infectious rate, some sort of indicator to indicate whether theyll be more suceptible to infectious diseases
+import os
+import json
+import google.generativeai as genai
+import time
+from random import uniform
 
-# are there neighbors, and the likelihood of going there, and the likeliness of infectious diseases getting spread base on neighbors
+# Configure with your API key
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+if not GOOGLE_API_KEY:
+    raise ValueError("Please set the GOOGLE_API_KEY environment variable with your API key from https://makersuite.google.com/app/apikey")
 
+# Configure the library
+genai.configure(api_key=GOOGLE_API_KEY)
 
+def read_cities_json(file_path):
+    with open(file_path, 'r') as f:
+        return json.load(f)
 
-# Add to my script
-# I want to generate a list of 10k popular cities. 
-# I want to generate from each city their population, the cities they're most likely go to. 
-# I want this to be a json file
+def generate_neighbors_for_city(model, city_name, max_retries=3):
+    prompt = f"""Given the country {city_name}, list 3-5 neighboring countries that directly share a border with {city_name}.
+    Only include countries that share a land or maritime border.
+    
+    Format the response as a JSON object with country names as keys without any values.
+    Example format: {{"Country1": "", "Country2": "", "Country3": ""}}"""
+    
+    for attempt in range(max_retries):
+        try:
+            # Add a random delay between requests (1-3 seconds)
+            time.sleep(uniform(1, 3))
+            
+            response = model.generate_content(prompt)
+            # Try to parse the response as JSON
+            response_text = response.text.strip()
+            # Remove any markdown code block markers if present
+            response_text = response_text.replace('```json', '').replace('```', '').strip()
+            neighbors_dict = json.loads(response_text)
+            # Convert to list of just country names
+            return list(neighbors_dict.keys())
+        except Exception as e:
+            if attempt < max_retries - 1:
+                # If it's not the last attempt, wait longer (5-10 seconds) before retrying
+                print(f"Attempt {attempt + 1} failed for {city_name}: {str(e)}. Retrying...")
+                time.sleep(uniform(5, 10))
+            else:
+                print(f"Error generating neighbors for {city_name} after {max_retries} attempts: {str(e)}")
+                return []
 
-
-
-
-import requests
-
-# Replace this with your actual Gemini API key
-API_KEY = "your_gemini_api_key"
-
-# Base URL for Gemini API
-BASE_URL = "https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText"
-
-def fetch_infectious_diseases():
-    """
-    Queries the Gemini API to generate a list of infectious diseases.
-    """
-    # Headers for the request
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}"
-    }
-
-    # Prompt for the AI
-    prompt = "Generate a list of infectious diseases with their common names and descriptions."
-
-    # Payload for the API request
-    payload = {
-        "prompt": prompt,
-        "maxOutputTokens": 500,  # Adjust this based on the level of detail you need
-        "temperature": 0.7  # Controls randomness in the response
-    }
-
+def process_cities(input_file, output_file):
     try:
-        # Send the request to the API
-        response = requests.post(BASE_URL, headers=headers, json=payload)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-
-        # Parse the API response
-        result = response.json()
-        generated_text = result.get("candidates", [{}])[0].get("output", "")
-
-        if generated_text:
-            print("Generated List of Infectious Diseases:")
-            print(generated_text)
-        else:
-            print("No output generated. Please check your request parameters.")
-
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
+        # Initialize the model
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
+        # Read input cities
+        data = read_cities_json(input_file)
         
+        # Create new data structure with generated neighbors
+        new_data = []
         
-def generate_city_data():
-    """
-    Queries the Gemini API to generate a list of 10,000 popular cities, 
-    their populations, and the cities residents are most likely to visit.
-    """
-    # Headers for the request
-    headers = {
-        "Content-Type": "application/json",
-        "Authorization": f"Bearer {API_KEY}"
-    }
+        print("Generating travel destinations for each city...")
+        total_cities = len(data)
+        
+        for index, city in enumerate(data, 1):
+            city_name = city["name"]
+            print(f"Processing {city_name}... ({index}/{total_cities})")
+            
+            neighbors = generate_neighbors_for_city(model, city_name)
+            
+            city_data = {
+                "name": city_name,
+                "neighbors": neighbors
+            }
+            new_data.append(city_data)
+            
+            # Save progress after each city
+            with open(output_file, 'w') as f:
+                json.dump(new_data, f, indent=2)
+        
+        print(f"\nResults saved to {output_file}")
+        
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        print("Please make sure:")
+        print("1. You have a valid API key from https://makersuite.google.com/app/apikey")
+        print("2. You have set the GOOGLE_API_KEY environment variable with your key")
+        print("3. Your input JSON file exists and is properly formatted")
 
-    # Prompt for the AI
-    prompt = (
-        "Generate a detailed list of 10,000 popular cities. "
-        "For each city, include: "
-        "1) the city's population, "
-        "2) the top 5 cities that residents are most likely to visit. "
-        "Format the response as a JSON array with each object having the following keys: "
-        "'city', 'population', 'popular_destinations'."
-    )
-
-    # Payload for the API request
-    payload = {
-        "prompt": prompt,
-        "maxOutputTokens": 500,  # Adjust based on the amount of data returned per request
-        "temperature": 0.7  # Controls randomness in the response
-    }
-
-    try:
-        # Send the request to the API
-        response = requests.post(BASE_URL, headers=headers, json=payload)
-        response.raise_for_status()  # Raise an exception for HTTP errors
-
-        # Parse the API response
-        result = response.json()
-        generated_text = result.get("candidates", [{}])[0].get("output", "")
-
-        if generated_text:
-            print("Generated City Data:")
-            print(generated_text)  # Optionally save or process the data further
-        else:
-            print("No output generated. Please check your request parameters.")
-
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
-
-# Call the function to fetch infectious diseases
-fetch_infectious_diseases()
-
-# Call the function to generate city data
-generate_city_data()
-
-'''
-EXAMPLE OUTPUT
-[
-    {
-        "city": "New York",
-        "population": 8419600,
-        "popular_destinations": ["Los Angeles", "Chicago", "Miami", "Las Vegas", "San Francisco"]
-    },
-    {
-        "city": "Tokyo",
-        "population": 13929286,
-        "popular_destinations": ["Osaka", "Kyoto", "Seoul", "Shanghai", "Hong Kong"]
-    },
-    ...
-]
-
-
-'''
+if __name__ == "__main__":
+    input_file = "countries.json"  # Your input JSON file
+    output_file = "cities_with_neighborsflash.json"  # Where to save the results
+    process_cities(input_file, output_file)
