@@ -258,6 +258,8 @@ class InfectionSimulator:
     def reset_option(self):
         #self.infected_grids.clear()
         self.update_infected_count()
+        self.step_count = 0
+        self.step_label.config(text=f"Steps: {self.step_count}")
         self.matrix.reset()
         self.matrix.setInfectionVector(self.simulation_state["starting_country"], self.simulation_state["starting_infected"])
         self.update_grid()
