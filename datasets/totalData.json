@@ -282,12 +282,6 @@
         "population": 599849
     },
     {
-        "name": "Saint Kitts and Nevis",
-        "hdi": 0.838,
-        "alternate_name": "saint-kitts-and-nevis",
-        "population": 55133
-    },
-    {
         "name": "Uruguay",
         "hdi": 0.83,
         "alternate_name": "uruguay",
@@ -438,12 +432,6 @@
         "population": 3798671
     },
     {
-        "name": "Saint Vincent and the Grenadines",
-        "hdi": 0.772,
-        "alternate_name": "saint-vincent-and-the-grenadines",
-        "population": 100647
-    },
-    {
         "name": "Dominican Republic",
         "hdi": 0.766,
         "alternate_name": "dominican-republic",
@@ -586,12 +574,6 @@
         "hdi": 0.727,
         "alternate_name": "uzbekistan",
         "population": 36520593
-    },
-    {
-        "name": "Saint Lucia",
-        "hdi": 0.725,
-        "alternate_name": "saint-lucia",
-        "population": 168038
     },
     {
         "name": "Lebanon",
