@@ -241,18 +241,6 @@
         "annual_passenger_traffic": 25604871
     },
     {
-        "name": "Turkey (Turkiye)",
-        "neighbors": [
-            "Greece",
-            "Bulgaria",
-            "Georgia",
-            "Armenia",
-            "Iran",
-            "Iraq",
-            "Syria"
-        ]
-    },
-    {
         "name": "Germany",
         "neighbors": [
             "Austria",
@@ -365,16 +353,6 @@
         "alternate_name": "kenya",
         "population": 58246378,
         "annual_passenger_traffic": 5935831
-    },
-    {
-        "name": "Burma",
-        "neighbors": [
-            "Bangladesh",
-            "China",
-            "India",
-            "Laos",
-            "Thailand"
-        ]
     },
     {
         "name": "Sudan",
@@ -1255,8 +1233,7 @@
             "Egypt",
             "Jordan",
             "Lebanon",
-            "Syria",
-            "West Bank"
+            "Syria"
         ],
         "hdi": 0.915,
         "alternate_name": "israel",
@@ -1703,13 +1680,6 @@
         "alternate_name": "mongolia",
         "population": 3281676,
         "annual_passenger_traffic": 670360
-    },
-    {
-        "name": "West Bank",
-        "neighbors": [
-            "Jordan",
-            "Israel"
-        ]
     },
     {
         "name": "Kuwait",
@@ -2199,7 +2169,7 @@
         "hdi": 0.795,
         "alternate_name": "french-polynesia",
         "population": 303540,
-        "annual_passenger_traffic": null
+        "annual_passenger_traffic": 0
     },
     {
         "name": "Sao Tome and Principe",

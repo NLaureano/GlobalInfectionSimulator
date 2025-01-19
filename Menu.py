@@ -1,9 +1,67 @@
 import tkinter as tk
 from tkinter import messagebox
 
+simulation_state = {
+    "virulence": 50,
+    "starting_country": None,
+    "starting_infected": 0,
+    "map": "default"
+}
+
+infected_count = 0
+infected_grids = []
+
+def update_infected_count():
+    global infected_count
+    infected_count = len(infected_grids)
+    total_infected_label.config(f"Total Infected: {infected_count}")
+
+"""
+total_infected_label = tk.Label(root, text="Total Infected: 0", font=("Arial", 12))
+total_infected_label.pack(pady=10)
+"""
+
+def run_simulation():
+    #Add simulation function here
+    return
+
 # Function to show information or perform actions
 def virulence_option():
-    messagebox.showinfo("Virulence", "This will adjust the virulence of the disease.")
+    # Create a new window for adjusting virulence
+    virulence_window = tk.Toplevel(root)
+    virulence_window.title("Adjust Virulence")
+    virulence_window.geometry("300x200")  # Adjust window size for the slider
+
+    # Label
+    label = tk.Label(virulence_window, text="Adjust the virulence:", font=("Arial", 12))
+    label.pack(pady=10)
+
+    # Function to update the virulence value when the slider is moved
+    def update_virulence(value):
+        virulence_label.config(text=f"Virulence: {value}%")
+
+    # Scale (slider) to adjust the virulence value between 0 and 100
+    virulence_slider = tk.Scale(virulence_window, from_=0, to=100, orient="horizontal", font=("Arial", 12), command=update_virulence)
+    virulence_slider.set(50)  # Set initial value to 50%
+    virulence_slider.pack(pady=10)
+
+    # Label to display the current virulence value
+    virulence_label = tk.Label(virulence_window, text="Virulence: 50%", font=("Arial", 12))
+    virulence_label.pack(pady=10)
+
+    # Button to confirm the selected virulence value
+    def confirm_virulence():
+        selected_virulence = virulence_slider.get()
+        messagebox.showinfo("Virulence Selected", f"You selected {selected_virulence}% virulence.")
+
+    def exit_virulence():
+        virulence_window.destroy()
+
+    confirm_button = tk.Button(virulence_window, text="Confirm", font=("Arial", 12), command=confirm_virulence)
+    confirm_button.pack(side=tk.LEFT, padx=20, pady=10)
+
+    exit_button = tk.Button(virulence_window, text="Exit", command=exit_virulence)
+    exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
 
 def starting_country_option():
     country_window = tk.Toplevel(root)
@@ -27,9 +85,15 @@ def starting_country_option():
         selected_country = country_listbox.get(tk.ACTIVE)
         messagebox.showinfo("Selected Country", f"You selected {selected_country} as the starting country.")
 
+    def exit_country():
+        country_window.destroy()
+
     # Button to confirm the selection
     select_button = tk.Button(country_window, text="Select", font=("Arial", 12), command=select_country)
-    select_button.pack(pady=10)
+    select_button.pack(side=tk.LEFT, padx=20, pady=10)
+
+    exit_button = tk.Button(country_window, text="Exit", command=exit_country)
+    exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
 
 def starting_infected_option():
     number_window = tk.Toplevel(root)
@@ -50,19 +114,32 @@ def starting_infected_option():
         selected_number = number_listbox.get(tk.ACTIVE)
         messagebox.showinfo("Selected number", f"You selected {selected_number} as the starting country.")
 
+    def exit_number():
+        number_window.destroy()
+
     # Button to confirm the selection
     select_button = tk.Button(number_window, text="Select", font=("Arial", 12), command=select_number)
     select_button.pack(pady=10)
-    
+
+    exit_button = tk.Button(number_window, text="Exit", command=exit_number)
+    exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
+
 def start_step_option():
-    messagebox.showinfo("Start/Step", "Start the simulation or move to the next step.")
+    run_simulation()
+
 
 def reset_option():
-    messagebox.showinfo("Reset", "This will reset the simulation.")
+    #Reset the simulation state
+    simulation_state.update({
+        "virulence": 0,
+        "starting_country": None,
+        "starting_infected": 0,
+        "map":"default"
+    })
 
 def total_infected_option():
-    messagebox.showinfo("Total Infected", "This will show the total number of infected individuals.")
-
+    messagebox.showinfo("Total Infected", f"Total infected grids: {infected_count}")
+    
 # Create the main window
 root = tk.Tk()
 root.title("Infectious Disease Simulation Menu")
