@@ -50,35 +50,12 @@ def draw_borders():
             x2, y2 = x1 + cell_width, y1 + cell_height
             canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
 
-
-# List of major cities with approximate coordinates (example values)
-cities = {
-    "New York": (-118.7128, -74.0060),
-    "London": (51.5074, -0.1278),
-    "Tokyo": (35.6762, 139.6503),
-    "Sydney": (-33.8688, 151.2093),
-    "Cairo": (30.0444, 31.2357),
-    # Add more cities and their lat/lon coordinates
-}
-
 # Function to convert lat/lon to grid coordinates
 def latlon_to_grid(lat, lon):
     # Assuming latitudes and longitudes range from -90 to 90 and -180 to 180 respectively
     grid_x = int((lon + 180) * (grid_columns / 360))  # Normalize longitude to grid column
     grid_y = int((90 - lat) * (grid_rows / 180))  # Normalize latitude to grid row
     return grid_x, grid_y
-
-# Function to mark cities on the map
-def mark_cities():
-    for city, (lat, lon) in cities.items():
-        grid_x, grid_y = latlon_to_grid(lat, lon)
-        # Draw a marker (circle) on the grid at the city location
-        canvas.create_oval(grid_x - 5, grid_y - 5, grid_x + 5, grid_y + 5, fill="red")  # Marker as a red circle
-        # Optionally, label the city
-        canvas.create_text(grid_x, grid_y - 10, text=city, fill="black", font=("Arial", 8))
-
-# Call the function to mark cities on the grid
-mark_cities()
 
 # Function to convert grid coordinates to lat/lon
 def grid_to_latlon(grid_x, grid_y):
