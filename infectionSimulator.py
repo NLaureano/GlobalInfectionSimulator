@@ -94,7 +94,8 @@ class InfectionSimulator:
     def returnInfectionRatio(self):
         res = {}
         for country in self.countryData:
-            res[country['name']] = self.infectionVector[self.countryIndex[country['name']]] / self.populationVector[self.countryIndex[country['name']]]
+            res[country['name']] = (float) (self.infectionVector[self.countryIndex[country['name']]] / self.populationVector[self.countryIndex[country['name']]])
+        print(f"INFECTION RATIOS: {res}")
         return res
     
     def setInfectionVector(self, startCountry="United States", startInfections="1"):
@@ -155,6 +156,13 @@ class InfectionSimulator:
             print("City Index Mapping:", self.countryIndex)
             print("Adjacency Matrix:\n", self.adjacenyMatrix)
 
+    def printData(self):
+        print("Country Count:", self.countryCount)
+        print("Population Vector:", self.populationVector)
+        print("HDI Vector:", self.countryHDI)
+        print("Travel Score Vector:", self.countryTravelScore)
+        print("Adjacency Matrix:\n", self.adjacenyMatrix)
+        print("Infection Vector:", self.infectionVector)
     def softmax(self, x):
     # """
     # Compute the softmax of a 1D or 2D array.

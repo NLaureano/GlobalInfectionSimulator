@@ -41,8 +41,10 @@ class InfectionSimulator:
     def update_grid(self):
         ratios = self.matrix.returnInfectionRatio()
         for country in ratios:
-            for border in country_borders[country]:
-                self.highlight_cell(border[0], border[1], ratios[country])
+            if country in country_borders:
+                for border in country_borders[country]:
+                    self.highlight_cell(border[0], border[1], ratios[country])
+        self.matrix.printData()
 
     def setup_map(self):
         # Load and display the world map
@@ -124,12 +126,12 @@ class InfectionSimulator:
             self.update_infected_count()
             self.highlight_cell(grid_x, grid_y)
     
-    def highlight_cell(self, grid_x, grid_y, ratio=0.5):
+    def highlight_cell(self, grid_x, grid_y, ratio=0.0):
         cell_width = self.image.width // self.grid_columns
         cell_height = self.image.height // self.grid_rows
         x1, y1 = grid_x * cell_width, grid_y * cell_height
         x2, y2 = x1 + cell_width, y1 + cell_height
-        self.canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill=("#%02x%02x%02x" % (int(ratio * 255), 0, 0)), outline="black", width=1)
     
     def grid_to_latlon(self, grid_x, grid_y):
         lat = 90 - (grid_y * 180 / self.grid_rows)
