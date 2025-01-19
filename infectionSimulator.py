@@ -57,7 +57,7 @@ class InfectionSimulator:
     def step(self):
         pass
 
-    def reset(self):
+    def reset(self, neighborPriority=0.1):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
             self.countryData = json.load(file)
@@ -76,18 +76,52 @@ class InfectionSimulator:
             for i, country in enumerate(self.countryData):
                 self.countryIndex[country['name']] = i
 
+            sumTravelScore = 0
+            for country in self.countryData:
+                sumTravelScore += country['annual_passenger_traffic']
+
+            # Populate population, HDI, and travel score vectors
+            for country in self.countryData:
+                self.populationVector[self.countryIndex[country['name']]] = country['population']
+                self.countryHDI[self.countryIndex[country['name']]] = country['HDI']
+                self.countryTravelScore[self.countryIndex[country['name']]] = country['annual_passenger_traffic'] / sumTravelScore
+
             # Populate adjacency matrix
             for country in self.countryData:
                 rowOfCountry = self.countryIndex[country['name']]
-                for neighbor, proximityScore in country['neighbors'].items():
+                for i in range(self.countryCount):
+                    self.adjacenyMatrix[rowOfCountry][i] = self.countryTravelScore[i]
+                for neighbor in country['neighbors']:
                     colOfCountry = self.countryIndex[neighbor]
-                    self.adjacenyMatrix[rowOfCountry][colOfCountry] = proximityScore
+                    self.adjacenyMatrix[rowOfCountry][colOfCountry] += neighborPriority
+                self.adjacenyMatrix[rowOfCountry] = self.softmax(self.adjacenyMatrix[rowOfCountry])
 
             print("City Index Mapping:", self.countryIndex)
             print("Adjacency Matrix:\n", self.adjacenyMatrix)
 
+    def softmax(self, x):
+    # """
+    # Compute the softmax of a 1D or 2D array.
+
+    # Parameters:
+    # - x: numpy array, shape (n,) for 1D or (m, n) for 2D
+
+    # Returns:
+    # - numpy array with the same shape as x, containing softmax probabilities
+    # """
+    # For numerical stability, subtract the maximum value in each row or the array itself
+        if x.ndim == 1:
+            max_val = np.max(x)
+            exp_x = np.exp(x - max_val)
+            return exp_x / np.sum(exp_x)
+        elif x.ndim == 2:
+            max_vals = np.max(x, axis=1, keepdims=True)
+            exp_x = np.exp(x - max_vals)
+            return exp_x / np.sum(exp_x, axis=1, keepdims=True)
+        else:
+            raise ValueError("Input array must be 1D or 2D.")
 
 # Instantiate and use the simulator
 simulator = InfectionSimulator()
-simulator.readCityData()
-simulator.simulateInfection()
+simulator.reset()
+#simulator.simulateInfection()
