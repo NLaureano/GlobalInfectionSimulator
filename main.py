@@ -164,10 +164,23 @@ class InfectionSimulator:
         virulence_label.pack(pady=10)
     
     def starting_country_option(self):
-        messagebox.showinfo("Starting Country", 
-                          "Click on the map to select a starting country")
-        self.simulation_state["starting_country"] = "pending"
+        window = tk.Toplevel(self.root)
+        window.title("Select Starting Country")
+        window.geometry("300x400")
+
+        countries = list(country_borders.keys())
+
+        label = tk.Label(window, text="Select a country to start infection:", font=("Arial, 12"))
+        label.pack(pady=10)
+
+        listbox = tk.Listbox(window, height=15, font=("Arial", 12))
+        for country in countries:
+            listbox.insert(tk.END, country)  # Insert each country into the Listbox
     
+        listbox.pack(pady=10)
+
+
+
     def starting_infected_option(self):
         window = tk.Toplevel(self.root)
         window.title("Set Starting Infected")
@@ -218,5 +231,6 @@ class InfectionSimulator:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    simulator = InfectionSimulator()
+    matrix = sim.InfectionSimulator
+    simulator = InfectionSimulator(matrix)
     simulator.run()
