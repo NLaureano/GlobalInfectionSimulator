@@ -706,7 +706,7 @@
         "hdi": 0.394,
         "alternate_name": "niger",
         "population": 26342784,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 3678
     },
     {
         "name": "Syria",
@@ -728,7 +728,7 @@
         "hdi": 0.829,
         "alternate_name": "taiwan",
         "population": 23595274,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 400000
     },
     {
         "name": "Burkina Faso",
@@ -758,7 +758,7 @@
         "hdi": 0.41,
         "alternate_name": "mali",
         "population": 21990607,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1680000
     },
     {
         "name": "Sri Lanka",
@@ -826,7 +826,7 @@
         "hdi": 0.394,
         "alternate_name": "chad",
         "population": 19093595,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10400
     },
     {
         "name": "Senegal",
@@ -950,7 +950,7 @@
         "hdi": 0.471,
         "alternate_name": "guinea",
         "population": 13986179,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 50000
     },
     {
         "name": "Rwanda",
@@ -975,7 +975,7 @@
         "hdi": 0.42,
         "alternate_name": "burundi",
         "population": 13590102,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 148000
     },
     {
         "name": "Somalia",
@@ -1001,7 +1001,7 @@
         "hdi": 0.381,
         "alternate_name": "south-sudan",
         "population": 12703714,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 529000
     },
     {
         "name": "Bolivia",
@@ -1049,7 +1049,7 @@
         "hdi": 0.552,
         "alternate_name": "haiti",
         "population": 11753943,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 148000
     },
     {
         "name": "Jordan",
@@ -1094,7 +1094,7 @@
         "hdi": 0.766,
         "alternate_name": "dominican-republic",
         "population": 10815857,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic":  7863542 
     },
     {
         "name": "Azerbaijan",
@@ -1361,7 +1361,7 @@
         "hdi": 0.669,
         "alternate_name": "nicaragua",
         "population": 6676948,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 222000
     },
     {
         "name": "Serbia",
@@ -1513,7 +1513,7 @@
         "hdi": 0.966,
         "alternate_name": "norway",
         "population": 5509733,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1146000
     },
     {
         "name": "Liberia",
@@ -1525,7 +1525,7 @@
         "hdi": 0.487,
         "alternate_name": "liberia",
         "population": 5437249,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 250000
     },
     {
         "name": "Lebanon",
@@ -1663,7 +1663,7 @@
         "hdi": 0.83,
         "alternate_name": "uruguay",
         "population": 3425330,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 3800000
     },
     {
         "name": "Mongolia",
@@ -1707,7 +1707,7 @@
         "hdi": 0.845,
         "alternate_name": "puerto-rico",
         "population": 3019450,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 6100000
     },
     {
         "name": "Armenia",
@@ -1721,7 +1721,8 @@
         "hdi": 0.786,
         "alternate_name": "armenia",
         "population": 2976765,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 3100000
+        
     },
     {
         "name": "Jamaica",
@@ -1729,7 +1730,7 @@
         "hdi": 0.706,
         "alternate_name": "jamaica",
         "population": 2823713,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 4100000
     },
     {
         "name": "Namibia",
@@ -1789,7 +1790,7 @@
         "hdi": 0.693,
         "alternate_name": "gabon",
         "population": 2455105,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10000
     },
     {
         "name": "Botswana",
@@ -1813,7 +1814,7 @@
         "hdi": 0.521,
         "alternate_name": "lesotho",
         "population": 2227548,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10000
     },
     {
         "name": "Gaza Strip",
@@ -1824,7 +1825,7 @@
         "hdi": 0.708,
         "alternate_name": "gaza-strip",
         "population": 2141643,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 5000
     },
     {
         "name": "North Macedonia",
@@ -1838,7 +1839,7 @@
         "hdi": 0.765,
         "alternate_name": "north-macedonia",
         "population": 2135622,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10000
     },
     {
         "name": "Guinea-Bissau",
@@ -1849,7 +1850,7 @@
         "hdi": 0.483,
         "alternate_name": "guinea-bissau",
         "population": 2132325,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10000
     },
     {
         "name": "Slovenia",
@@ -1875,7 +1876,8 @@
         "hdi": 0.786,
         "alternate_name": "kosovo",
         "population": 1977093,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 23000
+        
     },
     {
         "name": "Latvia",
@@ -1920,7 +1922,7 @@
         "hdi": 0.566,
         "alternate_name": "timor-leste",
         "population": 1506909,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 38000
     },
     {
         "name": "Trinidad and Tobago",
@@ -1967,7 +1969,7 @@
         "hdi": 0.61,
         "alternate_name": "eswatini",
         "population": 1138089,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 10000
     },
     {
         "name": "Djibouti",
@@ -1979,7 +1981,7 @@
         "hdi": 0.515,
         "alternate_name": "djibouti",
         "population": 994974,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 114000
     },
     {
         "name": "Fiji",
@@ -1995,7 +1997,7 @@
         "hdi": 0.586,
         "alternate_name": "comoros",
         "population": 900141,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 24849
     },
     {
         "name": "Bhutan",
@@ -2019,7 +2021,7 @@
         "hdi": 0.742,
         "alternate_name": "guyana",
         "population": 794099,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 319000
     },
     {
         "name": "Solomon Islands",
@@ -2149,7 +2151,7 @@
         "hdi": 0.795,
         "alternate_name": "new-caledonia",
         "population": 304167,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 100000
     },
     {
         "name": "Barbados",
@@ -2157,7 +2159,7 @@
         "hdi": 0.809,
         "alternate_name": "barbados",
         "population": 304139,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 150000
     },
     {
         "name": "French Polynesia",
@@ -2165,7 +2167,7 @@
         "hdi": 0.795,
         "alternate_name": "french-polynesia",
         "population": 303540,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 219000
     },
     {
         "name": "Sao Tome and Principe",
@@ -2173,7 +2175,7 @@
         "hdi": 0.613,
         "alternate_name": "sao-tome-and-principe",
         "population": 223561,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 30000
     },
     {
         "name": "Samoa",
@@ -2189,7 +2191,7 @@
         "hdi": 0.795,
         "alternate_name": "guam",
         "population": 169532,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1600000
     },
     {
         "name": "Curacao",
@@ -2197,7 +2199,7 @@
         "hdi": 0.785,
         "alternate_name": "curacao",
         "population": 153289,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1300000
     },
     {
         "name": "Aruba",
@@ -2221,7 +2223,7 @@
         "hdi": 0.793,
         "alternate_name": "grenada",
         "population": 114621,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 3000000
     },
     {
         "name": "Tonga",
@@ -2229,7 +2231,7 @@
         "hdi": 0.739,
         "alternate_name": "tonga",
         "population": 104889,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 94000
     },
     {
         "name": "Virgin Islands",
@@ -2240,7 +2242,7 @@
         "hdi": 0.944,
         "alternate_name": "virgin-islands",
         "population": 104377,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1811000
     },
     {
         "name": "Antigua and Barbuda",
@@ -2259,7 +2261,7 @@
         "hdi": 0.634,
         "alternate_name": "micronesia-federated-states-of",
         "population": 99603,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 21000
     },
     {
         "name": "Seychelles",
@@ -2278,7 +2280,8 @@
         "hdi": 0.884,
         "alternate_name": "andorra",
         "population": 85370,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 8000000
+        
     },
     {
         "name": "Marshall Islands",
@@ -2294,7 +2297,7 @@
         "hdi": 0.74,
         "alternate_name": "dominica",
         "population": 74661,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 339000
     },
     {
         "name": "Greenland",
@@ -2302,7 +2305,7 @@
         "hdi": 0.91,
         "alternate_name": "greenland",
         "population": 57751,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 105000
     },
     {
         "name": "Liechtenstein",
@@ -2313,7 +2316,7 @@
         "hdi": 0.942,
         "alternate_name": "liechtenstein",
         "population": 40272,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 116000
     },
     {
         "name": "San Marino",
@@ -2323,7 +2326,7 @@
         "hdi": 0.867,
         "alternate_name": "san-marino",
         "population": 35095,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 1822000
     },
     {
         "name": "Palau",
@@ -2331,7 +2334,7 @@
         "hdi": 0.797,
         "alternate_name": "palau",
         "population": 21864,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 626000
     },
     {
         "name": "Tuvalu",
@@ -2339,7 +2342,7 @@
         "hdi": 0.653,
         "alternate_name": "tuvalu",
         "population": 11733,
-        "annual_passenger_traffic": 0
+        "annual_passenger_traffic": 4490
     },
     {
         "name": "Nauru",
