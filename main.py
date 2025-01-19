@@ -127,12 +127,12 @@ class InfectionSimulator:
             self.highlight_cell(grid_x, grid_y)
     
     def highlight_cell(self, grid_x, grid_y, ratio=0.0):
+        self.canvas.delete("nodes")
         cell_width = self.image.width // self.grid_columns
         cell_height = self.image.height // self.grid_rows
         x1, y1 = grid_x * cell_width, grid_y * cell_height
         x2, y2 = x1 + cell_width, y1 + cell_height
-        if ratio > 0.25:
-            self.canvas.create_rectangle(x1, y1, x2, y2, fill=("#%02x%02x%02x" % (int(ratio * 255), 60, 125)), outline="black", width=1)
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill=("#%02x%02x%02x" % (int(ratio * 255), 60, 125)), outline="black", width=1, tags="nodes")
     
     def grid_to_latlon(self, grid_x, grid_y):
         lat = 90 - (grid_y * 180 / self.grid_rows)
@@ -140,7 +140,7 @@ class InfectionSimulator:
         return lat, lon
     
     def update_infected_count(self):
-        self.infected_count = len(self.infected_grids)
+        self.infected_count = self.matrix.getInfectedCount()
         self.total_infected_label.config(text=f"Total Infected: {self.infected_count}")
     
     # Menu option functions
@@ -254,7 +254,7 @@ class InfectionSimulator:
     
     def total_infected_option(self):
         messagebox.showinfo("Total Infected", 
-                          f"Current total infected: {self.infected_count}")
+                          f"Current total infected: {self.matrix.getInfectedCount()}")
     
     def run(self):
         self.root.mainloop()

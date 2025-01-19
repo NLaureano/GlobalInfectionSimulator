@@ -163,6 +163,8 @@ class InfectionSimulator:
         print("Travel Score Vector:", self.countryTravelScore)
         print("Adjacency Matrix:\n", self.adjacenyMatrix)
         print("Infection Vector:", self.infectionVector)
+    def getInfectedCount(self):
+        return self.infectionVector.sum()
     def softmax(self, x):
     # """
     # Compute the softmax of a 1D or 2D array.
