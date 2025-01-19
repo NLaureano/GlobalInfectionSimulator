@@ -42,7 +42,7 @@ class InfectionSimulator:
         ratios = self.matrix.returnInfectionRatio()
         for country in ratios:
             for border in country_borders[country]:
-                self.matrix.adjacenyMatrix[country][border] = ratios[country]
+                self.highlight_cell(border[0], border[1], ratios[country])
 
     def setup_map(self):
         # Load and display the world map
@@ -124,7 +124,7 @@ class InfectionSimulator:
             self.update_infected_count()
             self.highlight_cell(grid_x, grid_y)
     
-    def highlight_cell(self, grid_x, grid_y):
+    def highlight_cell(self, grid_x, grid_y, ratio=0.5):
         cell_width = self.image.width // self.grid_columns
         cell_height = self.image.height // self.grid_rows
         x1, y1 = grid_x * cell_width, grid_y * cell_height
