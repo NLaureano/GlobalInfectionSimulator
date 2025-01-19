@@ -6,11 +6,54 @@ def virulence_option():
     messagebox.showinfo("Virulence", "This will adjust the virulence of the disease.")
 
 def starting_country_option():
-    messagebox.showinfo("Starting Country", "Select the starting country for the disease.")
+    country_window = tk.Toplevel(root)
+    country_window.title("Select Starting Country")
+    country_window.geometry("300x400")
+
+    countries = ["United States", "Canada", "Brazil", "United Kingdom", "Germany", 
+        "France", "India", "Australia", "China", "Russia", "South Africa", "Japan"]
+    
+    label = tk.Label(country_window, text="Select a country to start infection:", font=("Arial, 12"))
+    label.pack(pady=10)
+
+    # Listbox for countries
+    country_listbox = tk.Listbox(country_window, font=("Arial", 12), height=10, width=25)
+    for country in countries:
+        country_listbox.insert(tk.END, country)
+    country_listbox.pack(pady=10)
+
+    # Function to handle country selection
+    def select_country():
+        selected_country = country_listbox.get(tk.ACTIVE)
+        messagebox.showinfo("Selected Country", f"You selected {selected_country} as the starting country.")
+
+    # Button to confirm the selection
+    select_button = tk.Button(country_window, text="Select", font=("Arial", 12), command=select_country)
+    select_button.pack(pady=10)
 
 def starting_infected_option():
-    messagebox.showinfo("Starting Infected", "Specify the number of starting infected individuals.")
+    number_window = tk.Toplevel(root)
+    number_window.title("Select number of starting infected individuals")
+    number_window.geometry("300x400")
 
+    label = tk.Label(number_window, text="Select number of starting infected individuals", font=("Arial, 12"))
+    label.pack(pady=10)
+
+    # Listbox for number of starting infectd individuals
+    number_listbox = tk.Listbox(number_window, font=("Arial", 12), height=10, width=25)
+    for i in range(1, 11):
+        number_listbox.insert(tk.END, i*10)
+    number_listbox.pack(pady=10)
+
+    # Function to handle country selection
+    def select_number():
+        selected_number = number_listbox.get(tk.ACTIVE)
+        messagebox.showinfo("Selected number", f"You selected {selected_number} as the starting country.")
+
+    # Button to confirm the selection
+    select_button = tk.Button(number_window, text="Select", font=("Arial", 12), command=select_number)
+    select_button.pack(pady=10)
+    
 def start_step_option():
     messagebox.showinfo("Start/Step", "Start the simulation or move to the next step.")
 
