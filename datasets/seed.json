@@ -355,16 +355,6 @@
         "annual_passenger_traffic": 5935831
     },
     {
-        "name": "Burma",
-        "neighbors": [
-            "Bangladesh",
-            "China",
-            "India",
-            "Laos",
-            "Thailand"
-        ]
-    },
-    {
         "name": "Sudan",
         "neighbors": [
             "Egypt",
@@ -1243,8 +1233,7 @@
             "Egypt",
             "Jordan",
             "Lebanon",
-            "Syria",
-            "West Bank"
+            "Syria"
         ],
         "hdi": 0.915,
         "alternate_name": "israel",
@@ -1691,13 +1680,6 @@
         "alternate_name": "mongolia",
         "population": 3281676,
         "annual_passenger_traffic": 670360
-    },
-    {
-        "name": "West Bank",
-        "neighbors": [
-            "Jordan",
-            "Israel"
-        ]
     },
     {
         "name": "Kuwait",
