@@ -21,6 +21,8 @@ class InfectionSimulator:
         matrix.setInfectionVector(self.simulation_state["starting_country"], self.simulation_state["starting_infected"])
         self.infected_count = 0
         self.infected_grids = set()
+        self.step_count = 0  # Step counter
+
         
         # Create frames
         self.left_frame = tk.Frame(self.root)
@@ -94,6 +96,12 @@ class InfectionSimulator:
         self.total_infected_label = tk.Label(self.root, text="Total Infected: 0", 
                                            font=("Arial", 12))
         self.total_infected_label.pack(pady=10)
+
+        # Step count label
+        self.step_label = tk.Label(self.root, text="Steps: 0", font=("Arial", 12))
+        self.step_label.pack(pady=10)
+
+
     
     def draw_grid(self):
         grid_width = self.image.width // self.grid_columns
@@ -241,8 +249,11 @@ class InfectionSimulator:
     
     def start_step_option(self):
         # Add simulation step logic here
+        self.step_count += 1 
         self.matrix.step()
         self.update_grid()
+        self.step_label.config(text=f"Steps: {self.step_count}")
+        self.total_infected_label.config(text=f"Total Infected: {self.matrix.getInfectedCount()}")
     
     def reset_option(self):
         #self.infected_grids.clear()
