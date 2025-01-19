@@ -245,12 +245,13 @@ class InfectionSimulator:
         self.update_grid()
     
     def reset_option(self):
-        self.infected_grids.clear()
+        #self.infected_grids.clear()
         self.update_infected_count()
-        self.simulation_state["starting_country"] = None
-        self.simulation_state["starting_infected"] = 0
+        self.matrix.reset()
+        self.matrix.setInfectionVector(self.simulation_state["starting_country"], self.simulation_state["starting_infected"])
+        self.update_grid()
         # Clear highlighted cells
-        self.setup_map()
+        #self.setup_map()
     
     def total_infected_option(self):
         messagebox.showinfo("Total Infected", 
