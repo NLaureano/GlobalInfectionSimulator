@@ -1,0 +1,770 @@
+[
+    {
+        "name": "Switzerland",
+        "hdi": 0.967
+    },
+    {
+        "name": "Norway",
+        "hdi": 0.966
+    },
+    {
+        "name": "Iceland",
+        "hdi": 0.959
+    },
+    {
+        "name": "Hong Kong, China (SAR)",
+        "hdi": 0.956
+    },
+    {
+        "name": "Denmark",
+        "hdi": 0.952
+    },
+    {
+        "name": "Sweden",
+        "hdi": 0.952
+    },
+    {
+        "name": "Germany",
+        "hdi": 0.95
+    },
+    {
+        "name": "Ireland",
+        "hdi": 0.95
+    },
+    {
+        "name": "Singapore",
+        "hdi": 0.949
+    },
+    {
+        "name": "Australia",
+        "hdi": 0.946
+    },
+    {
+        "name": "Netherlands",
+        "hdi": 0.946
+    },
+    {
+        "name": "Belgium",
+        "hdi": 0.942
+    },
+    {
+        "name": "Finland",
+        "hdi": 0.942
+    },
+    {
+        "name": "Liechtenstein",
+        "hdi": 0.942
+    },
+    {
+        "name": "United Kingdom",
+        "hdi": 0.94
+    },
+    {
+        "name": "New Zealand",
+        "hdi": 0.939
+    },
+    {
+        "name": "United Arab Emirates",
+        "hdi": 0.937
+    },
+    {
+        "name": "Canada",
+        "hdi": 0.935
+    },
+    {
+        "name": "Korea (Republic of)",
+        "hdi": 0.929
+    },
+    {
+        "name": "Luxembourg",
+        "hdi": 0.927
+    },
+    {
+        "name": "United States",
+        "hdi": 0.927
+    },
+    {
+        "name": "Austria",
+        "hdi": 0.926
+    },
+    {
+        "name": "Slovenia",
+        "hdi": 0.926
+    },
+    {
+        "name": "Japan",
+        "hdi": 0.92
+    },
+    {
+        "name": "Israel",
+        "hdi": 0.915
+    },
+    {
+        "name": "Malta",
+        "hdi": 0.915
+    },
+    {
+        "name": "Spain",
+        "hdi": 0.911
+    },
+    {
+        "name": "France",
+        "hdi": 0.91
+    },
+    {
+        "name": "Cyprus",
+        "hdi": 0.907
+    },
+    {
+        "name": "Italy",
+        "hdi": 0.906
+    },
+    {
+        "name": "Estonia",
+        "hdi": 0.899
+    },
+    {
+        "name": "Czechia",
+        "hdi": 0.895
+    },
+    {
+        "name": "Greece",
+        "hdi": 0.893
+    },
+    {
+        "name": "Bahrain",
+        "hdi": 0.888
+    },
+    {
+        "name": "Andorra",
+        "hdi": 0.884
+    },
+    {
+        "name": "Poland",
+        "hdi": 0.881
+    },
+    {
+        "name": "Latvia",
+        "hdi": 0.879
+    },
+    {
+        "name": "Lithuania",
+        "hdi": 0.879
+    },
+    {
+        "name": "Croatia",
+        "hdi": 0.878
+    },
+    {
+        "name": "Qatar",
+        "hdi": 0.875
+    },
+    {
+        "name": "Saudi Arabia",
+        "hdi": 0.875
+    },
+    {
+        "name": "Portugal",
+        "hdi": 0.874
+    },
+    {
+        "name": "San Marino",
+        "hdi": 0.867
+    },
+    {
+        "name": "Chile",
+        "hdi": 0.86
+    },
+    {
+        "name": "Slovakia",
+        "hdi": 0.855
+    },
+    {
+        "name": "T\u00c3\u00bcrkiye",
+        "hdi": 0.855
+    },
+    {
+        "name": "Hungary",
+        "hdi": 0.851
+    },
+    {
+        "name": "Argentina",
+        "hdi": 0.849
+    },
+    {
+        "name": "Kuwait",
+        "hdi": 0.847
+    },
+    {
+        "name": "Montenegro",
+        "hdi": 0.844
+    },
+    {
+        "name": "Saint Kitts and Nevis",
+        "hdi": 0.838
+    },
+    {
+        "name": "Uruguay",
+        "hdi": 0.83
+    },
+    {
+        "name": "Romania",
+        "hdi": 0.827
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "hdi": 0.826
+    },
+    {
+        "name": "Brunei Darussalam",
+        "hdi": 0.823
+    },
+    {
+        "name": "Russian Federation",
+        "hdi": 0.821
+    },
+    {
+        "name": "Bahamas",
+        "hdi": 0.82
+    },
+    {
+        "name": "Panama",
+        "hdi": 0.82
+    },
+    {
+        "name": "Oman",
+        "hdi": 0.819
+    },
+    {
+        "name": "Georgia",
+        "hdi": 0.814
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "hdi": 0.814
+    },
+    {
+        "name": "Barbados",
+        "hdi": 0.809
+    },
+    {
+        "name": "Malaysia",
+        "hdi": 0.807
+    },
+    {
+        "name": "Costa Rica",
+        "hdi": 0.806
+    },
+    {
+        "name": "Serbia",
+        "hdi": 0.805
+    },
+    {
+        "name": "Thailand",
+        "hdi": 0.803
+    },
+    {
+        "name": "Kazakhstan",
+        "hdi": 0.802
+    },
+    {
+        "name": "Seychelles",
+        "hdi": 0.802
+    },
+    {
+        "name": "Belarus",
+        "hdi": 0.801
+    },
+    {
+        "name": "Bulgaria",
+        "hdi": 0.799
+    },
+    {
+        "name": "Palau",
+        "hdi": 0.797
+    },
+    {
+        "name": "Mauritius",
+        "hdi": 0.796
+    },
+    {
+        "name": "Grenada",
+        "hdi": 0.793
+    },
+    {
+        "name": "Albania",
+        "hdi": 0.789
+    },
+    {
+        "name": "China",
+        "hdi": 0.788
+    },
+    {
+        "name": "Armenia",
+        "hdi": 0.786
+    },
+    {
+        "name": "Mexico",
+        "hdi": 0.781
+    },
+    {
+        "name": "Iran (Islamic Republic of)",
+        "hdi": 0.78
+    },
+    {
+        "name": "Sri Lanka",
+        "hdi": 0.78
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "hdi": 0.779
+    },
+    {
+        "name": "Saint Vincent and the Grenadines",
+        "hdi": 0.772
+    },
+    {
+        "name": "Dominican Republic",
+        "hdi": 0.766
+    },
+    {
+        "name": "Ecuador",
+        "hdi": 0.765
+    },
+    {
+        "name": "North Macedonia",
+        "hdi": 0.765
+    },
+    {
+        "name": "Cuba",
+        "hdi": 0.764
+    },
+    {
+        "name": "Moldova (Republic of)",
+        "hdi": 0.763
+    },
+    {
+        "name": "Maldives",
+        "hdi": 0.762
+    },
+    {
+        "name": "Peru",
+        "hdi": 0.762
+    },
+    {
+        "name": "Azerbaijan",
+        "hdi": 0.76
+    },
+    {
+        "name": "Brazil",
+        "hdi": 0.76
+    },
+    {
+        "name": "Colombia",
+        "hdi": 0.758
+    },
+    {
+        "name": "Libya",
+        "hdi": 0.746
+    },
+    {
+        "name": "Algeria",
+        "hdi": 0.745
+    },
+    {
+        "name": "Turkmenistan",
+        "hdi": 0.744
+    },
+    {
+        "name": "Guyana",
+        "hdi": 0.742
+    },
+    {
+        "name": "Mongolia",
+        "hdi": 0.741
+    },
+    {
+        "name": "Dominica",
+        "hdi": 0.74
+    },
+    {
+        "name": "Tonga",
+        "hdi": 0.739
+    },
+    {
+        "name": "Jordan",
+        "hdi": 0.736
+    },
+    {
+        "name": "Ukraine",
+        "hdi": 0.734
+    },
+    {
+        "name": "Tunisia",
+        "hdi": 0.732
+    },
+    {
+        "name": "Marshall Islands",
+        "hdi": 0.731
+    },
+    {
+        "name": "Paraguay",
+        "hdi": 0.731
+    },
+    {
+        "name": "Fiji",
+        "hdi": 0.729
+    },
+    {
+        "name": "Egypt",
+        "hdi": 0.728
+    },
+    {
+        "name": "Uzbekistan",
+        "hdi": 0.727
+    },
+    {
+        "name": "Viet Nam",
+        "hdi": 0.726
+    },
+    {
+        "name": "Saint Lucia",
+        "hdi": 0.725
+    },
+    {
+        "name": "Lebanon",
+        "hdi": 0.723
+    },
+    {
+        "name": "South Africa",
+        "hdi": 0.717
+    },
+    {
+        "name": "Palestine, State of",
+        "hdi": 0.716
+    },
+    {
+        "name": "Indonesia",
+        "hdi": 0.713
+    },
+    {
+        "name": "Philippines",
+        "hdi": 0.71
+    },
+    {
+        "name": "Botswana",
+        "hdi": 0.708
+    },
+    {
+        "name": "Jamaica",
+        "hdi": 0.706
+    },
+    {
+        "name": "Samoa",
+        "hdi": 0.702
+    },
+    {
+        "name": "Kyrgyzstan",
+        "hdi": 0.701
+    },
+    {
+        "name": "Belize",
+        "hdi": 0.7
+    },
+    {
+        "name": "Venezuela (Bolivarian Republic of)",
+        "hdi": 0.699
+    },
+    {
+        "name": "Bolivia (Plurinational State of)",
+        "hdi": 0.698
+    },
+    {
+        "name": "Morocco",
+        "hdi": 0.698
+    },
+    {
+        "name": "Nauru",
+        "hdi": 0.696
+    },
+    {
+        "name": "Gabon",
+        "hdi": 0.693
+    },
+    {
+        "name": "Suriname",
+        "hdi": 0.69
+    },
+    {
+        "name": "Bhutan",
+        "hdi": 0.681
+    },
+    {
+        "name": "Tajikistan",
+        "hdi": 0.679
+    },
+    {
+        "name": "El Salvador",
+        "hdi": 0.674
+    },
+    {
+        "name": "Iraq",
+        "hdi": 0.673
+    },
+    {
+        "name": "Bangladesh",
+        "hdi": 0.67
+    },
+    {
+        "name": "Nicaragua",
+        "hdi": 0.669
+    },
+    {
+        "name": "Cabo Verde",
+        "hdi": 0.661
+    },
+    {
+        "name": "Tuvalu",
+        "hdi": 0.653
+    },
+    {
+        "name": "Equatorial Guinea",
+        "hdi": 0.65
+    },
+    {
+        "name": "India",
+        "hdi": 0.644
+    },
+    {
+        "name": "Micronesia (Federated States of)",
+        "hdi": 0.634
+    },
+    {
+        "name": "Guatemala",
+        "hdi": 0.629
+    },
+    {
+        "name": "Kiribati",
+        "hdi": 0.628
+    },
+    {
+        "name": "Honduras",
+        "hdi": 0.624
+    },
+    {
+        "name": "Lao People's Democratic Republic",
+        "hdi": 0.62
+    },
+    {
+        "name": "Vanuatu",
+        "hdi": 0.614
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "hdi": 0.613
+    },
+    {
+        "name": "Eswatini (Kingdom of)",
+        "hdi": 0.61
+    },
+    {
+        "name": "Namibia",
+        "hdi": 0.61
+    },
+    {
+        "name": "Myanmar",
+        "hdi": 0.608
+    },
+    {
+        "name": "Ghana",
+        "hdi": 0.602
+    },
+    {
+        "name": "Kenya",
+        "hdi": 0.601
+    },
+    {
+        "name": "Nepal",
+        "hdi": 0.601
+    },
+    {
+        "name": "Cambodia",
+        "hdi": 0.6
+    },
+    {
+        "name": "Congo",
+        "hdi": 0.593
+    },
+    {
+        "name": "Angola",
+        "hdi": 0.591
+    },
+    {
+        "name": "Cameroon",
+        "hdi": 0.587
+    },
+    {
+        "name": "Comoros",
+        "hdi": 0.586
+    },
+    {
+        "name": "Zambia",
+        "hdi": 0.569
+    },
+    {
+        "name": "Papua New Guinea",
+        "hdi": 0.568
+    },
+    {
+        "name": "Timor-Leste",
+        "hdi": 0.566
+    },
+    {
+        "name": "Solomon Islands",
+        "hdi": 0.562
+    },
+    {
+        "name": "Syrian Arab Republic",
+        "hdi": 0.557
+    },
+    {
+        "name": "Haiti",
+        "hdi": 0.552
+    },
+    {
+        "name": "Uganda",
+        "hdi": 0.55
+    },
+    {
+        "name": "Nigeria",
+        "hdi": 0.548
+    },
+    {
+        "name": "Rwanda",
+        "hdi": 0.548
+    },
+    {
+        "name": "Togo",
+        "hdi": 0.547
+    },
+    {
+        "name": "Mauritania",
+        "hdi": 0.54
+    },
+    {
+        "name": "Pakistan",
+        "hdi": 0.54
+    },
+    {
+        "name": "C\u00c3\u00b4te d'Ivoire",
+        "hdi": 0.534
+    },
+    {
+        "name": "Tanzania (United Republic of)",
+        "hdi": 0.532
+    },
+    {
+        "name": "Lesotho",
+        "hdi": 0.521
+    },
+    {
+        "name": "Senegal",
+        "hdi": 0.517
+    },
+    {
+        "name": "Sudan",
+        "hdi": 0.516
+    },
+    {
+        "name": "Djibouti",
+        "hdi": 0.515
+    },
+    {
+        "name": "Malawi",
+        "hdi": 0.508
+    },
+    {
+        "name": "Benin",
+        "hdi": 0.504
+    },
+    {
+        "name": "Gambia",
+        "hdi": 0.495
+    },
+    {
+        "name": "Eritrea",
+        "hdi": 0.493
+    },
+    {
+        "name": "Ethiopia",
+        "hdi": 0.492
+    },
+    {
+        "name": "Liberia",
+        "hdi": 0.487
+    },
+    {
+        "name": "Madagascar",
+        "hdi": 0.487
+    },
+    {
+        "name": "Guinea-Bissau",
+        "hdi": 0.483
+    },
+    {
+        "name": "Congo (Democratic Republic of the)",
+        "hdi": 0.481
+    },
+    {
+        "name": "Guinea",
+        "hdi": 0.471
+    },
+    {
+        "name": "Afghanistan",
+        "hdi": 0.462
+    },
+    {
+        "name": "Mozambique",
+        "hdi": 0.461
+    },
+    {
+        "name": "Sierra Leone",
+        "hdi": 0.458
+    },
+    {
+        "name": "Burkina Faso",
+        "hdi": 0.438
+    },
+    {
+        "name": "Yemen",
+        "hdi": 0.424
+    },
+    {
+        "name": "Burundi",
+        "hdi": 0.42
+    },
+    {
+        "name": "Mali",
+        "hdi": 0.41
+    },
+    {
+        "name": "Chad",
+        "hdi": 0.394
+    },
+    {
+        "name": "Niger",
+        "hdi": 0.394
+    },
+    {
+        "name": "Central African Republic",
+        "hdi": 0.387
+    },
+    {
+        "name": "South Sudan",
+        "hdi": 0.381
+    },
+    {
+        "name": "Somalia",
+        "hdi": 0.38
+    }
+]
