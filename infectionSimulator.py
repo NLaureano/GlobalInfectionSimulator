@@ -1,14 +1,22 @@
 import numpy as np
 import json
 
+
+
+#Country count = The amount of countries simulated
+#Adjacency matrix = The matrix that shows the weighted connections between countries
+#Infection vector = The vector that shows the amount of infected people in each country
+#CountryHDI = The Human Development Index of each country
+#CountryData = The data of each country in a dictionary
+#CountryIndex = The index of each country in the adjacency matrix
 class InfectionSimulator:
-    def __init__(self, cityCount=None, adjacenyMatrix=None):
-        self.cityCount = cityCount
+    def __init__(self, countryCount=None, adjacenyMatrix=None):
+        self.countryCount = countryCount
         self.adjacenyMatrix = adjacenyMatrix
-        self.infectionVector = None
-        self.cityInternalSpreadProb = None
-        self.cityData = {}
-        self.cityIndex = {}
+        self.infectionVector = None #
+        self.countryHDI = None
+        self.countryData = {}
+        self.countryIndex = {}
 
     def simulateInfection(self, spreadProb=0.5, timeSteps=100):
         """
@@ -32,8 +40,6 @@ class InfectionSimulator:
             for i in range(self.cityCount):
                 for j in range(self.cityCount):
                     if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
-                        # Calculate the expected number of transmissions
-                        expected_transmissions = self.infectionVector[i] * self.adjacenyMatrix[i, j] * spreadProb
                         # Determine actual new infections probabilistically
                         actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * spreadProb)
                         resultingVector[j] += actual_transmissions
@@ -47,29 +53,28 @@ class InfectionSimulator:
         return infectionHistory
 
     def readCityData(self):
-        with open('cityinfo.json', 'r') as file:
+        with open('datasets/countries.json', 'r') as file:
             # Load the JSON data
-            self.cityData = json.load(file)
-            city_list = self.cityData['cities']
-            self.cityCount = len(city_list)
+            self.countryData = json.load(file)
+            country_list = self.countryData
+            self.countryCount = len(country_list)
 
             # Initialize adjacency matrix and infection vector
-            self.adjacenyMatrix = np.zeros((self.cityCount, self.cityCount), dtype=float)
-            self.infectionVector = np.zeros(self.cityCount)
-            self.cityInternalSpreadProb = np.zeros(self.cityCount)
+            self.adjacenyMatrix = np.zeros((self.countryCount, self.countryCount), dtype=float)
+            self.infectionVector = np.zeros(self.countryCount)
 
             # Create a dictionary to map city names to indices
-            for i, city in enumerate(city_list):
-                self.cityIndex[city['name']] = i
+            for i, country in enumerate(country_list):
+                self.countryIndex[country['name']] = i
 
             # Populate adjacency matrix
-            for city in city_list:
-                rowOfCity = self.cityIndex[city['name']]
-                for neighbor, distance in city['neighbors'].items():
-                    colOfCity = self.cityIndex[neighbor]
-                    self.adjacenyMatrix[rowOfCity][colOfCity] = 1/distance
+            for country in country_list:
+                rowOfCountry = self.countryIndex[country['name']]
+                for neighbor, proximityScore in country['neighbors'].items():
+                    colOfCountry = self.countryIndex[neighbor]
+                    self.adjacenyMatrix[rowOfCountry][colOfCountry] = proximityScore
 
-            print("City Index Mapping:", self.cityIndex)
+            print("City Index Mapping:", self.countryIndex)
             print("Adjacency Matrix:\n", self.adjacenyMatrix)
 
 
