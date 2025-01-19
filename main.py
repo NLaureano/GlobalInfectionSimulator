@@ -1,21 +1,24 @@
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
+import infectionSimulator as sim
 from borders import country_borders
 
 class InfectionSimulator:
-    def __init__(self):
+    def __init__(self, matrix: sim.InfectionSimulator):
         # Create the main window
         self.root = tk.Tk()
+        self.matrix = matrix
         self.root.title("Infection Simulator")
         
         # Simulation state
         self.simulation_state = {
             "virulence": 50,
             "starting_country": None,
-            "starting_infected": 0,
+            "starting_infected": 1,
             "map": "default"
         }
+        matrix.setInfectionVector(self.simulation_state["starting_country"], self.simulation_state["starting_infected"])
         self.infected_count = 0
         self.infected_grids = set()
         
@@ -35,6 +38,12 @@ class InfectionSimulator:
         # Initialize labels
         self.setup_labels()
     
+    def update_grid(self):
+        ratios = self.matrix.returnInfectionRatio()
+        for country in ratios:
+            for border in country_borders[country]:
+                self.matrix.adjacenyMatrix[country][border] = ratios[country]
+
     def setup_map(self):
         # Load and display the world map
         self.image = Image.open("world.png")
@@ -147,6 +156,7 @@ class InfectionSimulator:
         slider = tk.Scale(window, from_=0, to=100, orient="horizontal", 
                          font=("Arial", 12), command=update_virulence)
         slider.set(self.simulation_state["virulence"])
+        self.matrix.setSpreadProb(self.simulation_state["virulence"])
         slider.pack(pady=10)
         
         virulence_label = tk.Label(window, text=f"Virulence: {self.simulation_state['virulence']}%", 

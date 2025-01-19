@@ -1,8 +1,6 @@
 import numpy as np
 import json
 
-
-
 #Country count = The amount of countries simulated
 #Adjacency matrix = The matrix that shows the weighted connections between countries
 #Infection vector = The vector that shows the amount of infected people in each country
@@ -54,15 +52,54 @@ class InfectionSimulator:
 
         # Update the infection vector
         self.infectionVector += resultingVector
+        self.infectionVector = np.minimum(self.infectionVector, self.populationVector)
+        # Apply country response to reduce infections
+        self.infectionVector = self.applyCountryResponse(self.infectionVector)
+
         self.infectionVector = np.minimum(self.infectionVector, self.populationVector)  # Cap infections at population size
         return self.infectionVector
+    
+    def applyCountryResponse(self, current_infections):
+        """
+        Models how countries respond to and fight the infection based on their HDI.
+        
+        Parameters:
+            current_infections: Current infection vector
+            
+        Returns:
+            Updated infection vector after country response
+        """
+        # Convert HDI to response effectiveness (0 to 1)
+        # Higher HDI means better response, but not perfect
+        response_effectiveness = self.countryHDI * 0.3  # Max 30% effectiveness to prevent immediate containment
+        
+        # Calculate reduction based on current infections and HDI
+        # More infections = stronger response
+        infection_ratio = current_infections / self.populationVector
+        infection_ratio = np.nan_to_num(infection_ratio, 0)  # Handle division by zero
+        
+        # Response strength increases with infection ratio
+        response_strength = infection_ratio * response_effectiveness
+        
+        # Calculate reduced infections
+        reduction = current_infections * response_strength
+        
+        # Ensure we don't reduce below 0 and apply randomness
+        # Countries might have varying success in their response
+        reduction = np.random.binomial(reduction.astype(int), 0.8)  # 80% chance of successful reduction
+        
+        return np.maximum(current_infections - reduction, 0)
 
-    def returnInfections(self):
+    def returnInfectionRatio(self):
         res = {}
         for country in self.countryData:
-            res[country['name']] = self.infectionVector[self.countryIndex[country['name']]]
+            res[country['name']] = self.infectionVector[self.countryIndex[country['name']]] / self.populationVector[self.countryIndex[country['name']]]
         return res
     
+    def setInfectionVector(self, startCountry="United States", startInfections="1"):
+        self.infectionVector[self.countryIndex[startCountry]] = startInfections
+
+
     def reset(self, neighborPriority=0.1):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
@@ -137,7 +174,7 @@ class InfectionSimulator:
             raise ValueError("Input array must be 1D or 2D.")
 
 # Instantiate and use the simulator
-simulator = InfectionSimulator()
-simulator.reset()
-simulator.simulateInfection(0.5, 100)
+#simulator = InfectionSimulator()
+#simulator.reset()
+#simulator.simulateInfection(0.5, 100)
 #simulator.simulateInfection()
