@@ -16,7 +16,8 @@ class InfectionSimulator:
         self.countryHDI = None #Human Development Index of each country
         self.countryTravelScore = None #Travel score of each country
         self.countryData = {} #Json loaded into memory
-        self.countryIndex = {} #Index of each country in the adjacency matrix
+        self.countryIndex = {} #Index of each country in the adjacency matrix\
+        self.spreadProb = 0.5
 
     def simulateInfection(self, spreadProb=0.5, timeSteps=100):
         """
@@ -41,13 +42,13 @@ class InfectionSimulator:
 
         return infectionHistory
     
-    def step(self, spreadProb=0.5):
+    def step(self):
         resultingVector = np.zeros(self.countryCount)
         for i in range(self.countryCount):
             for j in range(self.countryCount):
                 if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
                     # Determine actual new infections probabilistically
-                    actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * spreadProb)
+                    actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * self.spreadProb)
                     resultingVector[j] += actual_transmissions
 
         # Update the infection vector
@@ -97,10 +98,13 @@ class InfectionSimulator:
         return res
     
     def setInfectionVector(self, startCountry="United States", startInfections="1"):
+        print(self.countryIndex)
         self.infectionVector[self.countryIndex[startCountry]] = startInfections
 
+    def setSpreadProb(self, spreadProb):
+        self.spreadProb = spreadProb
 
-    def reset(self, neighborPriority=0.1):
+    def reset(self, neighborPriority=0.1, spreadProb=0.5):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
             self.countryData = json.load(file)

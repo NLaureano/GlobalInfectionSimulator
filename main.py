@@ -14,7 +14,7 @@ class InfectionSimulator:
         # Simulation state
         self.simulation_state = {
             "virulence": 50,
-            "starting_country": None,
+            "starting_country": "United States",
             "starting_infected": 1,
             "map": "default"
         }
@@ -186,6 +186,7 @@ class InfectionSimulator:
                 value = int(entry.get())
                 if value >= 0:
                     self.simulation_state["starting_infected"] = value
+                    self.matrix.setInfectionVector(self.simulation_state["starting_country"], self.simulation_state["starting_infected"])
                     window.destroy()
                 else:
                     messagebox.showerror("Error", "Please enter a positive number")
@@ -198,7 +199,8 @@ class InfectionSimulator:
     
     def start_step_option(self):
         # Add simulation step logic here
-        pass
+        self.matrix.step()
+        self.update_grid()
     
     def reset_option(self):
         self.infected_grids.clear()
