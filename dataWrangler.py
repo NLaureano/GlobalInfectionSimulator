@@ -86,13 +86,33 @@ def merge_json_files(file1, file2, output_file):
 
     print(f"Merged data has been written to {output_file}")
 
+def extract_names_to_txt(json_file, output_txt_file):
+    # Open and load the JSON file
+    with open(json_file, 'r') as infile:
+        data = json.load(infile)
+
+    # Extract names from the JSON
+    names = [item["name"] for item in data if "name" in item]
+
+    names.sort()
+    # Write names to the output text file
+    with open(output_txt_file, 'w') as outfile:
+        for name in names:
+            outfile.write(name + '\n')
+
+    print(f"Extracted {len(names)} names and written to {output_txt_file}")
+
+# Example usage
+input_json_file = 'datasets/totalData.json'  # Replace with your input JSON file
+output_txt_file = 'names.txt'  # Replace with your desired output TXT file
+extract_names_to_txt(input_json_file, output_txt_file)
 
 # Specify input and output file names
-input_file1 = 'datasets/hdi_data.json'  # Replace with your input file name
-input_file2 = 'datasets/countries.json'  # Replace with your input file
-output_file = 'totalData.json'  # Replace with your desired output file name
+#input_file1 = 'datasets/hdi_data.json'  # Replace with your input file name
+#input_file2 = 'datasets/countries.json'  # Replace with your input file
+#output_file = 'totalData.json'  # Replace with your desired output file name
 
-merge_json_files(input_file1, input_file2, output_file)
+#merge_json_files(input_file1, input_file2, output_file)
 
 # Parse and convert the data to JSON
 #parse_hdi_data(input_file, output_file)
