@@ -149,6 +149,9 @@ Qatar
 Romania
 Russia
 Rwanda
+Saint Kitts and Nevis //Remove
+Saint Lucia //Remove
+Saint Vincent and the Grenadines //Remove
 Samoa
 San Marino
 Sao Tome and Principe

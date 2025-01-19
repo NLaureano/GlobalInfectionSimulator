@@ -107,6 +107,45 @@ input_json_file = 'datasets/totalData.json'  # Replace with your input JSON file
 output_txt_file = 'names.txt'  # Replace with your desired output TXT file
 extract_names_to_txt(input_json_file, output_txt_file)
 
+import re
+
+def parse_passenger_traffic(input_file):
+    traffic_data = {}
+    
+    with open(input_file, 'r') as file:
+        lines = file.readlines()
+
+    current_country = None
+    for line in lines:
+        line = line.strip()
+        
+        # Check if the line contains a country name (assumes country names have no colons)
+        if line and ':' not in line:
+            current_country = line
+        elif "annual passenger traffic on registered air carriers:" in line:
+            if current_country:
+                # Extract the passenger traffic value using regex
+                match = re.search(r'(\d[\d,]*)', line)
+                if match:
+                    passenger_traffic = int(match.group(1).replace(',', ''))
+                    traffic_data[current_country] = passenger_traffic
+
+    return traffic_data
+
+def save_to_json(data, output_file):
+    import json
+    with open(output_file, 'w') as file:
+        json.dump(data, file, indent=4)
+
+# Example usage
+input_file = 'air_traffic.txt'  # Replace with your input file name
+output_file = 'air_traffic.json'  # Replace with your desired output file name
+
+traffic_dict = parse_passenger_traffic(input_file)
+save_to_json(traffic_dict, output_file)
+
+print(f"Extracted data: {traffic_dict}")
+print(f"Data saved to {output_file}")
 # Specify input and output file names
 #input_file1 = 'datasets/hdi_data.json'  # Replace with your input file name
 #input_file2 = 'datasets/countries.json'  # Replace with your input file
