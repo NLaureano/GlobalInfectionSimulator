@@ -1,102 +1,117 @@
 import tkinter as tk
-import random
-import tkintermapview 
 from PIL import Image, ImageTk
 
-class VirusMapSimulator:
-    def __init__(self, root, width=800, height=500, grid_size=20):
-        self.root = root
-        self.width = width
-        self.height = height
-        self.grid_size = grid_size
-        self.rows = self.height // self.grid_size
-        self.cols = self.width // self.grid_size
+from borders import country_borders
 
-        # Create the Tkinter window
-        self.canvas = tkintermapview.TkinterMapView(root, width=self.width, height=self.height)
-        self.canvas.pack()
-
-        #create an overlay canvas for drawing the grid
-        self.overlay_canvas = tk.Canvas(root, width=self.width, height=self.height, bd=0, highlightthickness=0)
-        self.overlay_canvas.pack()
-
-        # Set an initial location and zoom level for the map
-        self.canvas.set_position(0, 0)  # Center on (0, 0) - you can adjust this as needed
-        self.canvas.set_zoom(2)  # Set zoom level
-
-        # Initialize the grid for virus simulation
-        self.grid = [[0 for _ in range(self.cols)] for _ in range(self.rows)]  # 0 - healthy, 1 - infected
-
-        # Start the virus in a random location
-        self.start_virus()
-
-        # Set up simulation parameters
-        self.running = False
-
-    def start_virus(self):
-        """Start by infecting a random cell in the grid."""
-        initial_row = random.randint(0, self.rows - 1)
-        initial_col = random.randint(0, self.cols - 1)
-        self.grid[initial_row][initial_col] = 1  # 1 indicates infected
-
-    def draw_grid(self):
-        """Draw the grid on top of the map."""
-        self.overlay_canvas.delete("all")
-        for row in range(self.rows):
-            for col in range(self.cols):
-                color = "green" if self.grid[row][col] == 0 else "red"  # Green for healthy, red for infected
-                # Draw a rectangle on the map based on grid size
-                self.overlay_canvas.create_rectangle(
-                    col * self.grid_size, row * self.grid_size,
-                    (col + 1) * self.grid_size, (row + 1) * self.grid_size,
-                    fill=color, outline="black"
-                )
-
-    def spread_virus(self):
-        """Simulate the virus spreading to adjacent grid cells."""
-        new_grid = [row[:] for row in self.grid]  # Make a copy to avoid modifying during iteration
-        for row in range(self.rows):
-            for col in range(self.cols):
-                if self.grid[row][col] == 1:  # If the cell is infected
-                    # Spread to adjacent cells (up, down, left, right)
-                    if row > 0 and self.grid[row - 1][col] == 0:  # Up
-                        new_grid[row - 1][col] = 1
-                    if row < self.rows - 1 and self.grid[row + 1][col] == 0:  # Down
-                        new_grid[row + 1][col] = 1
-                    if col > 0 and self.grid[row][col - 1] == 0:  # Left
-                        new_grid[row][col - 1] = 1
-                    if col < self.cols - 1 and self.grid[row][col + 1] == 0:  # Right
-                        new_grid[row][col + 1] = 1
-        self.grid = new_grid
-
-    def start_simulation(self):
-        """Start or stop the virus simulation."""
-        if not self.running:
-            self.running = True
-            self.run_simulation()
-        else:
-            self.running = False
-
-    def run_simulation(self):
-        """Run the virus simulation continuously."""
-        if self.running:
-            self.spread_virus()
-            self.draw_grid()
-            self.root.after(500, self.run_simulation)  # Update every 500 ms
-
-# Create the Tkinter window
+# Create the main window
 root = tk.Tk()
-root.title("Virus Map Simulator")
+root.title("World Map with Grid")
 
-# Create the simulator object
-simulator = VirusMapSimulator(root)
+# Load the world map image (ensure you have an image file like 'Map_world.png')
+image = Image.open("world.png")
+photo = ImageTk.PhotoImage(image)
 
-# Add a button to start/stop the simulation
-start_button = tk.Button(root, text="Start/Stop Simulation", command=simulator.start_simulation)
-start_button.pack()
+# Create a canvas to display the world map
+canvas = tk.Canvas(root, width=image.width, height=image.height)
+canvas.create_image(0, 0, image=photo, anchor=tk.NW)
+canvas.pack()
 
-# Initial drawing of the grid
-simulator.draw_grid()
+# Number of rows and columns for the grid
+grid_rows = 100  # Adjust the number of rows based on your map resolution
+grid_columns = 200  # Adjust the number of columns based on your map resolution
 
-# Run the Tkinter event loop
+# Dictionary to store country borders (list of grid cell coordinates)
+
+
+# Function to draw the grid on the canvas
+def draw_grid():
+    grid_width = image.width // grid_columns  # Calculate the width of each grid cell
+    grid_height = image.height // grid_rows  # Calculate the height of each grid cell
+
+    # Draw horizontal lines
+    for i in range(1, grid_rows):
+        y = i * grid_height
+        canvas.create_line(0, y, image.width, y, fill="black")  # White horizontal line
+
+    # Draw vertical lines
+    for j in range(1, grid_columns):
+        x = j * grid_width
+        canvas.create_line(x, 0, x, image.height, fill="black")  # White vertical line
+
+# Call the function to draw the grid
+draw_grid()
+
+def draw_borders():
+    for country, cells in country_borders.items():
+        for grid_x, grid_y in cells:
+            cell_width = image.width // grid_columns
+            cell_height = image.height // grid_rows
+            x1, y1 = grid_x * cell_width, grid_y * cell_height
+            x2, y2 = x1 + cell_width, y1 + cell_height
+            canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
+
+
+# List of major cities with approximate coordinates (example values)
+cities = {
+    "New York": (-118.7128, -74.0060),
+    "London": (51.5074, -0.1278),
+    "Tokyo": (35.6762, 139.6503),
+    "Sydney": (-33.8688, 151.2093),
+    "Cairo": (30.0444, 31.2357),
+    # Add more cities and their lat/lon coordinates
+}
+
+# Function to convert lat/lon to grid coordinates
+def latlon_to_grid(lat, lon):
+    # Assuming latitudes and longitudes range from -90 to 90 and -180 to 180 respectively
+    grid_x = int((lon + 180) * (grid_columns / 360))  # Normalize longitude to grid column
+    grid_y = int((90 - lat) * (grid_rows / 180))  # Normalize latitude to grid row
+    return grid_x, grid_y
+
+# Function to mark cities on the map
+def mark_cities():
+    for city, (lat, lon) in cities.items():
+        grid_x, grid_y = latlon_to_grid(lat, lon)
+        # Draw a marker (circle) on the grid at the city location
+        canvas.create_oval(grid_x - 5, grid_y - 5, grid_x + 5, grid_y + 5, fill="red")  # Marker as a red circle
+        # Optionally, label the city
+        canvas.create_text(grid_x, grid_y - 10, text=city, fill="black", font=("Arial", 8))
+
+# Call the function to mark cities on the grid
+mark_cities()
+
+# Function to convert grid coordinates to lat/lon
+def grid_to_latlon(grid_x, grid_y):
+    # Convert grid coordinates back to lat/lon
+    lon = (grid_x / grid_columns) * 360 - 180  # Reverse the longitude normalization
+    lat = 90 - (grid_y / grid_rows) * 180  # Reverse the latitude normalization
+    return lat, lon
+
+# Function to update the coordinates when the cursor moves
+def track_grid_cursor(event):
+    # Get the position of the cursor in canvas coordinates
+    grid_width = image.width // grid_columns
+    grid_height = image.height // grid_rows
+
+    # Convert pixel coordinates to grid row/column
+    grid_x = event.x // grid_width  # Column index
+    grid_y = event.y // grid_height  # Row index
+
+    # Ensure values stay within bounds
+    grid_x = min(max(grid_x, 0), grid_columns - 1)
+    grid_y = min(max(grid_y, 0), grid_rows - 1)
+
+    # Update the label with the grid block coordinates
+    coords_label.config(text=f"Grid Block: ({grid_x}, {grid_y})")
+
+# Create a label to display the coordinates
+coords_label = tk.Label(root, text="Lat: 0.00, Lon: 0.00", font=("Arial", 12), bg="white")
+coords_label.pack(pady=10)
+
+# Bind the motion event to track the cursor
+canvas.bind("<Motion>", track_grid_cursor)
+draw_borders()
+
+
+# Start the Tkinter event loop
 root.mainloop()
