@@ -1,0 +1,2425 @@
+[
+    {
+        "name": "China",
+        "neighbors": [
+            "Russia",
+            "Kazakhstan",
+            "Kyrgyzstan",
+            "Tajikistan",
+            "Afghanistan",
+            "Pakistan",
+            "India",
+            "Nepal",
+            "Bhutan",
+            "Myanmar",
+            "Laos",
+            "Vietnam",
+            "North Korea"
+        ],
+        "hdi": 0.788,
+        "alternate_name": "china",
+        "population": 1416043270,
+        "annual_passenger_traffic": 436183969
+    },
+    {
+        "name": "India",
+        "neighbors": [
+            "Pakistan",
+            "China",
+            "Nepal",
+            "Bhutan",
+            "Bangladesh"
+        ],
+        "hdi": 0.644,
+        "alternate_name": "india",
+        "population": 1409128296,
+        "annual_passenger_traffic": 164035637
+    },
+    {
+        "name": "United States",
+        "neighbors": [
+            "Canada",
+            "Mexico"
+        ],
+        "hdi": 0.927,
+        "alternate_name": "united-states",
+        "population": 341963408,
+        "annual_passenger_traffic": 889000000
+    },
+    {
+        "name": "Indonesia",
+        "neighbors": [
+            "Malaysia",
+            "Timor-Leste",
+            "Papua New Guinea",
+            "Australia"
+        ],
+        "hdi": 0.713,
+        "alternate_name": "indonesia",
+        "population": 281562465,
+        "annual_passenger_traffic": 115154100
+    },
+    {
+        "name": "Pakistan",
+        "neighbors": [
+            "Afghanistan",
+            "China",
+            "India",
+            "Iran"
+        ],
+        "hdi": 0.54,
+        "alternate_name": "pakistan",
+        "population": 252363571,
+        "annual_passenger_traffic": 6880637
+    },
+    {
+        "name": "Nigeria",
+        "neighbors": [
+            "Benin",
+            "Cameroon",
+            "Chad",
+            "Niger"
+        ],
+        "hdi": 0.548,
+        "alternate_name": "nigeria",
+        "population": 236747130,
+        "annual_passenger_traffic": 8169192
+    },
+    {
+        "name": "Brazil",
+        "neighbors": [
+            "Argentina",
+            "Bolivia",
+            "Colombia",
+            "French Guiana",
+            "Guyana",
+            "Paraguay",
+            "Peru",
+            "Suriname",
+            "Uruguay",
+            "Venezuela"
+        ],
+        "hdi": 0.76,
+        "alternate_name": "brazil",
+        "population": 220051512,
+        "annual_passenger_traffic": 102109977
+    },
+    {
+        "name": "Bangladesh",
+        "neighbors": [
+            "India",
+            "Myanmar",
+            "Bhutan"
+        ],
+        "hdi": 0.67,
+        "alternate_name": "bangladesh",
+        "population": 168697184,
+        "annual_passenger_traffic": 5984155
+    },
+    {
+        "name": "Russia",
+        "neighbors": [
+            "Finland",
+            "Norway",
+            "Estonia",
+            "Latvia",
+            "Belarus"
+        ],
+        "hdi": 0.821,
+        "alternate_name": "russia",
+        "population": 140820810,
+        "annual_passenger_traffic": 99327311
+    },
+    {
+        "name": "Mexico",
+        "neighbors": [
+            "Guatemala",
+            "Belize",
+            "United States"
+        ],
+        "hdi": 0.781,
+        "alternate_name": "mexico",
+        "population": 130739927,
+        "annual_passenger_traffic": 64569640
+    },
+    {
+        "name": "Japan",
+        "neighbors": [
+            "Russia",
+            "South Korea",
+            "North Korea",
+            "China",
+            "Taiwan"
+        ],
+        "hdi": 0.92,
+        "alternate_name": "japan",
+        "population": 123201945,
+        "annual_passenger_traffic": 126387527
+    },
+    {
+        "name": "Ethiopia",
+        "neighbors": [
+            "Eritrea",
+            "Somalia",
+            "Kenya",
+            "Sudan",
+            "South Sudan",
+            "Djibouti"
+        ],
+        "hdi": 0.492,
+        "alternate_name": "ethiopia",
+        "population": 118550298,
+        "annual_passenger_traffic": 11501244
+    },
+    {
+        "name": "Philippines",
+        "neighbors": [
+            "Malaysia",
+            "Indonesia",
+            "Palau"
+        ],
+        "hdi": 0.71,
+        "alternate_name": "philippines",
+        "population": 118277063,
+        "annual_passenger_traffic": 43080118
+    },
+    {
+        "name": "Congo, Democratic Republic of the",
+        "neighbors": [
+            "Angola",
+            "Burundi",
+            "Central African Republic",
+            "Congo",
+            "Rwanda",
+            "South Sudan",
+            "Tanzania",
+            "Uganda",
+            "Zambia"
+        ],
+        "hdi": 0.481,
+        "alternate_name": "congo-democratic-republic-of-the",
+        "population": 115403027,
+        "annual_passenger_traffic": 932043
+    },
+    {
+        "name": "Egypt",
+        "neighbors": [
+            "Libya",
+            "Sudan",
+            "Israel",
+            "Palestine"
+        ],
+        "hdi": 0.728,
+        "alternate_name": "egypt",
+        "population": 111247248,
+        "annual_passenger_traffic": 12340832
+    },
+    {
+        "name": "Vietnam",
+        "neighbors": [
+            "China",
+            "Laos",
+            "Cambodia"
+        ],
+        "hdi": 0.726,
+        "alternate_name": "vietnam",
+        "population": 105758975,
+        "annual_passenger_traffic": 47049671
+    },
+    {
+        "name": "Iran",
+        "neighbors": [
+            "Iraq",
+            "Turkey",
+            "Armenia",
+            "Azerbaijan",
+            "Afghanistan"
+        ],
+        "hdi": 0.78,
+        "alternate_name": "iran",
+        "population": 88386937,
+        "annual_passenger_traffic": 25604871
+    },
+    {
+        "name": "Turkey (Turkiye)",
+        "neighbors": [
+            "Greece",
+            "Bulgaria",
+            "Georgia",
+            "Armenia",
+            "Iran",
+            "Iraq",
+            "Syria"
+        ]
+    },
+    {
+        "name": "Germany",
+        "neighbors": [
+            "Austria",
+            "Czech Republic",
+            "Denmark",
+            "France",
+            "Luxembourg",
+            "Netherlands",
+            "Poland",
+            "Switzerland"
+        ],
+        "hdi": 0.95,
+        "alternate_name": "germany",
+        "population": 84119100,
+        "annual_passenger_traffic": 109796202
+    },
+    {
+        "name": "Thailand",
+        "neighbors": [
+            "Myanmar",
+            "Laos",
+            "Cambodia",
+            "Malaysia"
+        ],
+        "hdi": 0.803,
+        "alternate_name": "thailand",
+        "population": 69920998,
+        "annual_passenger_traffic": 76053042
+    },
+    {
+        "name": "United Kingdom",
+        "neighbors": [
+            "Ireland",
+            "France"
+        ],
+        "hdi": 0.94,
+        "alternate_name": "united-kingdom",
+        "population": 68459055,
+        "annual_passenger_traffic": 165388610
+    },
+    {
+        "name": "France",
+        "neighbors": [
+            "Spain",
+            "Italy",
+            "Germany",
+            "Switzerland",
+            "Monaco",
+            "Belgium",
+            "Luxembourg"
+        ],
+        "hdi": 0.91,
+        "alternate_name": "france",
+        "population": 68374591,
+        "annual_passenger_traffic": 70188028
+    },
+    {
+        "name": "Tanzania",
+        "neighbors": [
+            "Kenya",
+            "Burundi",
+            "Rwanda",
+            "Zambia",
+            "Malawi",
+            "Mozambique"
+        ],
+        "hdi": 0.532,
+        "alternate_name": "tanzania",
+        "population": 67462121,
+        "annual_passenger_traffic": 1481557
+    },
+    {
+        "name": "Italy",
+        "neighbors": [
+            "France",
+            "Switzerland",
+            "Austria",
+            "Slovenia",
+            "San Marino"
+        ],
+        "hdi": 0.906,
+        "alternate_name": "italy",
+        "population": 60964931,
+        "annual_passenger_traffic": 27630435
+    },
+    {
+        "name": "South Africa",
+        "neighbors": [
+            "Botswana",
+            "Eswatini",
+            "Lesotho",
+            "Mozambique",
+            "Namibia"
+        ],
+        "hdi": 0.717,
+        "alternate_name": "south-africa",
+        "population": 60442647,
+        "annual_passenger_traffic": 23921748
+    },
+    {
+        "name": "Kenya",
+        "neighbors": [
+            "Somalia",
+            "Ethiopia",
+            "South Sudan",
+            "Uganda",
+            "Tanzania"
+        ],
+        "hdi": 0.601,
+        "alternate_name": "kenya",
+        "population": 58246378,
+        "annual_passenger_traffic": 5935831
+    },
+    {
+        "name": "Burma",
+        "neighbors": [
+            "Bangladesh",
+            "China",
+            "India",
+            "Laos",
+            "Thailand"
+        ]
+    },
+    {
+        "name": "Sudan",
+        "neighbors": [
+            "Egypt",
+            "Ethiopia",
+            "Eritrea",
+            "Chad",
+            "Libya"
+        ],
+        "hdi": 0.516,
+        "alternate_name": "sudan",
+        "population": 50467278,
+        "annual_passenger_traffic": 269958
+    },
+    {
+        "name": "Colombia",
+        "neighbors": [
+            "Panama",
+            "Venezuela",
+            "Brazil",
+            "Peru",
+            "Ecuador"
+        ],
+        "hdi": 0.758,
+        "alternate_name": "colombia",
+        "population": 49588357,
+        "annual_passenger_traffic": 33704037
+    },
+    {
+        "name": "Uganda",
+        "neighbors": [
+            "Kenya",
+            "South Sudan",
+            "Tanzania",
+            "Rwanda",
+            "Democratic Republic of the Congo"
+        ],
+        "hdi": 0.55,
+        "alternate_name": "uganda",
+        "population": 49283041,
+        "annual_passenger_traffic": 21537
+    },
+    {
+        "name": "Spain",
+        "neighbors": [
+            "France",
+            "Portugal",
+            "Morocco"
+        ],
+        "hdi": 0.911,
+        "alternate_name": "spain",
+        "population": 47280433,
+        "annual_passenger_traffic": 80672105
+    },
+    {
+        "name": "Algeria",
+        "neighbors": [
+            "Libya",
+            "Tunisia",
+            "Morocco",
+            "Mauritania",
+            "Mali",
+            "Niger"
+        ],
+        "hdi": 0.745,
+        "alternate_name": "algeria",
+        "population": 47022473,
+        "annual_passenger_traffic": 6442442
+    },
+    {
+        "name": "Argentina",
+        "neighbors": [
+            "Brazil",
+            "Bolivia",
+            "Paraguay",
+            "Uruguay",
+            "Chile"
+        ],
+        "hdi": 0.849,
+        "alternate_name": "argentina",
+        "population": 46994384,
+        "annual_passenger_traffic": 18081937
+    },
+    {
+        "name": "Iraq",
+        "neighbors": [
+            "Iran",
+            "Syria",
+            "Turkey",
+            "Saudi Arabia",
+            "Jordan",
+            "Kuwait"
+        ],
+        "hdi": 0.673,
+        "alternate_name": "iraq",
+        "population": 42083436,
+        "annual_passenger_traffic": 2075065
+    },
+    {
+        "name": "Afghanistan",
+        "neighbors": [
+            "Pakistan",
+            "Iran",
+            "Turkmenistan",
+            "Uzbekistan",
+            "Tajikistan"
+        ],
+        "hdi": 0.462,
+        "alternate_name": "afghanistan",
+        "population": 40121552,
+        "annual_passenger_traffic": 1722612
+    },
+    {
+        "name": "Canada",
+        "neighbors": [
+            "United States",
+            "Alaska",
+            "Greenland"
+        ],
+        "hdi": 0.935,
+        "alternate_name": "canada",
+        "population": 38794813,
+        "annual_passenger_traffic": 89000000
+    },
+    {
+        "name": "Poland",
+        "neighbors": [
+            "Germany",
+            "Czech Republic",
+            "Slovakia",
+            "Ukraine",
+            "Belarus"
+        ],
+        "hdi": 0.881,
+        "alternate_name": "poland",
+        "population": 38746310,
+        "annual_passenger_traffic": 9277538
+    },
+    {
+        "name": "Morocco",
+        "neighbors": [
+            "Algeria",
+            "Spain",
+            "Western Sahara"
+        ],
+        "hdi": 0.698,
+        "alternate_name": "morocco",
+        "population": 37387585,
+        "annual_passenger_traffic": 8132917
+    },
+    {
+        "name": "Angola",
+        "neighbors": [
+            "Namibia",
+            "Democratic Republic of the Congo",
+            "Zambia",
+            "Republic of Congo"
+        ],
+        "hdi": 0.591,
+        "alternate_name": "angola",
+        "population": 37202061,
+        "annual_passenger_traffic": 1516628
+    },
+    {
+        "name": "Saudi Arabia",
+        "neighbors": [
+            "Iraq",
+            "Jordan",
+            "Kuwait",
+            "Oman",
+            "Qatar",
+            "United Arab Emirates"
+        ],
+        "hdi": 0.875,
+        "alternate_name": "saudi-arabia",
+        "population": 36544431,
+        "annual_passenger_traffic": 39141660
+    },
+    {
+        "name": "Uzbekistan",
+        "neighbors": [
+            "Kazakhstan",
+            "Kyrgyzstan",
+            "Tajikistan",
+            "Afghanistan",
+            "Turkmenistan"
+        ],
+        "hdi": 0.727,
+        "alternate_name": "uzbekistan",
+        "population": 36520593,
+        "annual_passenger_traffic": 3056558
+    },
+    {
+        "name": "Ukraine",
+        "neighbors": [
+            "Poland",
+            "Slovakia",
+            "Hungary",
+            "Romania",
+            "Moldova"
+        ],
+        "hdi": 0.734,
+        "alternate_name": "ukraine",
+        "population": 35661826,
+        "annual_passenger_traffic": 7854842
+    },
+    {
+        "name": "Ghana",
+        "neighbors": [
+            "Togo",
+            "Burkina Faso",
+            "C\u00f4te d'Ivoire"
+        ],
+        "hdi": 0.602,
+        "alternate_name": "ghana",
+        "population": 34589092,
+        "annual_passenger_traffic": 467438
+    },
+    {
+        "name": "Malaysia",
+        "neighbors": [
+            "Thailand",
+            "Indonesia",
+            "Brunei"
+        ],
+        "hdi": 0.807,
+        "alternate_name": "malaysia",
+        "population": 34564810,
+        "annual_passenger_traffic": 60481772
+    },
+    {
+        "name": "Mozambique",
+        "neighbors": [
+            "Zimbabwe",
+            "South Africa",
+            "Eswatini",
+            "Malawi",
+            "Tanzania"
+        ],
+        "hdi": 0.461,
+        "alternate_name": "mozambique",
+        "population": 33350954,
+        "annual_passenger_traffic": 540124
+    },
+    {
+        "name": "Peru",
+        "neighbors": [
+            "Brazil",
+            "Bolivia",
+            "Chile",
+            "Colombia",
+            "Ecuador"
+        ],
+        "hdi": 0.762,
+        "alternate_name": "peru",
+        "population": 32600249,
+        "annual_passenger_traffic": 17758527
+    },
+    {
+        "name": "Yemen",
+        "neighbors": [
+            "Oman",
+            "Saudi Arabia",
+            "Eritrea",
+            "Djibouti",
+            "Somalia"
+        ],
+        "hdi": 0.424,
+        "alternate_name": "yemen",
+        "population": 32140443,
+        "annual_passenger_traffic": 336310
+    },
+    {
+        "name": "Venezuela",
+        "neighbors": [
+            "Brazil",
+            "Colombia",
+            "Guyana",
+            "Trinidad and Tobago"
+        ],
+        "hdi": 0.699,
+        "alternate_name": "venezuela",
+        "population": 31250306,
+        "annual_passenger_traffic": 2137771
+    },
+    {
+        "name": "Nepal",
+        "neighbors": [
+            "China",
+            "India",
+            "Bhutan"
+        ],
+        "hdi": 0.601,
+        "alternate_name": "nepal",
+        "population": 31122387,
+        "annual_passenger_traffic": 3296953
+    },
+    {
+        "name": "Cameroon",
+        "neighbors": [
+            "Central African Republic",
+            "Chad",
+            "Congo",
+            "Equatorial Guinea",
+            "Gabon"
+        ],
+        "hdi": 0.587,
+        "alternate_name": "cameroon",
+        "population": 30966105,
+        "annual_passenger_traffic": 265136
+    },
+    {
+        "name": "Cote d'Ivoire",
+        "neighbors": [
+            "Guinea",
+            "Liberia",
+            "Mali",
+            "Burkina Faso",
+            "Ghana"
+        ],
+        "hdi": 0.534,
+        "alternate_name": "cote-divoire",
+        "population": 29981758,
+        "annual_passenger_traffic": 779482
+    },
+    {
+        "name": "Madagascar",
+        "neighbors": [],
+        "hdi": 0.487,
+        "alternate_name": "madagascar",
+        "population": 29452714,
+        "annual_passenger_traffic": 541290
+    },
+    {
+        "name": "Australia",
+        "neighbors": [
+            "Papua New Guinea"
+        ],
+        "hdi": 0.946,
+        "alternate_name": "australia",
+        "population": 26768598,
+        "annual_passenger_traffic": 75667645
+    },
+    {
+        "name": "Niger",
+        "neighbors": [
+            "Algeria",
+            "Benin",
+            "Burkina Faso",
+            "Chad",
+            "Libya"
+        ],
+        "hdi": 0.394,
+        "alternate_name": "niger",
+        "population": 26342784,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Syria",
+        "neighbors": [
+            "Turkey",
+            "Iraq",
+            "Jordan",
+            "Israel",
+            "Lebanon"
+        ],
+        "hdi": 0.557,
+        "alternate_name": "syria",
+        "population": 23865423,
+        "annual_passenger_traffic": 17896
+    },
+    {
+        "name": "Taiwan",
+        "neighbors": [],
+        "hdi": 0.829,
+        "alternate_name": "taiwan",
+        "population": 23595274,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Burkina Faso",
+        "neighbors": [
+            "Niger",
+            "Mali",
+            "Benin",
+            "Togo",
+            "Ivory Coast"
+        ],
+        "hdi": 0.438,
+        "alternate_name": "burkina-faso",
+        "population": 23042199,
+        "annual_passenger_traffic": 151531
+    },
+    {
+        "name": "Mali",
+        "neighbors": [
+            "Algeria",
+            "Burkina Faso",
+            "Guinea",
+            "Ivory Coast",
+            "Mauritania",
+            "Niger",
+            "Senegal"
+        ],
+        "hdi": 0.41,
+        "alternate_name": "mali",
+        "population": 21990607,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Sri Lanka",
+        "neighbors": [
+            "India"
+        ],
+        "hdi": 0.78,
+        "alternate_name": "sri-lanka",
+        "population": 21982608,
+        "annual_passenger_traffic": 5882376
+    },
+    {
+        "name": "Malawi",
+        "neighbors": [
+            "Tanzania",
+            "Zambia",
+            "Mozambique"
+        ],
+        "hdi": 0.508,
+        "alternate_name": "malawi",
+        "population": 21763309,
+        "annual_passenger_traffic": 10545
+    },
+    {
+        "name": "Zambia",
+        "neighbors": [
+            "Angola",
+            "Botswana",
+            "Democratic Republic of the Congo",
+            "Malawi",
+            "Mozambique",
+            "Namibia",
+            "Tanzania",
+            "Zimbabwe"
+        ],
+        "hdi": 0.569,
+        "alternate_name": "zambia",
+        "population": 20799116,
+        "annual_passenger_traffic": 8904
+    },
+    {
+        "name": "Kazakhstan",
+        "neighbors": [
+            "China",
+            "Kyrgyzstan",
+            "Russia",
+            "Turkmenistan",
+            "Uzbekistan"
+        ],
+        "hdi": 0.802,
+        "alternate_name": "kazakhstan",
+        "population": 20260006,
+        "annual_passenger_traffic": 7143797
+    },
+    {
+        "name": "Chad",
+        "neighbors": [
+            "Cameroon",
+            "Central African Republic",
+            "Libya",
+            "Niger",
+            "Nigeria",
+            "Sudan"
+        ],
+        "hdi": 0.394,
+        "alternate_name": "chad",
+        "population": 19093595,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Senegal",
+        "neighbors": [
+            "Mauritania",
+            "Mali",
+            "Guinea",
+            "Guinea-Bissau",
+            "Gambia"
+        ],
+        "hdi": 0.517,
+        "alternate_name": "senegal",
+        "population": 18847519,
+        "annual_passenger_traffic": 21038
+    },
+    {
+        "name": "Chile",
+        "neighbors": [
+            "Argentina",
+            "Bolivia",
+            "Peru"
+        ],
+        "hdi": 0.86,
+        "alternate_name": "chile",
+        "population": 18664652,
+        "annual_passenger_traffic": 19517185
+    },
+    {
+        "name": "Ecuador",
+        "neighbors": [
+            "Colombia",
+            "Peru"
+        ],
+        "hdi": 0.765,
+        "alternate_name": "ecuador",
+        "population": 18309984,
+        "annual_passenger_traffic": 5365261
+    },
+    {
+        "name": "Guatemala",
+        "neighbors": [
+            "Mexico",
+            "Belize",
+            "El Salvador",
+            "Honduras"
+        ],
+        "hdi": 0.629,
+        "alternate_name": "guatemala",
+        "population": 18255216,
+        "annual_passenger_traffic": 145795
+    },
+    {
+        "name": "Romania",
+        "neighbors": [
+            "Bulgaria",
+            "Hungary",
+            "Moldova",
+            "Serbia",
+            "Ukraine"
+        ],
+        "hdi": 0.827,
+        "alternate_name": "romania",
+        "population": 18148155,
+        "annual_passenger_traffic": 4908235
+    },
+    {
+        "name": "Netherlands",
+        "neighbors": [
+            "Belgium",
+            "Germany",
+            "United Kingdom"
+        ],
+        "hdi": 0.946,
+        "alternate_name": "netherlands",
+        "population": 17772378,
+        "annual_passenger_traffic": 43996044
+    },
+    {
+        "name": "Zimbabwe",
+        "neighbors": [],
+        "hdi": 0.571,
+        "alternate_name": "zimbabwe",
+        "population": 17150352,
+        "annual_passenger_traffic": 285539
+    },
+    {
+        "name": "Cambodia",
+        "neighbors": [
+            "Thailand",
+            "Laos",
+            "Vietnam",
+            "South China Sea"
+        ],
+        "hdi": 0.6,
+        "alternate_name": "cambodia",
+        "population": 17063669,
+        "annual_passenger_traffic": 1411059
+    },
+    {
+        "name": "Benin",
+        "neighbors": [
+            "Burkina Faso",
+            "Niger",
+            "Nigeria",
+            "Togo"
+        ],
+        "hdi": 0.504,
+        "alternate_name": "benin",
+        "population": 14697052,
+        "annual_passenger_traffic": 112392
+    },
+    {
+        "name": "Guinea",
+        "neighbors": [
+            "Cote d'Ivoire",
+            "Guinea-Bissau",
+            "Liberia",
+            "Mali",
+            "Senegal"
+        ],
+        "hdi": 0.471,
+        "alternate_name": "guinea",
+        "population": 13986179,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Rwanda",
+        "neighbors": [
+            "Burundi",
+            "Democratic Republic of the Congo",
+            "Tanzania",
+            "Uganda"
+        ],
+        "hdi": 0.548,
+        "alternate_name": "rwanda",
+        "population": 13623302,
+        "annual_passenger_traffic": 1073528
+    },
+    {
+        "name": "Burundi",
+        "neighbors": [
+            "Tanzania",
+            "Democratic Republic of the Congo",
+            "Rwanda"
+        ],
+        "hdi": 0.42,
+        "alternate_name": "burundi",
+        "population": 13590102,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Somalia",
+        "neighbors": [
+            "Ethiopia",
+            "Kenya",
+            "Djibouti"
+        ],
+        "hdi": 0.38,
+        "alternate_name": "somalia",
+        "population": 13017273,
+        "annual_passenger_traffic": 4486
+    },
+    {
+        "name": "South Sudan",
+        "neighbors": [
+            "Sudan",
+            "Ethiopia",
+            "Kenya",
+            "Uganda",
+            "Democratic Republic of the Congo"
+        ],
+        "hdi": 0.381,
+        "alternate_name": "south-sudan",
+        "population": 12703714,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Bolivia",
+        "neighbors": [
+            "Brazil",
+            "Chile",
+            "Paraguay",
+            "Peru",
+            "Argentina"
+        ],
+        "hdi": 0.698,
+        "alternate_name": "bolivia",
+        "population": 12311974,
+        "annual_passenger_traffic": 4122113
+    },
+    {
+        "name": "Tunisia",
+        "neighbors": [
+            "Algeria",
+            "Libya"
+        ],
+        "hdi": 0.732,
+        "alternate_name": "tunisia",
+        "population": 12048847,
+        "annual_passenger_traffic": 4274199
+    },
+    {
+        "name": "Belgium",
+        "neighbors": [
+            "France",
+            "Germany",
+            "Luxembourg",
+            "Netherlands"
+        ],
+        "hdi": 0.942,
+        "alternate_name": "belgium",
+        "population": 11977634,
+        "annual_passenger_traffic": 13639487
+    },
+    {
+        "name": "Haiti",
+        "neighbors": [
+            "Dominican Republic"
+        ],
+        "hdi": 0.552,
+        "alternate_name": "haiti",
+        "population": 11753943,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Jordan",
+        "neighbors": [],
+        "hdi": 0.736,
+        "alternate_name": "jordan",
+        "population": 11174024,
+        "annual_passenger_traffic": 3383805
+    },
+    {
+        "name": "Cuba",
+        "neighbors": [
+            "Bahamas",
+            "Jamaica",
+            "United States",
+            "Mexico",
+            "Cayman Islands"
+        ],
+        "hdi": 0.764,
+        "alternate_name": "cuba",
+        "population": 10966038,
+        "annual_passenger_traffic": 560754
+    },
+    {
+        "name": "Czechia",
+        "neighbors": [
+            "Austria",
+            "Germany",
+            "Poland",
+            "Slovakia"
+        ],
+        "hdi": 0.895,
+        "alternate_name": "czechia",
+        "population": 10837890,
+        "annual_passenger_traffic": 5727200
+    },
+    {
+        "name": "Dominican Republic",
+        "neighbors": [
+            "Haiti"
+        ],
+        "hdi": 0.766,
+        "alternate_name": "dominican-republic",
+        "population": 10815857,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Azerbaijan",
+        "neighbors": [
+            "Armenia",
+            "Georgia",
+            "Iran",
+            "Russia",
+            "Turkey"
+        ],
+        "hdi": 0.76,
+        "alternate_name": "azerbaijan",
+        "population": 10650239,
+        "annual_passenger_traffic": 2279546
+    },
+    {
+        "name": "Sweden",
+        "neighbors": [
+            "Norway",
+            "Finland",
+            "Denmark"
+        ],
+        "hdi": 0.952,
+        "alternate_name": "sweden",
+        "population": 10589835,
+        "annual_passenger_traffic": 18600000
+    },
+    {
+        "name": "Greece",
+        "neighbors": [
+            "Albania",
+            "Bulgaria",
+            "North Macedonia",
+            "Turkey"
+        ],
+        "hdi": 0.893,
+        "alternate_name": "greece",
+        "population": 10461091,
+        "annual_passenger_traffic": 15125933
+    },
+    {
+        "name": "Tajikistan",
+        "neighbors": [
+            "Afghanistan",
+            "China",
+            "Kyrgyzstan",
+            "Uzbekistan"
+        ],
+        "hdi": 0.679,
+        "alternate_name": "tajikistan",
+        "population": 10394063,
+        "annual_passenger_traffic": 492320
+    },
+    {
+        "name": "Portugal",
+        "neighbors": [
+            "Spain",
+            "France"
+        ],
+        "hdi": 0.874,
+        "alternate_name": "portugal",
+        "population": 10207177,
+        "annual_passenger_traffic": 17367956
+    },
+    {
+        "name": "Papua New Guinea",
+        "neighbors": [
+            "Indonesia",
+            "Solomon Islands"
+        ],
+        "hdi": 0.568,
+        "alternate_name": "papua-new-guinea",
+        "population": 10046233,
+        "annual_passenger_traffic": 964713
+    },
+    {
+        "name": "United Arab Emirates",
+        "neighbors": [
+            "Saudi Arabia",
+            "Oman",
+            "Qatar"
+        ],
+        "hdi": 0.937,
+        "alternate_name": "united-arab-emirates",
+        "population": 10032213,
+        "annual_passenger_traffic": 95533069
+    },
+    {
+        "name": "Hungary",
+        "neighbors": [
+            "Austria",
+            "Croatia",
+            "Romania",
+            "Serbia",
+            "Slovakia",
+            "Slovenia",
+            "Ukraine"
+        ],
+        "hdi": 0.851,
+        "alternate_name": "hungary",
+        "population": 9855745,
+        "annual_passenger_traffic": 31226848
+    },
+    {
+        "name": "Honduras",
+        "neighbors": [
+            "Guatemala",
+            "El Salvador",
+            "Nicaragua"
+        ],
+        "hdi": 0.624,
+        "alternate_name": "honduras",
+        "population": 9529188,
+        "annual_passenger_traffic": 251149
+    },
+    {
+        "name": "Belarus",
+        "neighbors": [
+            "Lithuania",
+            "Latvia",
+            "Russia",
+            "Ukraine",
+            "Poland"
+        ],
+        "hdi": 0.801,
+        "alternate_name": "belarus",
+        "population": 9501451,
+        "annual_passenger_traffic": 2760168
+    },
+    {
+        "name": "Israel",
+        "neighbors": [
+            "Egypt",
+            "Jordan",
+            "Lebanon",
+            "Syria",
+            "West Bank"
+        ],
+        "hdi": 0.915,
+        "alternate_name": "israel",
+        "population": 9402617,
+        "annual_passenger_traffic": 7404373
+    },
+    {
+        "name": "Sierra Leone",
+        "neighbors": [
+            "Guinea",
+            "Liberia",
+            "C\u00f4te d'Ivoire"
+        ],
+        "hdi": 0.458,
+        "alternate_name": "sierra-leone",
+        "population": 9121049,
+        "annual_passenger_traffic": 50193
+    },
+    {
+        "name": "Austria",
+        "neighbors": [
+            "Czech Republic",
+            "Germany",
+            "Hungary",
+            "Italy",
+            "Slovenia"
+        ],
+        "hdi": 0.926,
+        "alternate_name": "austria",
+        "population": 8967982,
+        "annual_passenger_traffic": 12935505
+    },
+    {
+        "name": "Togo",
+        "neighbors": [
+            "Benin",
+            "Burkina Faso",
+            "Ghana"
+        ],
+        "hdi": 0.547,
+        "alternate_name": "togo",
+        "population": 8917994,
+        "annual_passenger_traffic": 566295
+    },
+    {
+        "name": "Switzerland",
+        "neighbors": [
+            "Austria",
+            "France",
+            "Germany",
+            "Italy",
+            "Liechtenstein"
+        ],
+        "hdi": 0.967,
+        "alternate_name": "switzerland",
+        "population": 8860574,
+        "annual_passenger_traffic": 28857994
+    },
+    {
+        "name": "Laos",
+        "neighbors": [
+            "Thailand",
+            "Vietnam",
+            "Cambodia",
+            "China",
+            "Myanmar"
+        ],
+        "hdi": 0.62,
+        "alternate_name": "laos",
+        "population": 7953556,
+        "annual_passenger_traffic": 1251961
+    },
+    {
+        "name": "Paraguay",
+        "neighbors": [
+            "Argentina",
+            "Bolivia",
+            "Brazil"
+        ],
+        "hdi": 0.731,
+        "alternate_name": "paraguay",
+        "population": 7522549,
+        "annual_passenger_traffic": 560631
+    },
+    {
+        "name": "Libya",
+        "neighbors": [
+            "Tunisia",
+            "Algeria",
+            "Niger",
+            "Sudan",
+            "Chad"
+        ],
+        "hdi": 0.746,
+        "alternate_name": "libya",
+        "population": 7361263,
+        "annual_passenger_traffic": 927153
+    },
+    {
+        "name": "Hong Kong",
+        "neighbors": [
+            "China"
+        ],
+        "hdi": 0.956,
+        "alternate_name": "hong-kong",
+        "population": 7297821,
+        "annual_passenger_traffic": 47101822
+    },
+    {
+        "name": "Bulgaria",
+        "neighbors": [
+            "Romania",
+            "Serbia",
+            "North Macedonia",
+            "Greece",
+            "Turkey"
+        ],
+        "hdi": 0.799,
+        "alternate_name": "bulgaria",
+        "population": 6782659,
+        "annual_passenger_traffic": 1022645
+    },
+    {
+        "name": "Nicaragua",
+        "neighbors": [
+            "Costa Rica",
+            "Honduras"
+        ],
+        "hdi": 0.669,
+        "alternate_name": "nicaragua",
+        "population": 6676948,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Serbia",
+        "neighbors": [
+            "Bulgaria",
+            "Croatia",
+            "Hungary",
+            "Romania",
+            "Montenegro",
+            "North Macedonia"
+        ],
+        "hdi": 0.805,
+        "alternate_name": "serbia",
+        "population": 6652212,
+        "annual_passenger_traffic": 2262703
+    },
+    {
+        "name": "El Salvador",
+        "neighbors": [
+            "Guatemala",
+            "Honduras"
+        ],
+        "hdi": 0.674,
+        "alternate_name": "el-salvador",
+        "population": 6628702,
+        "annual_passenger_traffic": 2545105
+    },
+    {
+        "name": "Eritrea",
+        "neighbors": [
+            "Sudan",
+            "Ethiopia",
+            "Djibouti"
+        ],
+        "hdi": 0.493,
+        "alternate_name": "eritrea",
+        "population": 6343956,
+        "annual_passenger_traffic": 102729
+    },
+    {
+        "name": "Kyrgyzstan",
+        "neighbors": [
+            "China",
+            "Kazakhstan",
+            "Tajikistan",
+            "Uzbekistan"
+        ],
+        "hdi": 0.701,
+        "alternate_name": "kyrgyzstan",
+        "population": 6172101,
+        "annual_passenger_traffic": 709198
+    },
+    {
+        "name": "Congo, Republic of the",
+        "neighbors": [
+            "Angola",
+            "Cameroon",
+            "Central African Republic",
+            "Democratic Republic of the Congo",
+            "Gabon"
+        ],
+        "hdi": 0.593,
+        "alternate_name": "congo-republic-of-the",
+        "population": 6097665,
+        "annual_passenger_traffic": 333899
+    },
+    {
+        "name": "Singapore",
+        "neighbors": [
+            "Malaysia"
+        ],
+        "hdi": 0.949,
+        "alternate_name": "singapore",
+        "population": 6028459,
+        "annual_passenger_traffic": 40401515
+    },
+    {
+        "name": "Denmark",
+        "neighbors": [
+            "Norway",
+            "Germany",
+            "Sweden"
+        ],
+        "hdi": 0.952,
+        "alternate_name": "denmark",
+        "population": 5973136,
+        "annual_passenger_traffic": 582011
+    },
+    {
+        "name": "Turkmenistan",
+        "neighbors": [
+            "Iran",
+            "Afghanistan",
+            "Uzbekistan",
+            "Kazakhstan"
+        ],
+        "hdi": 0.744,
+        "alternate_name": "turkmenistan",
+        "population": 5744151,
+        "annual_passenger_traffic": 2457474
+    },
+    {
+        "name": "Central African Republic",
+        "neighbors": [
+            "Cameroon",
+            "Chad",
+            "D. R. Congo",
+            "Congo",
+            "South Sudan"
+        ],
+        "hdi": 0.387,
+        "alternate_name": "central-african-republic",
+        "population": 5650957,
+        "annual_passenger_traffic": 46364
+    },
+    {
+        "name": "Finland",
+        "neighbors": [
+            "Norway",
+            "Sweden",
+            "Russia"
+        ],
+        "hdi": 0.942,
+        "alternate_name": "finland",
+        "population": 5626414,
+        "annual_passenger_traffic": 13364839
+    },
+    {
+        "name": "Slovakia",
+        "neighbors": [
+            "Czech Republic",
+            "Hungary",
+            "Poland",
+            "Ukraine",
+            "Austria"
+        ],
+        "hdi": 0.855,
+        "alternate_name": "slovakia",
+        "population": 5563649,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Norway",
+        "neighbors": [
+            "Sweden",
+            "Finland",
+            "Russia"
+        ],
+        "hdi": 0.966,
+        "alternate_name": "norway",
+        "population": 5509733,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Liberia",
+        "neighbors": [
+            "Guinea",
+            "Ivory Coast",
+            "Sierra Leone"
+        ],
+        "hdi": 0.487,
+        "alternate_name": "liberia",
+        "population": 5437249,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Lebanon",
+        "neighbors": [
+            "Syria",
+            "Israel",
+            "Cyprus"
+        ],
+        "hdi": 0.723,
+        "alternate_name": "lebanon",
+        "population": 5364482,
+        "annual_passenger_traffic": 2981937
+    },
+    {
+        "name": "Costa Rica",
+        "neighbors": [
+            "Panama",
+            "Nicaragua"
+        ],
+        "hdi": 0.806,
+        "alternate_name": "costa-rica",
+        "population": 5265575,
+        "annual_passenger_traffic": 1948546
+    },
+    {
+        "name": "Ireland",
+        "neighbors": [
+            "United Kingdom"
+        ],
+        "hdi": 0.95,
+        "alternate_name": "ireland",
+        "population": 5233461,
+        "annual_passenger_traffic": 1000000
+    },
+    {
+        "name": "New Zealand",
+        "neighbors": [],
+        "hdi": 0.939,
+        "alternate_name": "new-zealand",
+        "population": 5161211,
+        "annual_passenger_traffic": 17249049
+    },
+    {
+        "name": "Georgia",
+        "neighbors": [
+            "Armenia",
+            "Azerbaijan",
+            "Russia",
+            "Turkey"
+        ],
+        "hdi": 0.814,
+        "alternate_name": "georgia",
+        "population": 4900961,
+        "annual_passenger_traffic": 516034
+    },
+    {
+        "name": "Panama",
+        "neighbors": [
+            "Colombia",
+            "Costa Rica"
+        ],
+        "hdi": 0.82,
+        "alternate_name": "panama",
+        "population": 4470241,
+        "annual_passenger_traffic": 12939350
+    },
+    {
+        "name": "Mauritania",
+        "neighbors": [
+            "Algeria",
+            "Mali",
+            "Senegal",
+            "Western Sahara"
+        ],
+        "hdi": 0.54,
+        "alternate_name": "mauritania",
+        "population": 4328040,
+        "annual_passenger_traffic": 454435
+    },
+    {
+        "name": "Croatia",
+        "neighbors": [
+            "Slovenia",
+            "Hungary",
+            "Serbia",
+            "Bosnia and Herzegovina",
+            "Montenegro"
+        ],
+        "hdi": 0.878,
+        "alternate_name": "croatia",
+        "population": 4150116,
+        "annual_passenger_traffic": 2093577
+    },
+    {
+        "name": "Oman",
+        "neighbors": [
+            "Saudi Arabia",
+            "United Arab Emirates",
+            "Yemen"
+        ],
+        "hdi": 0.819,
+        "alternate_name": "oman",
+        "population": 3901992,
+        "annual_passenger_traffic": 10438241
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "neighbors": [
+            "Serbia",
+            "Croatia",
+            "Montenegro"
+        ],
+        "hdi": 0.779,
+        "alternate_name": "bosnia-and-herzegovina",
+        "population": 3798671,
+        "annual_passenger_traffic": 7070
+    },
+    {
+        "name": "Moldova",
+        "neighbors": [
+            "Romania",
+            "Ukraine"
+        ],
+        "hdi": 0.763,
+        "alternate_name": "moldova",
+        "population": 3599528,
+        "annual_passenger_traffic": 1135999
+    },
+    {
+        "name": "Uruguay",
+        "neighbors": [
+            "Argentina",
+            "Brazil"
+        ],
+        "hdi": 0.83,
+        "alternate_name": "uruguay",
+        "population": 3425330,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Mongolia",
+        "neighbors": [
+            "China",
+            "Russia",
+            "Kazakhstan"
+        ],
+        "hdi": 0.741,
+        "alternate_name": "mongolia",
+        "population": 3281676,
+        "annual_passenger_traffic": 670360
+    },
+    {
+        "name": "West Bank",
+        "neighbors": [
+            "Jordan",
+            "Israel"
+        ]
+    },
+    {
+        "name": "Kuwait",
+        "neighbors": [
+            "Saudi Arabia",
+            "Iraq"
+        ],
+        "hdi": 0.847,
+        "alternate_name": "kuwait",
+        "population": 3138355,
+        "annual_passenger_traffic": 6464847
+    },
+    {
+        "name": "Albania",
+        "neighbors": [
+            "Greece",
+            "Montenegro",
+            "North Macedonia",
+            "Kosovo"
+        ],
+        "hdi": 0.789,
+        "alternate_name": "albania",
+        "population": 3107100,
+        "annual_passenger_traffic": 303137
+    },
+    {
+        "name": "Puerto Rico",
+        "neighbors": [],
+        "hdi": 0.845,
+        "alternate_name": "puerto-rico",
+        "population": 3019450,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Armenia",
+        "neighbors": [
+            "Azerbaijan",
+            "Georgia",
+            "Iran",
+            "Nakhichevan",
+            "Turkey"
+        ],
+        "hdi": 0.786,
+        "alternate_name": "armenia",
+        "population": 2976765,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Jamaica",
+        "neighbors": [],
+        "hdi": 0.706,
+        "alternate_name": "jamaica",
+        "population": 2823713,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Namibia",
+        "neighbors": [
+            "Angola",
+            "Botswana",
+            "South Africa",
+            "Zambia"
+        ],
+        "hdi": 0.61,
+        "alternate_name": "namibia",
+        "population": 2803660,
+        "annual_passenger_traffic": 602893
+    },
+    {
+        "name": "Lithuania",
+        "neighbors": [
+            "Belarus",
+            "Latvia",
+            "Poland",
+            "Russia"
+        ],
+        "hdi": 0.879,
+        "alternate_name": "lithuania",
+        "population": 2628186,
+        "annual_passenger_traffic": 26031
+    },
+    {
+        "name": "Qatar",
+        "neighbors": [
+            "Saudi Arabia",
+            "United Arab Emirates"
+        ],
+        "hdi": 0.875,
+        "alternate_name": "qatar",
+        "population": 2552088,
+        "annual_passenger_traffic": 29178923
+    },
+    {
+        "name": "Gambia, The",
+        "neighbors": [
+            "Senegal",
+            "Guinea-Bissau"
+        ],
+        "hdi": 0.495,
+        "alternate_name": "gambia-the",
+        "population": 2523327,
+        "annual_passenger_traffic": 53735
+    },
+    {
+        "name": "Gabon",
+        "neighbors": [
+            "Cameroon",
+            "Equatorial Guinea",
+            "Republic of the Congo"
+        ],
+        "hdi": 0.693,
+        "alternate_name": "gabon",
+        "population": 2455105,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Botswana",
+        "neighbors": [
+            "Namibia",
+            "Zambia",
+            "Zimbabwe",
+            "South Africa"
+        ],
+        "hdi": 0.708,
+        "alternate_name": "botswana",
+        "population": 2450668,
+        "annual_passenger_traffic": 253417
+    },
+    {
+        "name": "Lesotho",
+        "neighbors": [
+            "South Africa",
+            "Eswatini"
+        ],
+        "hdi": 0.521,
+        "alternate_name": "lesotho",
+        "population": 2227548,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Gaza Strip",
+        "neighbors": [
+            "Israel",
+            "Egypt"
+        ],
+        "alternate_name": "gaza-strip",
+        "population": 2141643,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "North Macedonia",
+        "neighbors": [
+            "Serbia",
+            "Kosovo",
+            "Bulgaria",
+            "Greece",
+            "Albania"
+        ],
+        "hdi": 0.765,
+        "alternate_name": "north-macedonia",
+        "population": 2135622,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Guinea-Bissau",
+        "neighbors": [
+            "Senegal",
+            "Guinea"
+        ],
+        "hdi": 0.483,
+        "alternate_name": "guinea-bissau",
+        "population": 2132325,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Slovenia",
+        "neighbors": [
+            "Italy",
+            "Austria",
+            "Hungary",
+            "Croatia"
+        ],
+        "hdi": 0.926,
+        "alternate_name": "slovenia",
+        "population": 2097893,
+        "annual_passenger_traffic": 1094762
+    },
+    {
+        "name": "Kosovo",
+        "neighbors": [
+            "Albania",
+            "Montenegro",
+            "North Macedonia",
+            "Serbia"
+        ],
+        "hdi": 0.786,
+        "alternate_name": "kosovo",
+        "population": 1977093,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Latvia",
+        "neighbors": [
+            "Estonia",
+            "Belarus",
+            "Lithuania"
+        ],
+        "hdi": 0.879,
+        "alternate_name": "latvia",
+        "population": 1801246,
+        "annual_passenger_traffic": 4058762
+    },
+    {
+        "name": "Equatorial Guinea",
+        "neighbors": [
+            "Cameroon",
+            "Gabon"
+        ],
+        "hdi": 0.65,
+        "alternate_name": "equatorial-guinea",
+        "population": 1795834,
+        "annual_passenger_traffic": 466435
+    },
+    {
+        "name": "Bahrain",
+        "neighbors": [
+            "Saudi Arabia",
+            "Qatar"
+        ],
+        "hdi": 0.888,
+        "alternate_name": "bahrain",
+        "population": 1566888,
+        "annual_passenger_traffic": 5877003
+    },
+    {
+        "name": "Timor-Leste",
+        "neighbors": [
+            "Indonesia",
+            "Australia"
+        ],
+        "hdi": 0.566,
+        "alternate_name": "timor-leste",
+        "population": 1506909,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "neighbors": [],
+        "hdi": 0.814,
+        "alternate_name": "trinidad-and-tobago",
+        "population": 1408966,
+        "annual_passenger_traffic": 2525130
+    },
+    {
+        "name": "Cyprus",
+        "neighbors": [],
+        "hdi": 0.907,
+        "alternate_name": "cyprus",
+        "population": 1320525,
+        "annual_passenger_traffic": 401408
+    },
+    {
+        "name": "Mauritius",
+        "neighbors": [],
+        "hdi": 0.796,
+        "alternate_name": "mauritius",
+        "population": 1310504,
+        "annual_passenger_traffic": 1745291
+    },
+    {
+        "name": "Estonia",
+        "neighbors": [
+            "Finland",
+            "Latvia",
+            "Russia"
+        ],
+        "hdi": 0.899,
+        "alternate_name": "estonia",
+        "population": 1193791,
+        "annual_passenger_traffic": 31981
+    },
+    {
+        "name": "Eswatini",
+        "neighbors": [
+            "South Africa",
+            "Mozambique"
+        ],
+        "hdi": 0.61,
+        "alternate_name": "eswatini",
+        "population": 1138089,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Djibouti",
+        "neighbors": [
+            "Eritrea",
+            "Ethiopia",
+            "Somalia"
+        ],
+        "hdi": 0.515,
+        "alternate_name": "djibouti",
+        "population": 994974,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Fiji",
+        "neighbors": [],
+        "hdi": 0.729,
+        "alternate_name": "fiji",
+        "population": 951611,
+        "annual_passenger_traffic": 1670216
+    },
+    {
+        "name": "Comoros",
+        "neighbors": [],
+        "hdi": 0.586,
+        "alternate_name": "comoros",
+        "population": 900141,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Bhutan",
+        "neighbors": [
+            "India",
+            "China",
+            "Bangladesh",
+            "Myanmar"
+        ],
+        "hdi": 0.681,
+        "alternate_name": "bhutan",
+        "population": 884546,
+        "annual_passenger_traffic": 275849
+    },
+    {
+        "name": "Guyana",
+        "neighbors": [
+            "Brazil",
+            "Suriname",
+            "Venezuela"
+        ],
+        "hdi": 0.742,
+        "alternate_name": "guyana",
+        "population": 794099,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Solomon Islands",
+        "neighbors": [],
+        "hdi": 0.562,
+        "alternate_name": "solomon-islands",
+        "population": 726799,
+        "annual_passenger_traffic": 427806
+    },
+    {
+        "name": "Luxembourg",
+        "neighbors": [
+            "Belgium",
+            "France",
+            "Germany"
+        ],
+        "hdi": 0.927,
+        "alternate_name": "luxembourg",
+        "population": 671254,
+        "annual_passenger_traffic": 2099102
+    },
+    {
+        "name": "Suriname",
+        "neighbors": [
+            "Guyana",
+            "Brazil",
+            "French Guiana"
+        ],
+        "hdi": 0.69,
+        "alternate_name": "suriname",
+        "population": 646758,
+        "annual_passenger_traffic": 272347
+    },
+    {
+        "name": "Cabo Verde",
+        "neighbors": [],
+        "hdi": 0.661,
+        "alternate_name": "cabo-verde",
+        "population": 611014,
+        "annual_passenger_traffic": 140429
+    },
+    {
+        "name": "Montenegro",
+        "neighbors": [
+            "Albania",
+            "Bosnia and Herzegovina",
+            "Croatia",
+            "Kosovo",
+            "Serbia"
+        ],
+        "hdi": 0.844,
+        "alternate_name": "montenegro",
+        "population": 599849,
+        "annual_passenger_traffic": 565522
+    },
+    {
+        "name": "Brunei",
+        "neighbors": [
+            "Malaysia",
+            "Indonesia"
+        ],
+        "hdi": 0.823,
+        "alternate_name": "brunei",
+        "population": 491900,
+        "annual_passenger_traffic": 1234455
+    },
+    {
+        "name": "Malta",
+        "neighbors": [],
+        "hdi": 0.915,
+        "alternate_name": "malta",
+        "population": 469730,
+        "annual_passenger_traffic": 2576898
+    },
+    {
+        "name": "Belize",
+        "neighbors": [
+            "Guatemala",
+            "Mexico"
+        ],
+        "hdi": 0.7,
+        "alternate_name": "belize",
+        "population": 415789,
+        "annual_passenger_traffic": 1297533
+    },
+    {
+        "name": "Bahamas, The",
+        "neighbors": [
+            "Cuba",
+            "Haiti",
+            "Dominican Republic",
+            "Turks and Caicos Islands",
+            "United States"
+        ],
+        "hdi": 0.82,
+        "alternate_name": "bahamas-the",
+        "population": 410862,
+        "annual_passenger_traffic": 1197116
+    },
+    {
+        "name": "Maldives",
+        "neighbors": [],
+        "hdi": 0.762,
+        "alternate_name": "maldives",
+        "population": 388858,
+        "annual_passenger_traffic": 1147247
+    },
+    {
+        "name": "Iceland",
+        "neighbors": [],
+        "hdi": 0.959,
+        "alternate_name": "iceland",
+        "population": 364036,
+        "annual_passenger_traffic": 7819740
+    },
+    {
+        "name": "Vanuatu",
+        "neighbors": [],
+        "hdi": 0.614,
+        "alternate_name": "vanuatu",
+        "population": 318007,
+        "annual_passenger_traffic": 374603
+    },
+    {
+        "name": "New Caledonia",
+        "neighbors": [],
+        "hdi": 0.795,
+        "alternate_name": "new-caledonia",
+        "population": 304167,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Barbados",
+        "neighbors": [],
+        "hdi": 0.809,
+        "alternate_name": "barbados",
+        "population": 304139,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "French Polynesia",
+        "neighbors": [],
+        "hdi": 0.795,
+        "alternate_name": "french-polynesia",
+        "population": 303540,
+        "annual_passenger_traffic": null
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "neighbors": [],
+        "hdi": 0.613,
+        "alternate_name": "sao-tome-and-principe",
+        "population": 223561,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Samoa",
+        "neighbors": [],
+        "hdi": 0.702,
+        "alternate_name": "samoa",
+        "population": 208853,
+        "annual_passenger_traffic": 137770
+    },
+    {
+        "name": "Guam",
+        "neighbors": [],
+        "hdi": 0.795,
+        "alternate_name": "guam",
+        "population": 169532,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Curacao",
+        "neighbors": [],
+        "hdi": 0.785,
+        "alternate_name": "curacao",
+        "population": 153289,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Aruba",
+        "neighbors": [],
+        "hdi": 0.801,
+        "alternate_name": "aruba",
+        "population": 125063,
+        "annual_passenger_traffic": 274280
+    },
+    {
+        "name": "Kiribati",
+        "neighbors": [],
+        "hdi": 0.628,
+        "alternate_name": "kiribati",
+        "population": 116545,
+        "annual_passenger_traffic": 66567
+    },
+    {
+        "name": "Grenada",
+        "neighbors": [],
+        "hdi": 0.793,
+        "alternate_name": "grenada",
+        "population": 114621,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Tonga",
+        "neighbors": [],
+        "hdi": 0.739,
+        "alternate_name": "tonga",
+        "population": 104889,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Virgin Islands",
+        "neighbors": [
+            "Puerto Rico",
+            "Anguilla"
+        ],
+        "hdi": 0.944,
+        "alternate_name": "virgin-islands",
+        "population": 104377,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "neighbors": [],
+        "hdi": 0.826,
+        "alternate_name": "antigua-and-barbuda",
+        "population": 102634,
+        "annual_passenger_traffic": 580174
+    },
+    {
+        "name": "Micronesia, Federated States of",
+        "neighbors": [
+            "Palau",
+            "Marshall Islands"
+        ],
+        "hdi": 0.634,
+        "alternate_name": "micronesia-federated-states-of",
+        "population": 99603,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Seychelles",
+        "neighbors": [],
+        "hdi": 0.802,
+        "alternate_name": "seychelles",
+        "population": 98187,
+        "annual_passenger_traffic": 455201
+    },
+    {
+        "name": "Andorra",
+        "neighbors": [
+            "Spain",
+            "France"
+        ],
+        "hdi": 0.884,
+        "alternate_name": "andorra",
+        "population": 85370,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Marshall Islands",
+        "neighbors": [],
+        "hdi": 0.731,
+        "alternate_name": "marshall-islands",
+        "population": 82011,
+        "annual_passenger_traffic": 24313
+    },
+    {
+        "name": "Dominica",
+        "neighbors": [],
+        "hdi": 0.74,
+        "alternate_name": "dominica",
+        "population": 74661,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Greenland",
+        "neighbors": [],
+        "hdi": 0.91,
+        "alternate_name": "greenland",
+        "population": 57751,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Liechtenstein",
+        "neighbors": [
+            "Switzerland",
+            "Austria"
+        ],
+        "hdi": 0.942,
+        "alternate_name": "liechtenstein",
+        "population": 40272,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "San Marino",
+        "neighbors": [
+            "Italy"
+        ],
+        "hdi": 0.867,
+        "alternate_name": "san-marino",
+        "population": 35095,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Palau",
+        "neighbors": [],
+        "hdi": 0.797,
+        "alternate_name": "palau",
+        "population": 21864,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Tuvalu",
+        "neighbors": [],
+        "hdi": 0.653,
+        "alternate_name": "tuvalu",
+        "population": 11733,
+        "annual_passenger_traffic": 0
+    },
+    {
+        "name": "Nauru",
+        "neighbors": [],
+        "hdi": 0.696,
+        "alternate_name": "nauru",
+        "population": 9892,
+        "annual_passenger_traffic": 45457
+    },
+    {
+        "name": "Turkey",
+        "neighbors": [
+            "Greece",
+            "Bulgaria",
+            "Georgia",
+            "Armenia",
+            "Iran",
+            "Iraq",
+            "Syria"
+        ],
+        "hdi": 0.855,
+        "alternate_name": "turkey-turkiye",
+        "population": 84119531,
+        "annual_passenger_traffic": 115595495
+    },
+    {
+        "name": "South Korea",
+        "neighbors": [
+            "North Korea",
+            "China"
+        ],
+        "hdi": 0.929,
+        "alternate_name": "korea-south",
+        "population": 52081799,
+        "annual_passenger_traffic": 88157579
+    },
+    {
+        "name": "North Korea",
+        "neighbors": [
+            "China",
+            "Russia",
+            "South Korea"
+        ],
+        "hdi": 0.699,
+        "alternate_name": "korea-north",
+        "population": 26298666,
+        "annual_passenger_traffic": 103560
+    }
+]
