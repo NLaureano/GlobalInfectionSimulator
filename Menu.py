@@ -1,6 +1,30 @@
 import tkinter as tk
 from tkinter import messagebox
 
+simulation_state = {
+    "virulence": 50,
+    "starting_country": None,
+    "starting_infected": 0,
+    "map": "default"
+}
+
+infected_count = 0
+infected_grids = []
+
+def update_infected_count():
+    global infected_count
+    infected_count = len(infected_grids)
+    total_infected_label.config(f"Total Infected: {infected_count}")
+
+"""
+total_infected_label = tk.Label(root, text="Total Infected: 0", font=("Arial", 12))
+total_infected_label.pack(pady=10)
+"""
+
+def run_simulation():
+    #Add simulation function here
+    return
+
 # Function to show information or perform actions
 def virulence_option():
     # Create a new window for adjusting virulence
@@ -101,14 +125,21 @@ def starting_infected_option():
     exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
 
 def start_step_option():
-    messagebox.showinfo("Start/Step", "Start the simulation or move to the next step.")
+    run_simulation()
+
 
 def reset_option():
-    messagebox.showinfo("Reset", "This will reset the simulation.")
+    #Reset the simulation state
+    simulation_state.update({
+        "virulence": 0,
+        "starting_country": None,
+        "starting_infected": 0,
+        "map":"default"
+    })
 
 def total_infected_option():
-    messagebox.showinfo("Total Infected", "This will show the total number of infected individuals.")
-
+    messagebox.showinfo("Total Infected", f"Total infected grids: {infected_count}")
+    
 # Create the main window
 root = tk.Tk()
 root.title("Infectious Disease Simulation Menu")
