@@ -5,91 +5,124 @@ from PIL import Image, ImageTk
 root = tk.Tk()
 root.title("World Map with Grid")
 
-# Load the world map image (ensure you have an image file like 'Map_world.png')
-image = Image.open("Map_world.png")
+# Load the world map image (Ensure 'Map_world.png' exists)
+image = Image.open("world.png")
 photo = ImageTk.PhotoImage(image)
 
-# Create a canvas to display the world map
+# Create a canvas for the world map
 canvas = tk.Canvas(root, width=image.width, height=image.height)
 canvas.create_image(0, 0, image=photo, anchor=tk.NW)
 canvas.pack()
 
-# Number of rows and columns for the grid
-grid_rows = 100  # Adjust the number of rows based on your map resolution
-grid_columns = 200  # Adjust the number of columns based on your map resolution
+# Number of grid rows and columns
+grid_rows = 100  
+grid_columns = 200  
 
-# Function to draw the grid on the canvas
+# Dictionary to store drawn borders
+country_borders = {}
+
+# List of major countries for the dropdown menu
+countries_list = ["China", "UK", "Japan", "Australia", "India", "Kenya", "France", "Germany", "Brazil", "Russia", "Mexico"]
+
+# **Dropdown menu for country selection**
+selected_country = tk.StringVar()
+selected_country.set(countries_list[0])  # Default selection
+
+dropdown_menu = tk.OptionMenu(root, selected_country, *countries_list)
+dropdown_menu.pack(pady=10)
+
+# Function to draw the grid
 def draw_grid():
-    grid_width = image.width // grid_columns  # Calculate the width of each grid cell
-    grid_height = image.height // grid_rows  # Calculate the height of each grid cell
+    grid_width = image.width // grid_columns
+    grid_height = image.height // grid_rows
 
-    # Draw horizontal lines
     for i in range(1, grid_rows):
         y = i * grid_height
-        canvas.create_line(0, y, image.width, y, fill="black")  # White horizontal line
+        canvas.create_line(0, y, image.width, y, fill="gray")
 
-    # Draw vertical lines
     for j in range(1, grid_columns):
         x = j * grid_width
-        canvas.create_line(x, 0, x, image.height, fill="black")  # White vertical line
+        canvas.create_line(x, 0, x, image.height, fill="gray")
 
-# Call the function to draw the grid
 draw_grid()
 
-# List of major cities with approximate coordinates (example values)
-cities = {
-    "New York": (-118.7128, 131.0060),
-    "London": (51.5074, -0.1278),
-    "Tokyo": (35.6762, 139.6503),
-    "Sydney": (-33.8688, 151.2093),
-    "Cairo": (30.0444, 31.2357),
-    # Add more cities and their lat/lon coordinates
-}
+# **Function to draw country borders**
+def draw_borders():
+    canvas.delete("borders")  # Clear old borders before redrawing
+    for country, cells in country_borders.items():
+        for grid_x, grid_y in cells:
+            cell_width = image.width / grid_columns
+            cell_height = image.height / grid_rows
+            x1, y1 = grid_x * cell_width, grid_y * cell_height
+            x2, y2 = x1 + cell_width, y1 + cell_height
+            canvas.create_rectangle(x1, y1, x2, y2, outline="red", width=1, tags="borders")
 
-# Function to convert lat/lon to grid coordinates
-def latlon_to_grid(lat, lon):
-    # Assuming latitudes and longitudes range from -90 to 90 and -180 to 180 respectively
-    grid_x = int((lon + 180) * (grid_columns / 360))  # Normalize longitude to grid column
-    grid_y = int((90 - lat) * (grid_rows / 180))  # Normalize latitude to grid row
-    return grid_x, grid_y
+# **Function to add border points**
+drawing_active = False  
 
-# Function to mark cities on the map
-def mark_cities():
-    for city, (lat, lon) in cities.items():
-        grid_x, grid_y = latlon_to_grid(lat, lon)
-        # Draw a marker (circle) on the grid at the city location
-        canvas.create_oval(grid_x - 5, grid_y - 5, grid_x + 5, grid_y + 5, fill="red")  # Marker as a red circle
-        # Optionally, label the city
-        canvas.create_text(grid_x, grid_y - 10, text=city, fill="black", font=("Arial", 8))
+def start_drawing(event):
+    """ Start selecting border points when mouse is clicked. """
+    global drawing_active
+    drawing_active = True
+    add_point(event)
 
-# Call the function to mark cities on the grid
-mark_cities()
+def add_point(event):
+    """ Add grid cell to country border when mouse moves while clicked. """
+    if not drawing_active:
+        return
 
-# Function to convert grid coordinates to lat/lon
-def grid_to_latlon(grid_x, grid_y):
-    # Convert grid coordinates back to lat/lon
-    lon = (grid_x / grid_columns) * 360 - 180  # Reverse the longitude normalization
-    lat = 90 - (grid_y / grid_rows) * 180  # Reverse the latitude normalization
-    return lat, lon
+    grid_width = image.width // grid_columns
+    grid_height = image.height // grid_rows
 
-# Function to update the coordinates when the cursor moves
-def track_cursor(event):
-    # Get the position of the cursor in canvas coordinates
-    grid_x = event.x
-    grid_y = event.y
+    grid_x = event.x // grid_width  
+    grid_y = event.y // grid_height  
 
-    # Convert the grid position to latitude and longitude
-    lat, lon = grid_to_latlon(grid_x, grid_y)
+    country = selected_country.get()
 
-    # Update the label with the coordinates
-    coords_label.config(text=f"Lat: {lat:.2f}, Lon: {lon:.2f}")
+    if country not in country_borders:
+        country_borders[country] = []
 
-# Create a label to display the coordinates
-coords_label = tk.Label(root, text="Lat: 0.00, Lon: 0.00", font=("Arial", 12), bg="white")
-coords_label.pack(pady=10)
+    if (grid_x, grid_y) not in country_borders[country]:
+        country_borders[country].append((grid_x, grid_y))
+        draw_borders()
 
-# Bind the motion event to track the cursor
-canvas.bind("<Motion>", track_cursor)
+def remove_point(event):
+    """ Remove a grid cell from the selected country when right-clicked. """
+    grid_width = image.width // grid_columns
+    grid_height = image.height // grid_rows
 
-# Start the Tkinter event loop
+    grid_x = event.x // grid_width  
+    grid_y = event.y // grid_height  
+
+    country = selected_country.get()
+
+    if country in country_borders and (grid_x, grid_y) in country_borders[country]:
+        country_borders[country].remove((grid_x, grid_y))
+        draw_borders()  
+
+def stop_drawing(event):
+    """ Stop drawing when mouse is released. """
+    global drawing_active
+    drawing_active = False
+
+# Bind mouse actions
+canvas.bind("<Button-1>", start_drawing)  # Left click to start
+canvas.bind("<B1-Motion>", add_point)  # Drag to add points
+canvas.bind("<ButtonRelease-1>", stop_drawing)  # Release to stop
+canvas.bind("<Button-3>", remove_point)  # Right-click to remove a point
+
+# **Function to save drawn borders to a Python file**
+def save_borders():
+    """ Save country border coordinates to a file """
+    with open("borders.py", "w") as f:
+        f.write("country_borders = {\n")
+        for country, cells in country_borders.items():
+            f.write(f'    "{country}": {cells},\n')
+        f.write("}\n")
+    print("Borders saved to borders.py!")
+
+# Save button
+save_button = tk.Button(root, text="Save Borders", command=save_borders)
+save_button.pack(pady=10)
+
 root.mainloop()
