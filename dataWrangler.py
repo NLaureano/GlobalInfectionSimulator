@@ -1,164 +1,41 @@
 import csv
 import json
 
-def parse_and_convert_to_json(input_file, output_file):
-    parsed_data = []
+def merge_jsons(json1_file, json2_file, output_file):
+    # Load JSON files
+    with open(json1_file, 'r') as file1, open(json2_file, 'r') as file2:
+        json1_data = json.load(file1)  # List of dictionaries with neighbors
+        json2_data = json.load(file2)  # List of dictionaries with additional data
 
-    # Open the input file and use csv.reader to parse
-    with open(input_file, 'r') as infile:
-        reader = csv.reader(infile)
-        for row in reader:
-            # Extract fields from the row
-            name = row[0].strip('"')
-            alternate_name = row[1].strip('"')
-            print(row[2])
-            population = int(row[2].replace(',', ''))
+    # Convert the second JSON to a dictionary for faster lookups by "name"
+    json2_dict = {item["name"]: item for item in json2_data}
 
-            # Create a dictionary for the line
-            country_data = {
-                "name": name,
-                "alternate_name": alternate_name,
-                "population": population,
-            }
-
-            # Append to the list of parsed data
-            parsed_data.append(country_data)
-
-    # Write parsed data to a JSON file
-    with open(output_file, 'w') as outfile:
-        json.dump(parsed_data, outfile, indent=4)
-
-def parse_hdi_data(input_file, output_file):
-    parsed_data = []
-
-    # Open the input file and parse each line
-    with open(input_file, 'r') as infile:
-        for line in infile:
-            # Split the line into country name and HDI value
-            parts = line.rsplit('\t', 1)
-            print(parts)
-            if len(parts) == 2:
-                country = parts[0].strip()
-                hdi = float(parts[1].strip())
-                
-                # Add the data to the list as a dictionary
-                parsed_data.append({
-                    "name": country,
-                    "hdi": hdi
-                })
-
-    # Write parsed data to a JSON file
-    with open(output_file, 'w') as outfile:
-        json.dump(parsed_data, outfile, indent=4)
-
-import json
-
-def merge_json_files(file1, file2, output_file):
-    # Load the data from the JSON files
-    with open(file1, 'r') as f1, open(file2, 'r') as f2:
-        data1 = json.load(f1)
-        data2 = json.load(f2)
-    
-    # Create a dictionary to store the merged data by "name"
-    merged_data = {}
-
-    # Add data from the first file
-    for item in data1:
+    # Merge the data
+    merged_data = []
+    for item in json1_data:
         name = item["name"]
-        merged_data[name] = item
-
-    # Merge data from the second file
-    for item in data2:
-        name = item["name"]
-        if name in merged_data:
-            # Merge the dictionaries
-            merged_data[name].update(item)
+        if name in json2_dict:
+            # Combine the dictionaries
+            merged_item = {**item, **json2_dict[name]}
+            merged_data.append(merged_item)
         else:
-            # Add new entries
-            merged_data[name] = item
+            # Add the item from the first JSON if no match is found
+            merged_data.append(item)
 
-    # Convert the merged data back into a list
-    merged_list = list(merged_data.values())
+    # Add entries from the second JSON that are not in the first JSON
+    for name, item in json2_dict.items():
+        if name not in {entry["name"] for entry in json1_data}:
+            merged_data.append(item)
 
     # Write the merged data to the output file
     with open(output_file, 'w') as outfile:
-        json.dump(merged_list, outfile, indent=4)
+        json.dump(merged_data, outfile, indent=4)
 
     print(f"Merged data has been written to {output_file}")
 
-def extract_names_to_txt(json_file, output_txt_file):
-    # Open and load the JSON file
-    with open(json_file, 'r') as infile:
-        data = json.load(infile)
-
-    # Extract names from the JSON
-    names = [item["name"] for item in data if "name" in item]
-
-    names.sort()
-    # Write names to the output text file
-    with open(output_txt_file, 'w') as outfile:
-        for name in names:
-            outfile.write(name + '\n')
-
-    print(f"Extracted {len(names)} names and written to {output_txt_file}")
-
 # Example usage
-input_json_file = 'datasets/totalData.json'  # Replace with your input JSON file
-output_txt_file = 'names.txt'  # Replace with your desired output TXT file
-extract_names_to_txt(input_json_file, output_txt_file)
+json1_file = 'countries_with_neighbors.json'  # Replace with your first JSON file
+json2_file = 'datasets/merged.json'  # Replace with your second JSON file
+output_file = 'merged.json'  # Replace with your desired output file
 
-import re
-
-def parse_passenger_traffic(input_file):
-    traffic_data = {}
-    
-    with open(input_file, 'r') as file:
-        lines = file.readlines()
-
-    current_country = None
-    for line in lines:
-        line = line.strip()
-        
-        # Check if the line contains a country name (assumes country names have no colons)
-        if line and ':' not in line:
-            current_country = line
-        elif "annual passenger traffic on registered air carriers:" in line:
-            if current_country:
-                # Extract the passenger traffic value using regex
-                match = re.search(r'(\d[\d,]*)', line)
-                if match:
-                    passenger_traffic = int(match.group(1).replace(',', ''))
-                    traffic_data[current_country] = passenger_traffic
-
-    return traffic_data
-
-def save_to_json(data, output_file):
-    import json
-    with open(output_file, 'w') as file:
-        json.dump(data, file, indent=4)
-
-# Example usage
-input_file = 'air_traffic.txt'  # Replace with your input file name
-output_file = 'air_traffic.json'  # Replace with your desired output file name
-
-traffic_dict = parse_passenger_traffic(input_file)
-save_to_json(traffic_dict, output_file)
-
-print(f"Extracted data: {traffic_dict}")
-print(f"Data saved to {output_file}")
-# Specify input and output file names
-#input_file1 = 'datasets/hdi_data.json'  # Replace with your input file name
-#input_file2 = 'datasets/countries.json'  # Replace with your input file
-#output_file = 'totalData.json'  # Replace with your desired output file name
-
-#merge_json_files(input_file1, input_file2, output_file)
-
-# Parse and convert the data to JSON
-#parse_hdi_data(input_file, output_file)
-
-# Specify input and output file names
-#input_file = 'populations.txt'  # Replace with your input file
-#output_file = 'countries.json'  # Replace with your desired output file
-
-# Parse and convert to JSON
-#parse_and_convert_to_json(input_file, output_file)
+merge_jsons(json1_file, json2_file, output_file)
