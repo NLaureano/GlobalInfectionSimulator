@@ -164,6 +164,20 @@ class InfectionSimulator:
         virulence_label = tk.Label(window, text=f"Virulence: {self.simulation_state['virulence']}%", 
                                   font=("Arial", 12))
         virulence_label.pack(pady=10)
+
+        def confirm_virulence():
+            selected_virulence = slider.get()
+            messagebox.showinfo("Virulence Selected", f"You selected{selected_virulence}%virulence.")
+
+        def exit_virulence():
+            window.destroy()
+
+        confirm_button = tk.Button(window, text="Confirm", font=("Arial", 12), command=confirm_virulence)
+        confirm_button.pack(side=tk.LEFT, padx=20, pady=10)
+
+        exit_button = tk.Button(window, text="Exit", command=exit_virulence)
+        exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
+        
     
     def starting_country_option(self):
         window = tk.Toplevel(self.root)
@@ -178,9 +192,21 @@ class InfectionSimulator:
         listbox = tk.Listbox(window, height=15, font=("Arial", 12))
         for country in countries:
             listbox.insert(tk.END, country)  # Insert each country into the Listbox
-    
         listbox.pack(pady=10)
 
+        def select_country():
+            selected_country = listbox.get(tk.ACTIVE)
+            messagebox.showinfo("Selected Country", f"You selected {selected_country} as the starting country.")
+
+        def exit_country():
+            window.destroy()
+
+        # Button to confirm the selection
+        select_button = tk.Button(window, text="Select", font=("Arial", 12), command=select_country)
+        select_button.pack(side=tk.LEFT, padx=20, pady=10)
+
+        exit_button = tk.Button(window, text="Exit", command=exit_country)
+        exit_button.pack(side=tk.RIGHT, padx=20, pady=10)
 
 
     def starting_infected_option(self):
@@ -233,6 +259,5 @@ class InfectionSimulator:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    matrix = sim.InfectionSimulator
-    simulator = InfectionSimulator(matrix)
+    simulator = InfectionSimulator()
     simulator.run()
