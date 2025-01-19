@@ -1,117 +1,210 @@
 import tkinter as tk
+from tkinter import messagebox
 from PIL import Image, ImageTk
-
 from borders import country_borders
 
-# Create the main window
-root = tk.Tk()
-root.title("World Map with Grid")
+class InfectionSimulator:
+    def __init__(self):
+        # Create the main window
+        self.root = tk.Tk()
+        self.root.title("Infection Simulator")
+        
+        # Simulation state
+        self.simulation_state = {
+            "virulence": 50,
+            "starting_country": None,
+            "starting_infected": 0,
+            "map": "default"
+        }
+        self.infected_count = 0
+        self.infected_grids = set()
+        
+        # Create frames
+        self.left_frame = tk.Frame(self.root)
+        self.left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        self.right_frame = tk.Frame(self.root)
+        self.right_frame.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # Initialize map
+        self.setup_map()
+        
+        # Initialize menu
+        self.setup_menu()
+        
+        # Initialize labels
+        self.setup_labels()
+    
+    def setup_map(self):
+        # Load and display the world map
+        self.image = Image.open("world.png")
+        self.photo = ImageTk.PhotoImage(self.image)
+        
+        # Create canvas for the map
+        self.canvas = tk.Canvas(self.left_frame, width=self.image.width, height=self.image.height)
+        self.canvas.create_image(0, 0, image=self.photo, anchor=tk.NW)
+        self.canvas.pack()
+        
+        # Grid settings
+        self.grid_rows = 100
+        self.grid_columns = 200
+        
+        # Draw grid
+        self.draw_grid()
+        
+        # Bind mouse movement
+        self.canvas.bind('<Motion>', self.track_grid_cursor)
+        self.canvas.bind('<Button-1>', self.handle_click)
+    
+    def setup_menu(self):
+        # Create menu buttons
+        buttons = [
+            ("Virulence", self.virulence_option),
+            ("Starting Country", self.starting_country_option),
+            ("Starting Infected", self.starting_infected_option),
+            ("Start/Step", self.start_step_option),
+            ("Reset", self.reset_option),
+            ("Total Infected", self.total_infected_option)
+        ]
+        
+        for text, command in buttons:
+            btn = tk.Button(self.right_frame, text=text, font=("Arial", 12), 
+                          width=20, command=command)
+            btn.pack(pady=5)
+    
+    def setup_labels(self):
+        # Coordinates label
+        self.coords_label = tk.Label(self.root, text="Lat: 0.00, Lon: 0.00", 
+                                   font=("Arial", 12), bg="white")
+        self.coords_label.pack(pady=10)
+        
+        # Total infected label
+        self.total_infected_label = tk.Label(self.root, text="Total Infected: 0", 
+                                           font=("Arial", 12))
+        self.total_infected_label.pack(pady=10)
+    
+    def draw_grid(self):
+        grid_width = self.image.width // self.grid_columns
+        grid_height = self.image.height // self.grid_rows
+        
+        # Draw horizontal lines
+        for i in range(1, self.grid_rows):
+            y = i * grid_height
+            self.canvas.create_line(0, y, self.image.width, y, fill="black")
+        
+        # Draw vertical lines
+        for j in range(1, self.grid_columns):
+            x = j * grid_width
+            self.canvas.create_line(x, 0, x, self.image.height, fill="black")
+    
+    def track_grid_cursor(self, event):
+        grid_x = event.x // (self.image.width // self.grid_columns)
+        grid_y = event.y // (self.image.height // self.grid_rows)
+        
+        # Convert grid coordinates to lat/lon
+        lat, lon = self.grid_to_latlon(grid_x, grid_y)
+        self.coords_label.config(text=f"Lat: {lat:.2f}, Lon: {lon:.2f}")
+    
+    def handle_click(self, event):
+        grid_x = event.x // (self.image.width // self.grid_columns)
+        grid_y = event.y // (self.image.height // self.grid_rows)
+        
+        # Add to infected grids if in simulation mode
+        if self.simulation_state["starting_country"] is None:
+            self.infected_grids.add((grid_x, grid_y))
+            self.update_infected_count()
+            self.highlight_cell(grid_x, grid_y)
+    
+    def highlight_cell(self, grid_x, grid_y):
+        cell_width = self.image.width // self.grid_columns
+        cell_height = self.image.height // self.grid_rows
+        x1, y1 = grid_x * cell_width, grid_y * cell_height
+        x2, y2 = x1 + cell_width, y1 + cell_height
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
+    
+    def grid_to_latlon(self, grid_x, grid_y):
+        lat = 90 - (grid_y * 180 / self.grid_rows)
+        lon = -180 + (grid_x * 360 / self.grid_columns)
+        return lat, lon
+    
+    def update_infected_count(self):
+        self.infected_count = len(self.infected_grids)
+        self.total_infected_label.config(text=f"Total Infected: {self.infected_count}")
+    
+    # Menu option functions
+    def virulence_option(self):
+        window = tk.Toplevel(self.root)
+        window.title("Adjust Virulence")
+        window.geometry("300x200")
+        
+        label = tk.Label(window, text="Adjust the virulence:", font=("Arial", 12))
+        label.pack(pady=10)
+        
+        def update_virulence(value):
+            virulence_label.config(text=f"Virulence: {value}%")
+            self.simulation_state["virulence"] = int(value)
+        
+        slider = tk.Scale(window, from_=0, to=100, orient="horizontal", 
+                         font=("Arial", 12), command=update_virulence)
+        slider.set(self.simulation_state["virulence"])
+        slider.pack(pady=10)
+        
+        virulence_label = tk.Label(window, text=f"Virulence: {self.simulation_state['virulence']}%", 
+                                  font=("Arial", 12))
+        virulence_label.pack(pady=10)
+    
+    def starting_country_option(self):
+        messagebox.showinfo("Starting Country", 
+                          "Click on the map to select a starting country")
+        self.simulation_state["starting_country"] = "pending"
+    
+    def starting_infected_option(self):
+        window = tk.Toplevel(self.root)
+        window.title("Set Starting Infected")
+        window.geometry("300x200")
+        
+        label = tk.Label(window, text="Enter number of initially infected:", 
+                        font=("Arial", 12))
+        label.pack(pady=10)
+        
+        entry = tk.Entry(window, font=("Arial", 12))
+        entry.insert(0, str(self.simulation_state["starting_infected"]))
+        entry.pack(pady=10)
+        
+        def update_infected():
+            try:
+                value = int(entry.get())
+                if value >= 0:
+                    self.simulation_state["starting_infected"] = value
+                    window.destroy()
+                else:
+                    messagebox.showerror("Error", "Please enter a positive number")
+            except ValueError:
+                messagebox.showerror("Error", "Please enter a valid number")
+        
+        button = tk.Button(window, text="Set", command=update_infected, 
+                          font=("Arial", 12))
+        button.pack(pady=10)
+    
+    def start_step_option(self):
+        # Add simulation step logic here
+        pass
+    
+    def reset_option(self):
+        self.infected_grids.clear()
+        self.update_infected_count()
+        self.simulation_state["starting_country"] = None
+        self.simulation_state["starting_infected"] = 0
+        # Clear highlighted cells
+        self.setup_map()
+    
+    def total_infected_option(self):
+        messagebox.showinfo("Total Infected", 
+                          f"Current total infected: {self.infected_count}")
+    
+    def run(self):
+        self.root.mainloop()
 
-# Load the world map image (ensure you have an image file like 'Map_world.png')
-image = Image.open("world.png")
-photo = ImageTk.PhotoImage(image)
-
-# Create a canvas to display the world map
-canvas = tk.Canvas(root, width=image.width, height=image.height)
-canvas.create_image(0, 0, image=photo, anchor=tk.NW)
-canvas.pack()
-
-# Number of rows and columns for the grid
-grid_rows = 100  # Adjust the number of rows based on your map resolution
-grid_columns = 200  # Adjust the number of columns based on your map resolution
-
-# Dictionary to store country borders (list of grid cell coordinates)
-
-
-# Function to draw the grid on the canvas
-def draw_grid():
-    grid_width = image.width // grid_columns  # Calculate the width of each grid cell
-    grid_height = image.height // grid_rows  # Calculate the height of each grid cell
-
-    # Draw horizontal lines
-    for i in range(1, grid_rows):
-        y = i * grid_height
-        canvas.create_line(0, y, image.width, y, fill="black")  # White horizontal line
-
-    # Draw vertical lines
-    for j in range(1, grid_columns):
-        x = j * grid_width
-        canvas.create_line(x, 0, x, image.height, fill="black")  # White vertical line
-
-# Call the function to draw the grid
-draw_grid()
-
-def draw_borders():
-    for country, cells in country_borders.items():
-        for grid_x, grid_y in cells:
-            cell_width = image.width // grid_columns
-            cell_height = image.height // grid_rows
-            x1, y1 = grid_x * cell_width, grid_y * cell_height
-            x2, y2 = x1 + cell_width, y1 + cell_height
-            canvas.create_rectangle(x1, y1, x2, y2, fill="red", outline="black", width=1)
-
-
-# List of major cities with approximate coordinates (example values)
-cities = {
-    "New York": (-118.7128, -74.0060),
-    "London": (51.5074, -0.1278),
-    "Tokyo": (35.6762, 139.6503),
-    "Sydney": (-33.8688, 151.2093),
-    "Cairo": (30.0444, 31.2357),
-    # Add more cities and their lat/lon coordinates
-}
-
-# Function to convert lat/lon to grid coordinates
-def latlon_to_grid(lat, lon):
-    # Assuming latitudes and longitudes range from -90 to 90 and -180 to 180 respectively
-    grid_x = int((lon + 180) * (grid_columns / 360))  # Normalize longitude to grid column
-    grid_y = int((90 - lat) * (grid_rows / 180))  # Normalize latitude to grid row
-    return grid_x, grid_y
-
-# Function to mark cities on the map
-def mark_cities():
-    for city, (lat, lon) in cities.items():
-        grid_x, grid_y = latlon_to_grid(lat, lon)
-        # Draw a marker (circle) on the grid at the city location
-        canvas.create_oval(grid_x - 5, grid_y - 5, grid_x + 5, grid_y + 5, fill="red")  # Marker as a red circle
-        # Optionally, label the city
-        canvas.create_text(grid_x, grid_y - 10, text=city, fill="black", font=("Arial", 8))
-
-# Call the function to mark cities on the grid
-mark_cities()
-
-# Function to convert grid coordinates to lat/lon
-def grid_to_latlon(grid_x, grid_y):
-    # Convert grid coordinates back to lat/lon
-    lon = (grid_x / grid_columns) * 360 - 180  # Reverse the longitude normalization
-    lat = 90 - (grid_y / grid_rows) * 180  # Reverse the latitude normalization
-    return lat, lon
-
-# Function to update the coordinates when the cursor moves
-def track_grid_cursor(event):
-    # Get the position of the cursor in canvas coordinates
-    grid_width = image.width // grid_columns
-    grid_height = image.height // grid_rows
-
-    # Convert pixel coordinates to grid row/column
-    grid_x = event.x // grid_width  # Column index
-    grid_y = event.y // grid_height  # Row index
-
-    # Ensure values stay within bounds
-    grid_x = min(max(grid_x, 0), grid_columns - 1)
-    grid_y = min(max(grid_y, 0), grid_rows - 1)
-
-    # Update the label with the grid block coordinates
-    coords_label.config(text=f"Grid Block: ({grid_x}, {grid_y})")
-
-# Create a label to display the coordinates
-coords_label = tk.Label(root, text="Lat: 0.00, Lon: 0.00", font=("Arial", 12), bg="white")
-coords_label.pack(pady=10)
-
-# Bind the motion event to track the cursor
-canvas.bind("<Motion>", track_grid_cursor)
-draw_borders()
-
-
-# Start the Tkinter event loop
-root.mainloop()
+if __name__ == "__main__":
+    simulator = InfectionSimulator()
+    simulator.run()
