@@ -6,7 +6,7 @@ root = tk.Tk()
 root.title("World Map with Grid")
 
 # Load the world map image (ensure you have an image file like 'world_map.jpg')
-image = Image.open("world_map.jpg")
+image = Image.open("Map_world.png")
 photo = ImageTk.PhotoImage(image)
 
 # Create a canvas to display the world map
