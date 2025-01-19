@@ -13,8 +13,9 @@ class InfectionSimulator:
     def __init__(self, countryCount=None, adjacenyMatrix=None):
         self.countryCount = countryCount
         self.adjacenyMatrix = adjacenyMatrix
-        self.infectionVector = None #
-        self.countryHDI = None
+        self.infectionVector = None #Number of infected people in each country
+        self.populationVector = None #Population of each country
+        self.countryHDI = None #Human Development Index of each country
         self.countryData = {}
         self.countryIndex = {}
 
@@ -51,9 +52,12 @@ class InfectionSimulator:
             print(f"Time Step {t}: {self.infectionVector}")
 
         return infectionHistory
+    
+    def step(self):
+        pass
 
-    def readCityData(self):
-        with open('datasets/countries.json', 'r') as file:
+    def reset(self):
+        with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
             self.countryData = json.load(file)
             country_list = self.countryData
