@@ -44,7 +44,7 @@ class InfectionSimulator:
     
     def step(self):
         resultingVector = np.zeros(self.countryCount)
-        dampener = 0.8 # Dampener for infection spread
+        dampener = 0.70 # Dampener for infection spread
         for i in range(self.countryCount):
             for j in range(self.countryCount):
                 if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
@@ -106,7 +106,7 @@ class InfectionSimulator:
     def setSpreadProb(self, spreadProb):
         self.spreadProb = spreadProb
 
-    def reset(self, neighborPriority=0.1, spreadProb=0.5):
+    def reset(self, neighborPriority=0.5, spreadProb=0.5):
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
             self.countryData = json.load(file)
