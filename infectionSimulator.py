@@ -44,11 +44,12 @@ class InfectionSimulator:
     
     def step(self):
         resultingVector = np.zeros(self.countryCount)
+        dampener = 0.8 # Dampener for infection spread
         for i in range(self.countryCount):
             for j in range(self.countryCount):
                 if self.adjacenyMatrix[i, j] > 0:  # If nodes are connected
                     # Determine actual new infections probabilistically
-                    actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * self.spreadProb)
+                    actual_transmissions = np.random.binomial(int(self.infectionVector[i]), self.adjacenyMatrix[i, j] * self.spreadProb * dampener)
                     resultingVector[j] += actual_transmissions
 
         # Update the infection vector

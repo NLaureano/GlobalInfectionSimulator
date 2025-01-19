@@ -132,7 +132,7 @@ class InfectionSimulator:
         cell_height = self.image.height // self.grid_rows
         x1, y1 = grid_x * cell_width, grid_y * cell_height
         x2, y2 = x1 + cell_width, y1 + cell_height
-        self.canvas.create_rectangle(x1, y1, x2, y2, fill=("#%02x%02x%02x" % (int(ratio * 255), 60, 125)), outline="black", width=1, tags="nodes")
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill=("#%02x%02x%02x" % (min(255, int(ratio * 255) + 51), 129, 195)), outline="black", width=1, tags="nodes")
     
     def grid_to_latlon(self, grid_x, grid_y):
         lat = 90 - (grid_y * 180 / self.grid_rows)
