@@ -5,6 +5,11 @@ Quackhacks Project W25
 
 An interactive visualization tool that simulates the spread of infection across different countries, taking into account various factors such as Human Development Index (HDI) and country interconnections.
 
+<img width="1159" alt="Screen Shot 2025-01-19 at 11 19 32 AM" src="https://github.com/user-attachments/assets/7c91cd4a-fc1c-4b4e-a5a5-3e368c57dd66" />
+
+
+
+
 ## Features
 
 - **Interactive World Map**: Click on countries to select infection starting points
