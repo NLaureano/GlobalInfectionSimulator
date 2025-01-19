@@ -1,2 +1,3 @@
 import numpy = 2.2.1
 import tkinter
+import PIL

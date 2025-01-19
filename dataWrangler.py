@@ -51,12 +51,51 @@ def parse_hdi_data(input_file, output_file):
     with open(output_file, 'w') as outfile:
         json.dump(parsed_data, outfile, indent=4)
 
+import json
+
+def merge_json_files(file1, file2, output_file):
+    # Load the data from the JSON files
+    with open(file1, 'r') as f1, open(file2, 'r') as f2:
+        data1 = json.load(f1)
+        data2 = json.load(f2)
+    
+    # Create a dictionary to store the merged data by "name"
+    merged_data = {}
+
+    # Add data from the first file
+    for item in data1:
+        name = item["name"]
+        merged_data[name] = item
+
+    # Merge data from the second file
+    for item in data2:
+        name = item["name"]
+        if name in merged_data:
+            # Merge the dictionaries
+            merged_data[name].update(item)
+        else:
+            # Add new entries
+            merged_data[name] = item
+
+    # Convert the merged data back into a list
+    merged_list = list(merged_data.values())
+
+    # Write the merged data to the output file
+    with open(output_file, 'w') as outfile:
+        json.dump(merged_list, outfile, indent=4)
+
+    print(f"Merged data has been written to {output_file}")
+
+
 # Specify input and output file names
-input_file = 'HDIData.txt'  # Replace with your input file name
-output_file = 'hdi_data.json'  # Replace with your desired output file name
+input_file1 = 'datasets/hdi_data.json'  # Replace with your input file name
+input_file2 = 'datasets/countries.json'  # Replace with your input file
+output_file = 'totalData.json'  # Replace with your desired output file name
+
+merge_json_files(input_file1, input_file2, output_file)
 
 # Parse and convert the data to JSON
-parse_hdi_data(input_file, output_file)
+#parse_hdi_data(input_file, output_file)
 
 # Specify input and output file names
 #input_file = 'populations.txt'  # Replace with your input file

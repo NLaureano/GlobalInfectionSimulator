@@ -1,0 +1,1220 @@
+[
+    {
+        "name": "Switzerland",
+        "hdi": 0.967,
+        "alternate_name": "switzerland",
+        "population": 8860574
+    },
+    {
+        "name": "Norway",
+        "hdi": 0.966,
+        "alternate_name": "norway",
+        "population": 5509733
+    },
+    {
+        "name": "Iceland",
+        "hdi": 0.959,
+        "alternate_name": "iceland",
+        "population": 364036
+    },
+    {
+        "name": "Denmark",
+        "hdi": 0.952,
+        "alternate_name": "denmark",
+        "population": 5973136
+    },
+    {
+        "name": "Sweden",
+        "hdi": 0.952,
+        "alternate_name": "sweden",
+        "population": 10589835
+    },
+    {
+        "name": "Germany",
+        "hdi": 0.95,
+        "alternate_name": "germany",
+        "population": 84119100
+    },
+    {
+        "name": "Ireland",
+        "hdi": 0.95,
+        "alternate_name": "ireland",
+        "population": 5233461
+    },
+    {
+        "name": "Singapore",
+        "hdi": 0.949,
+        "alternate_name": "singapore",
+        "population": 6028459
+    },
+    {
+        "name": "Australia",
+        "hdi": 0.946,
+        "alternate_name": "australia",
+        "population": 26768598
+    },
+    {
+        "name": "Netherlands",
+        "hdi": 0.946,
+        "alternate_name": "netherlands",
+        "population": 17772378
+    },
+    {
+        "name": "Belgium",
+        "hdi": 0.942,
+        "alternate_name": "belgium",
+        "population": 11977634
+    },
+    {
+        "name": "Finland",
+        "hdi": 0.942,
+        "alternate_name": "finland",
+        "population": 5626414
+    },
+    {
+        "name": "Liechtenstein",
+        "hdi": 0.942,
+        "alternate_name": "liechtenstein",
+        "population": 40272
+    },
+    {
+        "name": "United Kingdom",
+        "hdi": 0.94,
+        "alternate_name": "united-kingdom",
+        "population": 68459055
+    },
+    {
+        "name": "New Zealand",
+        "hdi": 0.939,
+        "alternate_name": "new-zealand",
+        "population": 5161211
+    },
+    {
+        "name": "United Arab Emirates",
+        "hdi": 0.937,
+        "alternate_name": "united-arab-emirates",
+        "population": 10032213
+    },
+    {
+        "name": "Canada",
+        "hdi": 0.935,
+        "alternate_name": "canada",
+        "population": 38794813
+    },
+    {
+        "name": "Luxembourg",
+        "hdi": 0.927,
+        "alternate_name": "luxembourg",
+        "population": 671254
+    },
+    {
+        "name": "United States",
+        "hdi": 0.927,
+        "alternate_name": "united-states",
+        "population": 341963408
+    },
+    {
+        "name": "Austria",
+        "hdi": 0.926,
+        "alternate_name": "austria",
+        "population": 8967982
+    },
+    {
+        "name": "Slovenia",
+        "hdi": 0.926,
+        "alternate_name": "slovenia",
+        "population": 2097893
+    },
+    {
+        "name": "Japan",
+        "hdi": 0.92,
+        "alternate_name": "japan",
+        "population": 123201945
+    },
+    {
+        "name": "Israel",
+        "hdi": 0.915,
+        "alternate_name": "israel",
+        "population": 9402617
+    },
+    {
+        "name": "Malta",
+        "hdi": 0.915,
+        "alternate_name": "malta",
+        "population": 469730
+    },
+    {
+        "name": "Spain",
+        "hdi": 0.911,
+        "alternate_name": "spain",
+        "population": 47280433
+    },
+    {
+        "name": "France",
+        "hdi": 0.91,
+        "alternate_name": "france",
+        "population": 68374591
+    },
+    {
+        "name": "Cyprus",
+        "hdi": 0.907,
+        "alternate_name": "cyprus",
+        "population": 1320525
+    },
+    {
+        "name": "Italy",
+        "hdi": 0.906,
+        "alternate_name": "italy",
+        "population": 60964931
+    },
+    {
+        "name": "Estonia",
+        "hdi": 0.899,
+        "alternate_name": "estonia",
+        "population": 1193791
+    },
+    {
+        "name": "Czechia",
+        "hdi": 0.895,
+        "alternate_name": "czechia",
+        "population": 10837890
+    },
+    {
+        "name": "Greece",
+        "hdi": 0.893,
+        "alternate_name": "greece",
+        "population": 10461091
+    },
+    {
+        "name": "Bahrain",
+        "hdi": 0.888,
+        "alternate_name": "bahrain",
+        "population": 1566888
+    },
+    {
+        "name": "Andorra",
+        "hdi": 0.884,
+        "alternate_name": "andorra",
+        "population": 85370
+    },
+    {
+        "name": "Poland",
+        "hdi": 0.881,
+        "alternate_name": "poland",
+        "population": 38746310
+    },
+    {
+        "name": "Latvia",
+        "hdi": 0.879,
+        "alternate_name": "latvia",
+        "population": 1801246
+    },
+    {
+        "name": "Lithuania",
+        "hdi": 0.879,
+        "alternate_name": "lithuania",
+        "population": 2628186
+    },
+    {
+        "name": "Croatia",
+        "hdi": 0.878,
+        "alternate_name": "croatia",
+        "population": 4150116
+    },
+    {
+        "name": "Qatar",
+        "hdi": 0.875,
+        "alternate_name": "qatar",
+        "population": 2552088
+    },
+    {
+        "name": "Saudi Arabia",
+        "hdi": 0.875,
+        "alternate_name": "saudi-arabia",
+        "population": 36544431
+    },
+    {
+        "name": "Portugal",
+        "hdi": 0.874,
+        "alternate_name": "portugal",
+        "population": 10207177
+    },
+    {
+        "name": "San Marino",
+        "hdi": 0.867,
+        "alternate_name": "san-marino",
+        "population": 35095
+    },
+    {
+        "name": "Chile",
+        "hdi": 0.86,
+        "alternate_name": "chile",
+        "population": 18664652
+    },
+    {
+        "name": "Slovakia",
+        "hdi": 0.855,
+        "alternate_name": "slovakia",
+        "population": 5563649
+    },
+    {
+        "name": "Hungary",
+        "hdi": 0.851,
+        "alternate_name": "hungary",
+        "population": 9855745
+    },
+    {
+        "name": "Argentina",
+        "hdi": 0.849,
+        "alternate_name": "argentina",
+        "population": 46994384
+    },
+    {
+        "name": "Kuwait",
+        "hdi": 0.847,
+        "alternate_name": "kuwait",
+        "population": 3138355
+    },
+    {
+        "name": "Montenegro",
+        "hdi": 0.844,
+        "alternate_name": "montenegro",
+        "population": 599849
+    },
+    {
+        "name": "Saint Kitts and Nevis",
+        "hdi": 0.838,
+        "alternate_name": "saint-kitts-and-nevis",
+        "population": 55133
+    },
+    {
+        "name": "Uruguay",
+        "hdi": 0.83,
+        "alternate_name": "uruguay",
+        "population": 3425330
+    },
+    {
+        "name": "Romania",
+        "hdi": 0.827,
+        "alternate_name": "romania",
+        "population": 18148155
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "hdi": 0.826,
+        "alternate_name": "antigua-and-barbuda",
+        "population": 102634
+    },
+    {
+        "name": "Panama",
+        "hdi": 0.82,
+        "alternate_name": "panama",
+        "population": 4470241
+    },
+    {
+        "name": "Oman",
+        "hdi": 0.819,
+        "alternate_name": "oman",
+        "population": 3901992
+    },
+    {
+        "name": "Georgia",
+        "hdi": 0.814,
+        "alternate_name": "georgia",
+        "population": 4900961
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "hdi": 0.814,
+        "alternate_name": "trinidad-and-tobago",
+        "population": 1408966
+    },
+    {
+        "name": "Barbados",
+        "hdi": 0.809,
+        "alternate_name": "barbados",
+        "population": 304139
+    },
+    {
+        "name": "Malaysia",
+        "hdi": 0.807,
+        "alternate_name": "malaysia",
+        "population": 34564810
+    },
+    {
+        "name": "Costa Rica",
+        "hdi": 0.806,
+        "alternate_name": "costa-rica",
+        "population": 5265575
+    },
+    {
+        "name": "Serbia",
+        "hdi": 0.805,
+        "alternate_name": "serbia",
+        "population": 6652212
+    },
+    {
+        "name": "Thailand",
+        "hdi": 0.803,
+        "alternate_name": "thailand",
+        "population": 69920998
+    },
+    {
+        "name": "Kazakhstan",
+        "hdi": 0.802,
+        "alternate_name": "kazakhstan",
+        "population": 20260006
+    },
+    {
+        "name": "Seychelles",
+        "hdi": 0.802,
+        "alternate_name": "seychelles",
+        "population": 98187
+    },
+    {
+        "name": "Belarus",
+        "hdi": 0.801,
+        "alternate_name": "belarus",
+        "population": 9501451
+    },
+    {
+        "name": "Bulgaria",
+        "hdi": 0.799,
+        "alternate_name": "bulgaria",
+        "population": 6782659
+    },
+    {
+        "name": "Palau",
+        "hdi": 0.797,
+        "alternate_name": "palau",
+        "population": 21864
+    },
+    {
+        "name": "Mauritius",
+        "hdi": 0.796,
+        "alternate_name": "mauritius",
+        "population": 1310504
+    },
+    {
+        "name": "Grenada",
+        "hdi": 0.793,
+        "alternate_name": "grenada",
+        "population": 114621
+    },
+    {
+        "name": "Albania",
+        "hdi": 0.789,
+        "alternate_name": "albania",
+        "population": 3107100
+    },
+    {
+        "name": "China",
+        "hdi": 0.788,
+        "alternate_name": "china",
+        "population": 1416043270
+    },
+    {
+        "name": "Armenia",
+        "hdi": 0.786,
+        "alternate_name": "armenia",
+        "population": 2976765
+    },
+    {
+        "name": "Mexico",
+        "hdi": 0.781,
+        "alternate_name": "mexico",
+        "population": 130739927
+    },
+    {
+        "name": "Sri Lanka",
+        "hdi": 0.78,
+        "alternate_name": "sri-lanka",
+        "population": 21982608
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "hdi": 0.779,
+        "alternate_name": "bosnia-and-herzegovina",
+        "population": 3798671
+    },
+    {
+        "name": "Saint Vincent and the Grenadines",
+        "hdi": 0.772,
+        "alternate_name": "saint-vincent-and-the-grenadines",
+        "population": 100647
+    },
+    {
+        "name": "Dominican Republic",
+        "hdi": 0.766,
+        "alternate_name": "dominican-republic",
+        "population": 10815857
+    },
+    {
+        "name": "Ecuador",
+        "hdi": 0.765,
+        "alternate_name": "ecuador",
+        "population": 18309984
+    },
+    {
+        "name": "North Macedonia",
+        "hdi": 0.765,
+        "alternate_name": "north-macedonia",
+        "population": 2135622
+    },
+    {
+        "name": "Cuba",
+        "hdi": 0.764,
+        "alternate_name": "cuba",
+        "population": 10966038
+    },
+    {
+        "name": "Maldives",
+        "hdi": 0.762,
+        "alternate_name": "maldives",
+        "population": 388858
+    },
+    {
+        "name": "Peru",
+        "hdi": 0.762,
+        "alternate_name": "peru",
+        "population": 32600249
+    },
+    {
+        "name": "Azerbaijan",
+        "hdi": 0.76,
+        "alternate_name": "azerbaijan",
+        "population": 10650239
+    },
+    {
+        "name": "Brazil",
+        "hdi": 0.76,
+        "alternate_name": "brazil",
+        "population": 220051512
+    },
+    {
+        "name": "Colombia",
+        "hdi": 0.758,
+        "alternate_name": "colombia",
+        "population": 49588357
+    },
+    {
+        "name": "Libya",
+        "hdi": 0.746,
+        "alternate_name": "libya",
+        "population": 7361263
+    },
+    {
+        "name": "Algeria",
+        "hdi": 0.745,
+        "alternate_name": "algeria",
+        "population": 47022473
+    },
+    {
+        "name": "Turkmenistan",
+        "hdi": 0.744,
+        "alternate_name": "turkmenistan",
+        "population": 5744151
+    },
+    {
+        "name": "Guyana",
+        "hdi": 0.742,
+        "alternate_name": "guyana",
+        "population": 794099
+    },
+    {
+        "name": "Mongolia",
+        "hdi": 0.741,
+        "alternate_name": "mongolia",
+        "population": 3281676
+    },
+    {
+        "name": "Dominica",
+        "hdi": 0.74,
+        "alternate_name": "dominica",
+        "population": 74661
+    },
+    {
+        "name": "Tonga",
+        "hdi": 0.739,
+        "alternate_name": "tonga",
+        "population": 104889
+    },
+    {
+        "name": "Jordan",
+        "hdi": 0.736,
+        "alternate_name": "jordan",
+        "population": 11174024
+    },
+    {
+        "name": "Ukraine",
+        "hdi": 0.734,
+        "alternate_name": "ukraine",
+        "population": 35661826
+    },
+    {
+        "name": "Tunisia",
+        "hdi": 0.732,
+        "alternate_name": "tunisia",
+        "population": 12048847
+    },
+    {
+        "name": "Marshall Islands",
+        "hdi": 0.731,
+        "alternate_name": "marshall-islands",
+        "population": 82011
+    },
+    {
+        "name": "Paraguay",
+        "hdi": 0.731,
+        "alternate_name": "paraguay",
+        "population": 7522549
+    },
+    {
+        "name": "Fiji",
+        "hdi": 0.729,
+        "alternate_name": "fiji",
+        "population": 951611
+    },
+    {
+        "name": "Egypt",
+        "hdi": 0.728,
+        "alternate_name": "egypt",
+        "population": 111247248
+    },
+    {
+        "name": "Uzbekistan",
+        "hdi": 0.727,
+        "alternate_name": "uzbekistan",
+        "population": 36520593
+    },
+    {
+        "name": "Saint Lucia",
+        "hdi": 0.725,
+        "alternate_name": "saint-lucia",
+        "population": 168038
+    },
+    {
+        "name": "Lebanon",
+        "hdi": 0.723,
+        "alternate_name": "lebanon",
+        "population": 5364482
+    },
+    {
+        "name": "South Africa",
+        "hdi": 0.717,
+        "alternate_name": "south-africa",
+        "population": 60442647
+    },
+    {
+        "name": "Indonesia",
+        "hdi": 0.713,
+        "alternate_name": "indonesia",
+        "population": 281562465
+    },
+    {
+        "name": "Philippines",
+        "hdi": 0.71,
+        "alternate_name": "philippines",
+        "population": 118277063
+    },
+    {
+        "name": "Botswana",
+        "hdi": 0.708,
+        "alternate_name": "botswana",
+        "population": 2450668
+    },
+    {
+        "name": "Jamaica",
+        "hdi": 0.706,
+        "alternate_name": "jamaica",
+        "population": 2823713
+    },
+    {
+        "name": "Samoa",
+        "hdi": 0.702,
+        "alternate_name": "samoa",
+        "population": 208853
+    },
+    {
+        "name": "Kyrgyzstan",
+        "hdi": 0.701,
+        "alternate_name": "kyrgyzstan",
+        "population": 6172101
+    },
+    {
+        "name": "Belize",
+        "hdi": 0.7,
+        "alternate_name": "belize",
+        "population": 415789
+    },
+    {
+        "name": "Morocco",
+        "hdi": 0.698,
+        "alternate_name": "morocco",
+        "population": 37387585
+    },
+    {
+        "name": "Nauru",
+        "hdi": 0.696,
+        "alternate_name": "nauru",
+        "population": 9892
+    },
+    {
+        "name": "Gabon",
+        "hdi": 0.693,
+        "alternate_name": "gabon",
+        "population": 2455105
+    },
+    {
+        "name": "Suriname",
+        "hdi": 0.69,
+        "alternate_name": "suriname",
+        "population": 646758
+    },
+    {
+        "name": "Bhutan",
+        "hdi": 0.681,
+        "alternate_name": "bhutan",
+        "population": 884546
+    },
+    {
+        "name": "Tajikistan",
+        "hdi": 0.679,
+        "alternate_name": "tajikistan",
+        "population": 10394063
+    },
+    {
+        "name": "El Salvador",
+        "hdi": 0.674,
+        "alternate_name": "el-salvador",
+        "population": 6628702
+    },
+    {
+        "name": "Iraq",
+        "hdi": 0.673,
+        "alternate_name": "iraq",
+        "population": 42083436
+    },
+    {
+        "name": "Bangladesh",
+        "hdi": 0.67,
+        "alternate_name": "bangladesh",
+        "population": 168697184
+    },
+    {
+        "name": "Nicaragua",
+        "hdi": 0.669,
+        "alternate_name": "nicaragua",
+        "population": 6676948
+    },
+    {
+        "name": "Cabo Verde",
+        "hdi": 0.661,
+        "alternate_name": "cabo-verde",
+        "population": 611014
+    },
+    {
+        "name": "Tuvalu",
+        "hdi": 0.653,
+        "alternate_name": "tuvalu",
+        "population": 11733
+    },
+    {
+        "name": "Equatorial Guinea",
+        "hdi": 0.65,
+        "alternate_name": "equatorial-guinea",
+        "population": 1795834
+    },
+    {
+        "name": "India",
+        "hdi": 0.644,
+        "alternate_name": "india",
+        "population": 1409128296
+    },
+    {
+        "name": "Guatemala",
+        "hdi": 0.629,
+        "alternate_name": "guatemala",
+        "population": 18255216
+    },
+    {
+        "name": "Kiribati",
+        "hdi": 0.628,
+        "alternate_name": "kiribati",
+        "population": 116545
+    },
+    {
+        "name": "Honduras",
+        "hdi": 0.624,
+        "alternate_name": "honduras",
+        "population": 9529188
+    },
+    {
+        "name": "Vanuatu",
+        "hdi": 0.614,
+        "alternate_name": "vanuatu",
+        "population": 318007
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "hdi": 0.613,
+        "alternate_name": "sao-tome-and-principe",
+        "population": 223561
+    },
+    {
+        "name": "Namibia",
+        "hdi": 0.61,
+        "alternate_name": "namibia",
+        "population": 2803660
+    },
+    {
+        "name": "Ghana",
+        "hdi": 0.602,
+        "alternate_name": "ghana",
+        "population": 34589092
+    },
+    {
+        "name": "Kenya",
+        "hdi": 0.601,
+        "alternate_name": "kenya",
+        "population": 58246378
+    },
+    {
+        "name": "Nepal",
+        "hdi": 0.601,
+        "alternate_name": "nepal",
+        "population": 31122387
+    },
+    {
+        "name": "Cambodia",
+        "hdi": 0.6,
+        "alternate_name": "cambodia",
+        "population": 17063669
+    },
+
+    {
+        "name": "Angola",
+        "hdi": 0.591,
+        "alternate_name": "angola",
+        "population": 37202061
+    },
+    {
+        "name": "Cameroon",
+        "hdi": 0.587,
+        "alternate_name": "cameroon",
+        "population": 30966105
+    },
+    {
+        "name": "Comoros",
+        "hdi": 0.586,
+        "alternate_name": "comoros",
+        "population": 900141
+    },
+    {
+        "name": "Zambia",
+        "hdi": 0.569,
+        "alternate_name": "zambia",
+        "population": 20799116
+    },
+    {
+        "name": "Papua New Guinea",
+        "hdi": 0.568,
+        "alternate_name": "papua-new-guinea",
+        "population": 10046233
+    },
+    {
+        "name": "Timor-Leste",
+        "hdi": 0.566,
+        "alternate_name": "timor-leste",
+        "population": 1506909
+    },
+    {
+        "name": "Solomon Islands",
+        "hdi": 0.562,
+        "alternate_name": "solomon-islands",
+        "population": 726799
+    },
+    {
+        "name": "Haiti",
+        "hdi": 0.552,
+        "alternate_name": "haiti",
+        "population": 11753943
+    },
+    {
+        "name": "Uganda",
+        "hdi": 0.55,
+        "alternate_name": "uganda",
+        "population": 49283041
+    },
+    {
+        "name": "Nigeria",
+        "hdi": 0.548,
+        "alternate_name": "nigeria",
+        "population": 236747130
+    },
+    {
+        "name": "Rwanda",
+        "hdi": 0.548,
+        "alternate_name": "rwanda",
+        "population": 13623302
+    },
+    {
+        "name": "Togo",
+        "hdi": 0.547,
+        "alternate_name": "togo",
+        "population": 8917994
+    },
+    {
+        "name": "Mauritania",
+        "hdi": 0.54,
+        "alternate_name": "mauritania",
+        "population": 4328040
+    },
+    {
+        "name": "Pakistan",
+        "hdi": 0.54,
+        "alternate_name": "pakistan",
+        "population": 252363571
+    },
+    {
+        "name": "Lesotho",
+        "hdi": 0.521,
+        "alternate_name": "lesotho",
+        "population": 2227548
+    },
+    {
+        "name": "Senegal",
+        "hdi": 0.517,
+        "alternate_name": "senegal",
+        "population": 18847519
+    },
+    {
+        "name": "Sudan",
+        "hdi": 0.516,
+        "alternate_name": "sudan",
+        "population": 50467278
+    },
+    {
+        "name": "Djibouti",
+        "hdi": 0.515,
+        "alternate_name": "djibouti",
+        "population": 994974
+    },
+    {
+        "name": "Malawi",
+        "hdi": 0.508,
+        "alternate_name": "malawi",
+        "population": 21763309
+    },
+    {
+        "name": "Benin",
+        "hdi": 0.504,
+        "alternate_name": "benin",
+        "population": 14697052
+    },
+    {
+        "name": "Eritrea",
+        "hdi": 0.493,
+        "alternate_name": "eritrea",
+        "population": 6343956
+    },
+    {
+        "name": "Ethiopia",
+        "hdi": 0.492,
+        "alternate_name": "ethiopia",
+        "population": 118550298
+    },
+    {
+        "name": "Liberia",
+        "hdi": 0.487,
+        "alternate_name": "liberia",
+        "population": 5437249
+    },
+    {
+        "name": "Madagascar",
+        "hdi": 0.487,
+        "alternate_name": "madagascar",
+        "population": 29452714
+    },
+    {
+        "name": "Guinea-Bissau",
+        "hdi": 0.483,
+        "alternate_name": "guinea-bissau",
+        "population": 2132325
+    },
+    {
+        "name": "Guinea",
+        "hdi": 0.471,
+        "alternate_name": "guinea",
+        "population": 13986179
+    },
+    {
+        "name": "Afghanistan",
+        "hdi": 0.462,
+        "alternate_name": "afghanistan",
+        "population": 40121552
+    },
+    {
+        "name": "Mozambique",
+        "hdi": 0.461,
+        "alternate_name": "mozambique",
+        "population": 33350954
+    },
+    {
+        "name": "Sierra Leone",
+        "hdi": 0.458,
+        "alternate_name": "sierra-leone",
+        "population": 9121049
+    },
+    {
+        "name": "Burkina Faso",
+        "hdi": 0.438,
+        "alternate_name": "burkina-faso",
+        "population": 23042199
+    },
+    {
+        "name": "Yemen",
+        "hdi": 0.424,
+        "alternate_name": "yemen",
+        "population": 32140443
+    },
+    {
+        "name": "Burundi",
+        "hdi": 0.42,
+        "alternate_name": "burundi",
+        "population": 13590102
+    },
+    {
+        "name": "Mali",
+        "hdi": 0.41,
+        "alternate_name": "mali",
+        "population": 21990607
+    },
+    {
+        "name": "Chad",
+        "hdi": 0.394,
+        "alternate_name": "chad",
+        "population": 19093595
+    },
+    {
+        "name": "Niger",
+        "hdi": 0.394,
+        "alternate_name": "niger",
+        "population": 26342784
+    },
+    {
+        "name": "Central African Republic",
+        "hdi": 0.387,
+        "alternate_name": "central-african-republic",
+        "population": 5650957
+    },
+    {
+        "name": "South Sudan",
+        "hdi": 0.381,
+        "alternate_name": "south-sudan",
+        "population": 12703714
+    },
+    {
+        "name": "Somalia",
+        "hdi": 0.38,
+        "alternate_name": "somalia",
+        "population": 13017273
+    },
+    {
+        "name": "Russia",
+        "hdi": 0.821,
+        "alternate_name": "russia",
+        "population": 140820810
+    },
+    {
+        "name": "Congo, Democratic Republic of the",
+        "hdi": 0.481,
+        "alternate_name": "congo-democratic-republic-of-the",
+        "population": 115403027
+    },
+    {
+        "name": "Vietnam",
+        "hdi": 0.726,
+        "alternate_name": "vietnam",
+        "population": 105758975
+    },
+    {
+        "name": "Iran",
+        "hdi": 0.78,
+        "alternate_name": "iran",
+        "population": 88386937
+    },
+    {
+        "name": "Turkey",
+        "hdi": 0.855,
+        "alternate_name": "turkey-turkiye",
+        "population": 84119531
+    },
+    {
+        "name": "Tanzania",
+        "hdi": 0.532,
+        "alternate_name": "tanzania",
+        "population": 67462121
+    },
+    {
+        "name": "South Korea",
+        "hdi": 0.929,
+        "alternate_name": "korea-south",
+        "population": 52081799
+    },
+    {
+        "name": "Venezuela",
+        "hdi": 0.699,
+        "alternate_name": "venezuela",
+        "population": 31250306
+    },
+    {
+        "name": "Cote d'Ivoire",
+        "hdi": 0.534,
+        "alternate_name": "cote-divoire",
+        "population": 29981758
+    },
+    {
+        "name": "North Korea",
+        "hdi": 0.699,
+        "alternate_name": "korea-north",
+        "population": 26298666
+    },
+    {
+        "name": "Syria",
+        "hdi": 0.557,
+        "alternate_name": "syria",
+        "population": 23865423
+    },
+    {
+        "name": "Taiwan",
+        "hdi": 0.829,
+        "alternate_name": "taiwan",
+        "population": 23595274
+    },
+    {
+        "name": "Zimbabwe",
+        "hdi": 0.571,
+        "alternate_name": "zimbabwe",
+        "population": 17150352
+    },
+    {
+        "name": "Bolivia",
+        "hdi": 0.698,
+        "alternate_name": "bolivia",
+        "population": 12311974
+    },
+    {
+        "name": "Laos",
+        "hdi": 0.62,
+        "alternate_name": "laos",
+        "population": 7953556
+    },
+    {
+        "name": "Hong Kong",
+        "hdi": 0.956,
+        "alternate_name": "hong-kong",
+        "population": 7297821
+    },
+    {
+        "name": "Congo, Republic of the",
+        "hdi": 0.593,
+        "alternate_name": "congo-republic-of-the",
+        "population": 6097665
+    },
+    {
+        "name": "Moldova",
+        "hdi": 0.763,
+        "alternate_name": "moldova",
+        "population": 3599528
+    },
+    {
+        "name": "Puerto Rico",
+        "hdi": 0.845,
+        "alternate_name": "puerto-rico",
+        "population": 3019450
+    },
+    {
+        "name": "Gambia, The",
+        "hdi": 0.495,
+        "alternate_name": "gambia-the",
+        "population": 2523327
+    },
+    {
+        "name": "Gaza Strip",
+        "alternate_name": "gaza-strip",
+        "population": 2141643
+    },
+    {
+        "name": "Kosovo",
+        "hdi": 0.786,
+        "alternate_name": "kosovo",
+        "population": 1977093
+    },
+    {
+        "name": "Eswatini",
+        "hdi": 0.61,
+        "alternate_name": "eswatini",
+        "population": 1138089
+    },
+    {
+        "name": "Brunei",
+        "hdi": 0.823,
+        "alternate_name": "brunei",
+        "population": 491900
+    },
+    {
+        "name": "Bahamas, The",
+        "hdi": 0.82,
+        "alternate_name": "bahamas-the",
+        "population": 410862
+    },
+    {
+        "name": "New Caledonia",
+        "hdi": 0.795,
+        "alternate_name": "new-caledonia",
+        "population": 304167
+    },
+    {
+        "name": "French Polynesia",
+        "hdi": 0.795,
+        "alternate_name": "french-polynesia",
+        "population": 303540
+    },
+    {
+        "name": "Guam",
+        "hdi": 0.795,
+        "alternate_name": "guam",
+        "population": 169532
+    },
+    {
+        "name": "Curacao",
+        "hdi": 0.785,
+        "alternate_name": "curacao",
+        "population": 153289
+    },
+    {
+        "name": "Aruba",
+        "hdi": 0.801,
+        "alternate_name": "aruba",
+        "population": 125063
+    },
+    {
+        "name": "Virgin Islands",
+        "hdi": 0.944,
+        "alternate_name": "virgin-islands",
+        "population": 104377
+    },
+    {
+        "name": "Micronesia, Federated States of",
+        "hdi": 0.634,
+        "alternate_name": "micronesia-federated-states-of",
+        "population": 99603
+    },
+    {
+        "name": "Greenland",
+        "hdi": 0.91,
+        "alternate_name": "greenland",
+        "population": 57751
+    }
+]
