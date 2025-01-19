@@ -241,18 +241,6 @@
         "annual_passenger_traffic": 25604871
     },
     {
-        "name": "Turkey (Turkiye)",
-        "neighbors": [
-            "Greece",
-            "Bulgaria",
-            "Georgia",
-            "Armenia",
-            "Iran",
-            "Iraq",
-            "Syria"
-        ]
-    },
-    {
         "name": "Germany",
         "neighbors": [
             "Austria",

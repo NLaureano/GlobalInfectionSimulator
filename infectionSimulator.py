@@ -65,7 +65,6 @@ class InfectionSimulator:
             self.populationVector = np.zeros(self.countryCount) #Population of each country
             self.countryHDI = np.zeros(self.countryCount) #Human Development Index of each country
             self.countryTravelScore = np.zeros(self.countryCount) #Travel score of each country
-            self.countryData = {}
             self.countryIndex = {}
 
             # Initialize adjacency matrix and infection vector
@@ -75,16 +74,23 @@ class InfectionSimulator:
             # Create a dictionary to map city names to indices
             for i, country in enumerate(self.countryData):
                 self.countryIndex[country['name']] = i
+                print(f"Country {country['name']} has index {i}")
 
             sumTravelScore = 0
             for country in self.countryData:
+                print("Country PASSANGER:", country['name'])
                 sumTravelScore += country['annual_passenger_traffic']
+            print("Sum of travel scores:", sumTravelScore)
 
             # Populate population, HDI, and travel score vectors
             for country in self.countryData:
                 self.populationVector[self.countryIndex[country['name']]] = country['population']
                 self.countryHDI[self.countryIndex[country['name']]] = country['HDI']
                 self.countryTravelScore[self.countryIndex[country['name']]] = country['annual_passenger_traffic'] / sumTravelScore
+            
+            print("Population Vector:", self.populationVector)
+            print("HDI Vector:", self.countryHDI)
+            print("Travel Score Vector:", self.countryTravelScore)
 
             # Populate adjacency matrix
             for country in self.countryData:
