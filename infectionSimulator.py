@@ -16,8 +16,9 @@ class InfectionSimulator:
         self.infectionVector = None #Number of infected people in each country
         self.populationVector = None #Population of each country
         self.countryHDI = None #Human Development Index of each country
-        self.countryData = {}
-        self.countryIndex = {}
+        self.countryTravelScore = None #Travel score of each country
+        self.countryData = {} #Json loaded into memory
+        self.countryIndex = {} #Index of each country in the adjacency matrix
 
     def simulateInfection(self, spreadProb=0.5, timeSteps=100):
         """
@@ -60,19 +61,23 @@ class InfectionSimulator:
         with open('datasets/seed.json', 'r') as file:
             # Load the JSON data
             self.countryData = json.load(file)
-            country_list = self.countryData
-            self.countryCount = len(country_list)
+            self.countryCount = len(self.countryData)
+            self.populationVector = np.zeros(self.countryCount) #Population of each country
+            self.countryHDI = np.zeros(self.countryCount) #Human Development Index of each country
+            self.countryTravelScore = np.zeros(self.countryCount) #Travel score of each country
+            self.countryData = {}
+            self.countryIndex = {}
 
             # Initialize adjacency matrix and infection vector
             self.adjacenyMatrix = np.zeros((self.countryCount, self.countryCount), dtype=float)
             self.infectionVector = np.zeros(self.countryCount)
 
             # Create a dictionary to map city names to indices
-            for i, country in enumerate(country_list):
+            for i, country in enumerate(self.countryData):
                 self.countryIndex[country['name']] = i
 
             # Populate adjacency matrix
-            for country in country_list:
+            for country in self.countryData:
                 rowOfCountry = self.countryIndex[country['name']]
                 for neighbor, proximityScore in country['neighbors'].items():
                     colOfCountry = self.countryIndex[neighbor]
