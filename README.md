@@ -1,7 +1,6 @@
-# QuackHacksW25
-Quackhacks Project W25
-
 # Global Infection Simulator
+
+Built for the Winter 2025 University of Oregon Hackathon AKA Quackhacks
 
 An interactive visualization tool that simulates the spread of infection across different countries, taking into account various factors such as Human Development Index (HDI) and country interconnections.
 
@@ -51,7 +50,7 @@ Features:
 
 1. **Setup**:
    ```bash
-   python3 main.py
+   python3 run.py
    ```
 
 2. **Start Simulation**:
